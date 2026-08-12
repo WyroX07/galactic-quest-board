@@ -8,6 +8,7 @@ import com.service.MusicPlayer;
 import com.service.QuestService;
 import com.service.QuestionService;
 import com.ui.PlanetBoardView;
+import com.ui.QuestionCardView;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.effect.GaussianBlur;
@@ -66,6 +67,10 @@ public class GameController {
 
     @FXML
     public void initialize() {
+        // Help/Settings are only locked while a question card is actually
+        // on screen — not during difficulty/theme selection beforehand.
+        QuestionCardView.setHudLockHooks(this::lockHud, this::unlockHud);
+
         backgroundImage.fitWidthProperty().bind(root.widthProperty());
         backgroundImage.fitHeightProperty().bind(root.heightProperty());
 
@@ -235,7 +240,6 @@ public class GameController {
     private void continueAfterResolvedTurn() {
         if (gameOver || continuePromptShown) return;
         continuePromptShown = true;
-        unlockHud();
         if (showingInitialStartQuestions) {
             showContinueButton("Next player ▶", this::showNextInitialStartQuestion);
         } else {
@@ -247,7 +251,6 @@ public class GameController {
         if (gameOver) return;
         PlayerToken current = playerTokens.get(currentPlayerIndex);
         pendingQuestionPlayer = current;
-        lockHud();
         boardView.mooveToken(current);
     }
 
@@ -261,7 +264,6 @@ public class GameController {
             return;
         }
         pendingQuestionPlayer = nextPlayer;
-        lockHud();
         boardView.askQuestionForCurrentTile(nextPlayer);
     }
 
