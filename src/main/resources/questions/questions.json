@@ -1,0 +1,3373 @@
+[
+  {
+    "theme": "ENTERTAINMENT",
+    "subject": "Sport",
+    "difficulty": 1,
+    "question": "Which sport does Kylian Mbappé play?",
+    "answer": "Football",
+    "choices": ["Tennis", "Basketball", "Football", "Rugby"]
+  },
+  {
+    "theme": "ENTERTAINMENT",
+    "subject": "Cinema",
+    "difficulty": 2,
+    "question": "Which movie was directed by Christopher Nolan?",
+    "answer": "Inception",
+    "choices": ["Titanic", "Inception", "Avatar", "Gladiator"]
+  },
+  {
+    "theme": "ENTERTAINMENT",
+    "subject": "Series",
+    "difficulty": 3,
+    "question": "Which series takes place in the fictional town of Hawkins?",
+    "answer": "Stranger Things",
+    "choices": ["Dark", "Stranger Things", "Black Mirror", "The Witcher"]
+  },
+  {
+    "theme": "ENTERTAINMENT",
+    "subject": "Cinema",
+    "difficulty": 4,
+    "question": "Which film won the Palme d’Or at the Cannes Film Festival in 2019?",
+    "answer": "Parasite",
+    "choices": ["Parasite", "Joker", "1917", "Roma"]
+  },
+  {
+    "theme": "ENTERTAINMENT",
+    "subject": "Cinema",
+    "difficulty": 1,
+    "question": "In which year was the movie \"Titanic\" released?",
+    "answer": "1997",
+    "choices": ["1977", "1987", "1997", "1999"]
+  },
+  {
+    "theme": "ENTERTAINMENT",
+    "subject": "Literature",
+    "difficulty": 2,
+    "question": "How many novels have been written by Guillaume Musso?",
+    "answer": "23",
+    "choices": ["21", "22", "23", "24"]
+  },
+  {
+    "theme": "ENTERTAINMENT",
+    "subject": "Video Games",
+    "difficulty": 3,
+    "question": "Which of these games is mainly recognized for popularizing 3D open-world gameplay for the general public?",
+    "answer": "GTA III",
+    "choices": [
+      "The Elder Scrolls III: Morrowind",
+      "Minecraft",
+      "GTA III",
+      "Super Mario 64"
+    ]
+  },
+  {
+    "theme": "ENTERTAINMENT",
+    "subject": "Video Games",
+    "difficulty": 4,
+    "question": "Which creator is often referred to as the \"father of Mario\" and \"The Legend of Zelda\"?",
+    "answer": "Shigeru Miyamoto",
+    "choices": ["Shigeru Miyamoto", "Hideo Kojima", "Sid Meier", "Gabe Newell"]
+  },
+  {
+    "theme": "TECH",
+    "subject": "Web",
+    "difficulty": 1,
+    "question": "What does \"WWW\" stand for?",
+    "answer": "World Wide Web",
+    "choices": [
+      "World Web Wide",
+      "World Wide Web",
+      "Web World Wide",
+      "Wide World Web"
+    ]
+  },
+  {
+    "theme": "TECH",
+    "subject": "Web",
+    "difficulty": 2,
+    "question": "Which language is used to structure a web page?",
+    "answer": "HTML",
+    "choices": ["Python", "HTML", "Java", "C++"]
+  },
+  {
+    "theme": "TECH",
+    "subject": "Networking",
+    "difficulty": 3,
+    "question": "What does the acronym \"VPN\" stand for?",
+    "answer": "Virtual Private Network",
+    "choices": [
+      "Virtual Private Network",
+      "Visual Public Network",
+      "Verified Private Node",
+      "Virtual Public Net"
+    ]
+  },
+  {
+    "theme": "TECH",
+    "subject": "Cryptography",
+    "difficulty": 4,
+    "question": "Which algorithm is commonly used for asymmetric encryption?",
+    "answer": "RSA",
+    "choices": ["RSA", "JPEG", "HTML", "TCP"]
+  },
+  {
+    "theme": "TECH",
+    "subject": "Artificial Intelligence",
+    "difficulty": 1,
+    "question": "What does the acronym \"LLM\" stand for in artificial intelligence?",
+    "answer": "Large Language Model",
+    "choices": [
+      "Large Language Model",
+      "Language Llama Machine",
+      "Lazy Language Messenger",
+      "Lingering Language Meme"
+    ]
+  },
+  {
+    "theme": "TECH",
+    "subject": "AI / Hardware",
+    "difficulty": 2,
+    "question": "What is an NPU used for?",
+    "answer": "Executing AI inferences with low latency",
+    "choices": [
+      "Executing AI inferences with low latency",
+      "Training AI models",
+      "Performing floating-point calculations",
+      "Performing cryptography"
+    ]
+  },
+  {
+    "theme": "TECH",
+    "subject": "Cybersecurity",
+    "difficulty": 3,
+    "question": "An OSINT investigation is based on:",
+    "answer": "Open Source Intelligence",
+    "choices": [
+      "Open Source Intelligence",
+      "Operation Schedule Interactive",
+      "Open Source Information",
+      "Operation System Investigation"
+    ]
+  },
+  {
+    "theme": "TECH",
+    "subject": "Networking",
+    "difficulty": 4,
+    "question": "Which protocol is used by the \"ping\" command?",
+    "answer": "ICMP",
+    "choices": ["ICMP", "TCP", "UDP", "RDP"]
+  },
+  {
+    "theme": "WORLD",
+    "subject": "Geography",
+    "difficulty": 1,
+    "question": "What is the capital of Italy?",
+    "answer": "Rome",
+    "choices": ["Madrid", "Rome", "Lisbon", "Athens"]
+  },
+  {
+    "theme": "WORLD",
+    "subject": "Geography",
+    "difficulty": 2,
+    "question": "In which country is the Taj Mahal located?",
+    "answer": "India",
+    "choices": ["Pakistan", "India", "Turkey", "Iran"]
+  },
+  {
+    "theme": "WORLD",
+    "subject": "Geography",
+    "difficulty": 3,
+    "question": "Which country has the largest land area in the world?",
+    "answer": "Russia",
+    "choices": ["China", "United States", "Russia", "Canada"]
+  },
+  {
+    "theme": "WORLD",
+    "subject": "Geography",
+    "difficulty": 4,
+    "question": "Which city is located in both Europe and Asia?",
+    "answer": "Istanbul",
+    "choices": ["Athens", "Moscow", "Istanbul", "Bucharest"]
+  },
+  {
+    "theme": "WORLD",
+    "subject": "Geography",
+    "difficulty": 1,
+    "question": "Where is Mount Everest located?",
+    "answer": "China",
+    "choices": ["China", "France", "Japan", "Russia"]
+  },
+  {
+    "theme": "WORLD",
+    "subject": "History",
+    "difficulty": 2,
+    "question": "When was the Great Wall of China built?",
+    "answer": "221 BC",
+    "choices": ["221 BC", "231 BC", "500 AD", "221 AD"]
+  },
+  {
+    "theme": "WORLD",
+    "subject": "Geography",
+    "difficulty": 3,
+    "question": "In which ocean is the Mariana Trench located?",
+    "answer": "Western Pacific Ocean",
+    "choices": [
+      "Western Pacific Ocean",
+      "Eastern Pacific Ocean",
+      "North Pacific Ocean",
+      "South Pacific Ocean"
+    ]
+  },
+  {
+    "theme": "WORLD",
+    "subject": "Astronomy",
+    "difficulty": 4,
+    "question": "How many kilometers separate the Earth from the Moon?",
+    "answer": "395,384 km",
+    "choices": ["406,696 km", "395,384 km", "402,556 km", "544,798 km"]
+  },
+  {
+    "theme": "MENTAL OPERATION",
+    "subject": "Math",
+    "difficulty": 1,
+    "question": "2 + 2 × 2 - 6 = ?",
+    "answer": "0",
+    "choices": ["6", "8", "4", "0"]
+  },
+  {
+    "theme": "MENTAL OPERATION",
+    "subject": "Logic",
+    "difficulty": 2,
+    "question": "If a snail takes 1 hour to climb a wall and slides back 30 minutes, how long does it take to give up permanently?",
+    "answer": "It depends on its motivation",
+    "choices": [
+      "1 hour",
+      "2 hours",
+      "It depends on its motivation",
+      "30 minutes"
+    ]
+  },
+  {
+    "theme": "MENTAL OPERATION",
+    "subject": "Logic",
+    "difficulty": 3,
+    "question": "You have 3 closed boxes: one labeled 'Apples', one labeled 'Oranges', and one labeled 'Apples + Oranges'. All labels are wrong. You may draw only one fruit from one box. What is the minimum number of draws needed to determine the exact contents of all three boxes?",
+    "answer": "1",
+    "choices": ["1", "2", "3", "Impossible"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Film",
+    "difficulty": 1,
+    "question": "Who's the main actor in \"Je suis une légende\"?",
+    "answer": "Will Smith",
+    "choices": [
+      "Michael B. Jordan",
+      "Dwayne Johnson",
+      "Denzel Washington",
+      "Will Smith"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Wrestling",
+    "difficulty": 1,
+    "question": "What's the most well-known wrestling federation?",
+    "answer": "WWE",
+    "choices": ["WFW", "WWF", "WWW", "WWE"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Show",
+    "difficulty": 2,
+    "question": "Who's the new champion of \"12 coups de midi\"?",
+    "answer": "Cyprien",
+    "choices": ["Emilien", "Bruno", "Christian", "Cyprien"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Basketball",
+    "difficulty": 2,
+    "question": "In which team did Lebron James make his NBA debut?",
+    "answer": "Cleveland Cavaliers",
+    "choices": [
+      "LA Lakers",
+      "Chicago Bulls",
+      "Golden State Warriors",
+      "Cleveland Cavaliers"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Cartoon",
+    "difficulty": 3,
+    "question": "In what year was \"Cars\" released?",
+    "answer": "2006",
+    "choices": ["1998", "2010", "2004", "2006"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Royalty",
+    "difficulty": 3,
+    "question": "What's the Belgian king's last child's name?",
+    "answer": "Eleanore",
+    "choices": ["Elisabeth", "Gabriel", "Emmanuel", "Eleanore"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Sport",
+    "difficulty": 4,
+    "question": "How many points are scored for a try in rugby?",
+    "answer": "5 points",
+    "choices": ["2 points", "7 points", "1 point", "5 points"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Sport",
+    "difficulty": 4,
+    "question": "Which French judoka was world champion in 1993, 1995, 1997, 1999?",
+    "answer": "David Douillet",
+    "choices": [
+      "Teddy Rinner",
+      "François Pestelard",
+      "Jean-Luc Rougé",
+      "David Douillet"
+    ]
+  },
+  {
+    "theme": "IT",
+    "subject": "Java",
+    "difficulty": 1,
+    "question": "What type of return does a constructor have?",
+    "answer": "No return",
+    "choices": ["Object", "String", "void", "No return"]
+  },
+  {
+    "theme": "IT",
+    "subject": "Python",
+    "difficulty": 1,
+    "question": "In a Python list: fruits = ['apple', 'banana', 'cherry']. Which instruction retrieves 'banana'?",
+    "answer": "fruits[1]",
+    "choices": ["fruit[1]", "fruits.get(1)", "fruits(1)", "fruits[1]"]
+  },
+  {
+    "theme": "IT",
+    "subject": "Hardware",
+    "difficulty": 2,
+    "question": "Which of these queries is incorrect?",
+    "answer": "select name from users where age > 18 having city = 'Paris';",
+    "choices": [
+      "select namecomp from company where nbairplanes = (select max(nbairplanes) from company);",
+      "select countryairp, avg(nbterm) as avg from airport group by countryairp having moy < 12;",
+      "select count(distinct namepil) as tot from pilote;",
+      "select name from users where age > 18 having city = 'Paris';"
+    ]
+  },
+  {
+    "theme": "IT",
+    "subject": "RAM",
+    "difficulty": 2,
+    "question": "What does \"RAM\" means?",
+    "answer": "Random Access Memory",
+    "choices": [
+      "Remote Access Module",
+      "Rapid Application Management",
+      "Read Analytical Memory",
+      "Random Access Memory"
+    ]
+  },
+  {
+    "theme": "IT",
+    "subject": "SQL",
+    "difficulty": 3,
+    "question": "In an SQL database, what is the result of the comparison \"NULL = NULL\"?",
+    "answer": "Null",
+    "choices": ["Error", "True", "NaN", "Null"]
+  },
+  {
+    "theme": "IT",
+    "subject": "Malware",
+    "difficulty": 3,
+    "question": "What is the name of the malware that encrypts all data?",
+    "answer": "Randsomware",
+    "choices": ["Spyware", "Trojan horse", "Worms", "Randsomware"]
+  },
+  {
+    "theme": "IT",
+    "subject": "De Morgan's law",
+    "difficulty": 4,
+    "question": "According to De Morgan's law, the expression \"!(A||B)\" is strictly equivalent to …",
+    "answer": "!A&&!B",
+    "choices": ["!A||!B", "A&&B", "A||B", "!A&&!B"]
+  },
+  {
+    "theme": "IT",
+    "subject": "Python",
+    "difficulty": 4,
+    "question": "In Python, what is the result of this instruction: \"print(3 * 2 + str(4 + 1) * 3)\" ?",
+    "answer": "'33555'",
+    "choices": ["615", "33555", "'3315'", "'33555'"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "USA",
+    "difficulty": 1,
+    "question": "In which state of the United States can we visit the \"monument valley\"?",
+    "answer": "Arizona",
+    "choices": ["California", "Utah", "Nevada", "Arizona"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Population",
+    "difficulty": 1,
+    "question": "Which country has the fewest population in the world?",
+    "answer": "Vatican",
+    "choices": ["Monaco", "San Marin", "Liechtenstein", "Vatican"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Italy",
+    "difficulty": 2,
+    "question": "Which Italian city is famous for its canals and its total absence of cars in the center?",
+    "answer": "Venezia",
+    "choices": ["Roma", "Naples", "Milan", "Venezia"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Capital",
+    "difficulty": 2,
+    "question": "What is the capital of Jamaica?",
+    "answer": "Kingston",
+    "choices": ["Porto-Novo", "Ocho Rios", "Montego Bay", "Kingston"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "United Arab Emirates",
+    "difficulty": 3,
+    "question": "How many emirates make up the United Arab Emirates?",
+    "answer": "7",
+    "choices": ["6", "8", "9", "7"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "UK",
+    "difficulty": 3,
+    "question": "In what year did England officially leave the European Union?",
+    "answer": "2020",
+    "choices": ["2019", "2021", "2022", "2020"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Berlin wall",
+    "difficulty": 4,
+    "question": "When was the Berlin Wall destroyed?",
+    "answer": "November 1989",
+    "choices": ["May 1989", "August 1989", "March 1989", "November 1989"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "F1",
+    "difficulty": 4,
+    "question": "In 2026, which city will host the Formula 1 Grand Prix for the first time?",
+    "answer": "Madrid",
+    "choices": ["Monza", "Miami", "Barcelona", "Madrid"]
+  },
+  {
+    "theme": "Music",
+    "subject": "Singer",
+    "difficulty": 1,
+    "question": "Which legendary French singer sang \"La Bohème\"?",
+    "answer": "Charles Aznavour",
+    "choices": [
+      "Claude François",
+      "Michel Berger",
+      "Jacques Brel",
+      "Charles Aznavour"
+    ]
+  },
+  {
+    "theme": "Music",
+    "subject": "Reggae",
+    "difficulty": 1,
+    "question": "Which Jamaican artist is considered the greatest reggae legend?",
+    "answer": "Bob Marley",
+    "choices": ["Jimmy Cliff", "Shaggy", "Peter Tosh", "Bob Marley"]
+  },
+  {
+    "theme": "Music",
+    "subject": "Cover",
+    "difficulty": 2,
+    "question": "I am known for the covers of Jean-Jacques Goldman and Claude François. Who am I?",
+    "answer": "Matt Pokora",
+    "choices": ["Keen'V", "Slimane", "Kenji Girac", "Matt Pokora"]
+  },
+  {
+    "theme": "Music",
+    "subject": "Group",
+    "difficulty": 2,
+    "question": "In what year did One Direction officially split up?",
+    "answer": "2016",
+    "choices": ["2015", "2017", "2014", "2016"]
+  },
+  {
+    "theme": "Music",
+    "subject": "Superbowl",
+    "difficulty": 3,
+    "question": "Which artist had their Superbowl performance, the most watched of all time?",
+    "answer": "Bad Bunny",
+    "choices": ["Kendrick Lamar", "Michael Jackson", "Rihanna", "Bad Bunny"]
+  },
+  {
+    "theme": "Music",
+    "subject": "Grammy Awards",
+    "difficulty": 3,
+    "question": "Which singer is the female artist who has won the most Grammy Awards?",
+    "answer": "Beyonce",
+    "choices": ["Billie Eilish", "Taylor Swift", "Raye", "Beyonce"]
+  },
+  {
+    "theme": "Music",
+    "subject": "Michael Jackson",
+    "difficulty": 4,
+    "question": "What's the name of Michael Jackson's monkey?",
+    "answer": "Bubbles",
+    "choices": ["Pimpsky", "Jackson", "Mike", "Bubbles"]
+  },
+  {
+    "theme": "Music",
+    "subject": "Star Academy",
+    "difficulty": 4,
+    "question": "Which international artist was the godfather of the last season of the Star Academy?",
+    "answer": "Ed Sheeran",
+    "choices": ["Lady Gaga", "Robbie Williams", "Celine Dion", "Ed Sheeran"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Tourism",
+    "difficulty": 1,
+    "question": "What is the most visited country in the world?",
+    "answer": "France",
+    "choices": ["France", "Spain", "USA", "China"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Tourism",
+    "difficulty": 1,
+    "question": "Which country is called the Middle Kingdom?",
+    "answer": "China",
+    "choices": ["China", "Germany", "Russia", "Egypt"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Tourism",
+    "difficulty": 2,
+    "question": "In which country is the famous Machu Picchu site located?",
+    "answer": "Peru",
+    "choices": ["Peru", "Mexico", "Chile", "Brazil"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Tourism",
+    "difficulty": 2,
+    "question": "In which country did reggae originate?",
+    "answer": "Jamaica",
+    "choices": ["Jamaica", "USA", "UK", "Brazil"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Tourism",
+    "difficulty": 3,
+    "question": "In which country is the famous Leaning Tower of Pisa located?",
+    "answer": "Italy",
+    "choices": ["Italy", "France", "Spain", "Greece"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Tourism",
+    "difficulty": 3,
+    "question": "What is the tiredness caused by time zone changes called?",
+    "answer": "Jet lag",
+    "choices": ["Jet lag", "Time shift", "Overtravel", "Time lag"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Tourism",
+    "difficulty": 4,
+    "question": "In which city is the famous astronomical clock located?",
+    "answer": "Prague",
+    "choices": ["Prague", "Berlin", "Vienna", "Budapest"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Tourism",
+    "difficulty": 4,
+    "question": "Which country does not have a Roman amphitheater?",
+    "answer": "Belgium",
+    "choices": ["Tunisia", "Croatia", "Belgium", "Bulgaria"]
+  },
+
+  {
+    "theme": "entertainment",
+    "subject": "entertainment",
+    "difficulty": 1,
+    "question": "What's the release date of the Friends series?",
+    "answer": "1994",
+    "choices": ["1994", "2001", "1986", "2012"]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "entertainment",
+    "difficulty": 1,
+    "question": "What is the most popular game coded in the programming language \"Java\"?",
+    "answer": "Minecraft",
+    "choices": [
+      "Minecraft",
+      "Elden Ring",
+      "Call of Duty: Black Ops II",
+      "Mario Bros"
+    ]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "entertainment",
+    "difficulty": 2,
+    "question": "In what year was the game Fortnite Battle Royale officially released?",
+    "answer": "2017",
+    "choices": ["2017", "2011", "2015", "2010"]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "entertainment",
+    "difficulty": 2,
+    "question": "What is the prisoner's name in The Green Mile?",
+    "answer": "John Coffey",
+    "choices": [
+      "John Coffey",
+      "Paul Edgecomb",
+      "Wild Bill Wharton",
+      "Delacroix"
+    ]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "entertainment",
+    "difficulty": 3,
+    "question": "Which Mario Kart allowed having two characters on the same kart?",
+    "answer": "Mario Kart DS",
+    "choices": [
+      "Mario Kart DS",
+      "Mario Kart 3DS",
+      "Mario Kart GameCube",
+      "Mario Kart Wii"
+    ]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "entertainment",
+    "difficulty": 3,
+    "question": "In which film does Jeff Goldblum play an egocentric mathematician?",
+    "answer": "Jurassic Park",
+    "choices": ["Jurassic Park", "Independence Day", "Wicked", "Thor: Ragnarok"]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "entertainment",
+    "difficulty": 4,
+    "question": "How many playable champions are there in League of Legends?",
+    "answer": "172",
+    "choices": ["172", "202", "182", "167"]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "entertainment",
+    "difficulty": 4,
+    "question": "Under which pseudonym is Laurent Godefroid known?",
+    "answer": "Réfléchix",
+    "choices": ["Opastix", "Idefix", "Whyskix", "Réfléchix"]
+  },
+
+  {
+    "theme": "Computing",
+    "subject": "Computing",
+    "difficulty": 1,
+    "question": "What does the \"++\" symbol do?",
+    "answer": "It adds 1 to the value",
+    "choices": [
+      "It adds 1 to the value",
+      "It deletes the variable",
+      "It multiplies by 2",
+      "It pauses the program"
+    ]
+  },
+  {
+    "theme": "Computing",
+    "subject": "Computing",
+    "difficulty": 1,
+    "question": "What is a True or False value called?",
+    "answer": "A Boolean",
+    "choices": ["A Boolean", "A String", "An Integer", "A Loop"]
+  },
+  {
+    "theme": "Computing",
+    "subject": "Computing",
+    "difficulty": 2,
+    "question": "Which programming language is known for its readability and simplicity?",
+    "answer": "Python",
+    "choices": ["Python", "VBA", "C++", "Cobra"]
+  },
+  {
+    "theme": "Computing",
+    "subject": "Computing",
+    "difficulty": 2,
+    "question": "Which line of code is correct in Python?",
+    "answer": "print(\"Hello World!\")",
+    "choices": [
+      "print(\"Hello World!\")",
+      "\"Hello World\".print()",
+      "HelloWorld(print)",
+      "print = \"hello World\" Print(print)"
+    ]
+  },
+  {
+    "theme": "Computing",
+    "subject": "Computing",
+    "difficulty": 3,
+    "question": "What is the result of the binary addition 1101 + 1011? (Answer in decimal)",
+    "answer": "24",
+    "choices": ["22", "24", "26", "23"]
+  },
+  {
+    "theme": "Computing",
+    "subject": "Computing",
+    "difficulty": 3,
+    "question": "Which programming language is primarily used in the Unity engine?",
+    "answer": "C#",
+    "choices": ["C#", "C++", "Python", "Java"]
+  },
+  {
+    "theme": "Computing",
+    "subject": "Computing",
+    "difficulty": 4,
+    "question": "Who is considered to be the very first person to write a computer program?",
+    "answer": "Ada Lovelace",
+    "choices": [
+      "Ada Lovelace",
+      "Alan Turing",
+      "Grace Hopper",
+      "Charles Babbage"
+    ]
+  },
+  {
+    "theme": "Computing",
+    "subject": "Computing",
+    "difficulty": 4,
+    "question": "What was the original name of the Java language before it was renamed?",
+    "answer": "Oak",
+    "choices": ["Oak", "TypeScript", "Python", "Cobble"]
+  },
+
+  {
+    "theme": "Mystery (Jumanji)",
+    "subject": "Mystery (Jumanji)",
+    "difficulty": 1,
+    "question": "What kind of game is Jumanji originally?",
+    "answer": "A board game",
+    "choices": ["A board game", "A card game", "A video game", "A sports game"]
+  },
+  {
+    "theme": "Mystery (Jumanji)",
+    "subject": "Mystery (Jumanji)",
+    "difficulty": 1,
+    "question": "In the game Jumanji, how can players stop the dangers released by the game?",
+    "answer": "By reaching the final square and shouting \"Jumanji\"",
+    "choices": [
+      "By reaching the final square and shouting \"Jumanji\"",
+      "By leaving the game as soon as a danger appears",
+      "By winning each challenge individually",
+      "By destroying the game board"
+    ]
+  },
+  {
+    "theme": "Mystery (Jumanji)",
+    "subject": "Mystery (Jumanji)",
+    "difficulty": 2,
+    "question": "What is the release date of the (first) Jumanji movie?",
+    "answer": "1995",
+    "choices": ["1995", "1990", "1999", "2005"]
+  },
+  {
+    "theme": "Mystery (Jumanji)",
+    "subject": "Mystery (Jumanji)",
+    "difficulty": 2,
+    "question": "What is the name of the hunter chasing Alan Parrish in Jumanji (first movie)?",
+    "answer": "Van Pelt",
+    "choices": ["Van Pelt", "Van Helsing", "Clayton", "Kraven"]
+  },
+  {
+    "theme": "Mystery (Jumanji)",
+    "subject": "Mystery (Jumanji)",
+    "difficulty": 3,
+    "question": "In the movie Jumanji: Welcome to the Jungle, which actor plays the role of Dr. Xander Bravestone?",
+    "answer": "Dwayne Johnson",
+    "choices": ["Dwayne Johnson", "Kevin Hart", "Karen Gillan", "Jack Black"]
+  },
+  {
+    "theme": "Mystery (Jumanji)",
+    "subject": "Mystery (Jumanji)",
+    "difficulty": 3,
+    "question": "Which actor played Alan Parrish in the original 1995 Jumanji film?",
+    "answer": "Robin Williams",
+    "choices": ["Robin Williams", "Dustin Hoffman", "Tim Allen", "Tom Hanks"]
+  },
+  {
+    "theme": "Mystery (Jumanji)",
+    "subject": "Mystery (Jumanji)",
+    "difficulty": 4,
+    "question": "Who wrote the original Jumanji children's book?",
+    "answer": "Chris Van Allsburg",
+    "choices": ["Chris Van Allsburg", "Dr. Seuss", "Roald Dahl", "J.K. Rowling"]
+  },
+  {
+    "theme": "Mystery (Jumanji)",
+    "subject": "Mystery (Jumanji)",
+    "difficulty": 4,
+    "question": "Which actor portrayed the hunter Van Pelt in the original 1995 Jumanji film?",
+    "answer": "Jonathan Hyde",
+    "choices": [
+      "Jonathan Hyde",
+      "Robin Williams",
+      "Brad Pitt",
+      "Samuel L. Jackson"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Video Games & Tech",
+    "difficulty": 1,
+    "question": "Which plumber is Nintendo's mascot?",
+    "answer": "Mario",
+    "choices": ["Mario", "Luigi", "Cars", "Forza"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Video Games & Tech",
+    "difficulty": 2,
+    "question": "In what year was the first iPhone released?",
+    "answer": "2007",
+    "choices": ["2007", "2006", "2008", "2002"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Cinema",
+    "difficulty": 3,
+    "question": "Which Swedish music streaming service dominated the market in the 2010s?",
+    "answer": "Spotify",
+    "choices": ["Spotify", "Deezer", "Apple Music", "Google Music"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Video Games & Tech",
+    "difficulty": 4,
+    "question": "Who is the NBA player with the most championships?",
+    "answer": "Bill Russell",
+    "choices": ["Bill Russell", "Sam Jones", "LeBron James", "Michael Jordan"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Sports",
+    "difficulty": 1,
+    "question": "What is the most watched sport on the planet?",
+    "answer": "Football",
+    "choices": ["Football", "Cricket", "Basketball", "Tennis"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Sports",
+    "difficulty": 2,
+    "question": "Which actor plays Jack Sparrow in the Pirates of the Caribbean movies?",
+    "answer": "Johnny Depp",
+    "choices": ["Johnny Depp", "Leonardo DiCaprio", "Brad Pitt", "Tom Cruise"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Sports",
+    "difficulty": 3,
+    "question": "What is the most expensive transfer fee in football history?",
+    "answer": "222 million",
+    "choices": ["222 million", "180 million", "145 million", "126 million"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Sports",
+    "difficulty": 4,
+    "question": "Why was Mike Tyson disqualified during his fight against Evander Holyfield in 1997?",
+    "answer": "He bit his opponent's ear.",
+    "choices": [
+      "He bit his opponent's ear.",
+      "He accidentally knocked out the referee.",
+      "He used an illegal kick.",
+      "He kept hitting after the bell."
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Hardware & Memory",
+    "difficulty": 1,
+    "question": "A programmer's job consists of:",
+    "answer": "Writing and testing code to create software or applications.",
+    "choices": [
+      "Writing and testing code to create software or applications.",
+      "Physically repairing internal computer components.",
+      "Exclusively managing the sale of computer hardware in a store.",
+      "Monitoring building security through surveillance cameras."
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Programming & Software",
+    "difficulty": 2,
+    "question": "What is a programming language?",
+    "answer": "Code that allows a human to give instructions to a machine.",
+    "choices": [
+      "Code that allows a human to give instructions to a machine.",
+      "A foreign language used only by network engineers.",
+      "A software used to translate texts from one language to another.",
+      "A dictionary of technical words for repairing keyboards."
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Networking",
+    "difficulty": 3,
+    "question": "What does the acronym \"RAM\" stand for?",
+    "answer": "Random Access Memory",
+    "choices": [
+      "Random Access Memory",
+      "Global Active Network",
+      "Modular Automated Routing",
+      "Amply Mobilized Resource"
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "History",
+    "difficulty": 4,
+    "question": "What is the major difference between RAM and ROM?",
+    "answer": "RAM is volatile while ROM is permanent.",
+    "choices": [
+      "RAM is volatile while ROM is permanent.",
+      "RAM is used to store photos.",
+      "RAM is external.",
+      "RAM is slower than ROM."
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Programming & Software",
+    "difficulty": 1,
+    "question": "In what programming language was the Linux kernel written?",
+    "answer": "C language",
+    "choices": [
+      "C language",
+      "Assembly language",
+      "C# language",
+      "Java language"
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Programming & Software",
+    "difficulty": 2,
+    "question": "Who is considered the first computer programmer in history?",
+    "answer": "Ada Lovelace",
+    "choices": ["Ada Lovelace", "Bill Gates", "Jeff Bezos", "Thomas Pesquet"]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Hardware & Memory",
+    "difficulty": 3,
+    "question": "What is the difference between a bit and a byte?",
+    "answer": "A bit is the minimum unit (0 or 1), while a byte is a group of 8 bits.",
+    "choices": [
+      "A bit is the minimum unit (0 or 1), while a byte is a group of 8 bits.",
+      "A bit is used for text and a byte is used only for images.",
+      "A byte is a hardware part while a bit is a Wi-Fi signal.",
+      "There is no difference."
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Hardware & Memory",
+    "difficulty": 4,
+    "question": "What is my network's IP address? (E.g., 192.128.1.15).",
+    "answer": "192.128.1.0",
+    "choices": ["192.128.1.0", "192.128.0.0", "192.128.1.255", "192.128.1.15"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Geography & Landmarks",
+    "difficulty": 1,
+    "question": "What is the capital of Japan?",
+    "answer": "Tokyo",
+    "choices": ["Tokyo", "Kyoto", "Osaka", "Hiroshima"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Geography & Landmarks",
+    "difficulty": 2,
+    "question": "In which country is Mont Blanc located?",
+    "answer": "France",
+    "choices": ["France", "Italy", "Austria", "Switzerland"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Records & Statistics",
+    "difficulty": 3,
+    "question": "In which country is Machu Picchu located?",
+    "answer": "Peru",
+    "choices": ["Peru", "Bolivia", "Chile", "Mexico"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Geography & Landmarks",
+    "difficulty": 4,
+    "question": "Which monument was built by an emperor in memory of his wife?",
+    "answer": "Taj Mahal",
+    "choices": ["Taj Mahal", "Red Fort", "Golden Temple", "Qutub Minar"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Records & Statistics",
+    "difficulty": 1,
+    "question": "Where do “French fries” come from?",
+    "answer": "Belgium",
+    "choices": ["Belgium", "France", "United States", "Canada"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Geography & Landmarks",
+    "difficulty": 2,
+    "question": "Which country is historically the world's top tourist destination by number of visitors?",
+    "answer": "France",
+    "choices": ["France", "Spain", "United States", "China"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Records & Statistics",
+    "difficulty": 3,
+    "question": "Which is the largest mosque in Africa?",
+    "answer": "The Great Mosque of Algiers (Algeria)",
+    "choices": [
+      "The Great Mosque of Algiers (Algeria)",
+      "The Hassan II Mosque (Morocco)",
+      "Al-Azhar Mosque (Egypt)",
+      "The Great Mosque of Kairouan (Tunisia)"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Culture & Fun Facts",
+    "difficulty": 4,
+    "question": "Which country has the most islands in the world?",
+    "answer": "Sweden",
+    "choices": ["Sweden", "Norway", "Indonesia", "Philippines"]
+  },
+  {
+    "theme": "History",
+    "subject": "French History",
+    "difficulty": 1,
+    "question": "Which French emperor lost the Battle of Waterloo?",
+    "answer": "Napoleon Bonaparte",
+    "choices": [
+      "Napoleon Bonaparte",
+      "Napoleon III",
+      "Louis Philippe I",
+      "Charles X"
+    ]
+  },
+  {
+    "theme": "History",
+    "subject": "French History",
+    "difficulty": 2,
+    "question": "Which famous text was adopted on August 26, 1789, in France?",
+    "answer": "The Declaration of the Rights of Man and of the Citizen",
+    "choices": [
+      "The Declaration of the Rights of Man and of the Citizen",
+      "The Constitution of the Republic",
+      "The Civil Code",
+      "The Treaty of Versailles"
+    ]
+  },
+  {
+    "theme": "History",
+    "subject": "Ottoman History",
+    "difficulty": 3,
+    "question": "Which Ottoman ruler, nicknamed 'the Magnificent' by Europeans, brought the Empire to its peak in the 16th century?",
+    "answer": "Suleiman the Magnificent",
+    "choices": [
+      "Suleiman the Magnificent",
+      "Osman III",
+      "Mourad IV",
+      "Abdülhamid II"
+    ]
+  },
+  {
+    "theme": "History",
+    "subject": "Ottoman History",
+    "difficulty": 4,
+    "question": "Which Ottoman sultan conquered Constantinople in 1453?",
+    "answer": "Mehmed II",
+    "choices": ["Mehmed II", "Suleiman the Magnificent", "Osman I", "Selim I"]
+  },
+  {
+    "theme": "History",
+    "subject": "Belgian History",
+    "difficulty": 1,
+    "question": "In what year did the Belgian Revolution take place?",
+    "answer": "1830",
+    "choices": ["1830", "1789", "1848", "1914"]
+  },
+  {
+    "theme": "History",
+    "subject": "Medieval History",
+    "difficulty": 2,
+    "question": "In which region was the printing press invented?",
+    "answer": "In Europe",
+    "choices": [
+      "In Europe",
+      "In East Asia",
+      "In the Middle East",
+      "In Central America"
+    ]
+  },
+  {
+    "theme": "History",
+    "subject": "World War II",
+    "difficulty": 3,
+    "question": "What was the Enigma machine used for during World War II?",
+    "answer": "To encrypt and decrypt secret messages",
+    "choices": [
+      "To encrypt and decrypt secret messages",
+      "To detect enemy submarines using ultrasound",
+      "To calculate the trajectory of V2 missiles",
+      "To transmit propaganda images via radio waves"
+    ]
+  },
+  {
+    "theme": "History",
+    "subject": "Belgian History",
+    "difficulty": 4,
+    "question": "In what year did television broadcast color images for the first time in Belgium?",
+    "answer": "1967",
+    "choices": ["1967", "1953", "1975", "1982"]
+  },
+  {
+    "theme": "mystery",
+    "subject": "Rick & Morty — Basics",
+    "difficulty": 1,
+    "question": "What iconic item does Rick use to travel between dimensions?",
+    "answer": "The Portal Gun",
+    "choices": [
+      "A TARDIS",
+      "A flying DeLorean",
+      "The Space Stone",
+      "The Portal Gun"
+    ]
+  },
+  {
+    "theme": "mystery",
+    "subject": "Rick & Morty — Basics",
+    "difficulty": 1,
+    "question": "What is the sole purpose of a Mr. Meeseeks' existence?",
+    "answer": "To complete a simple task and then disappear",
+    "choices": [
+      "To complete a simple task and then disappear",
+      "To become Jerry's best friend",
+      "To serve butter",
+      "To conquer planets"
+    ]
+  },
+  {
+    "theme": "mystery",
+    "subject": "Rick & Morty — Family",
+    "difficulty": 2,
+    "question": "Who is Rick to Morty?",
+    "answer": "His grandfather",
+    "choices": ["His grandfather", "His father", "His brother", "His uncle"]
+  },
+  {
+    "theme": "mystery",
+    "subject": "Rick & Morty — Family",
+    "difficulty": 2,
+    "question": "What color is Rick's hair?",
+    "answer": "mystery",
+    "choices": ["Grey", "Brown", "Red", "mystery"]
+  },
+  {
+    "theme": "mystery",
+    "subject": "Rick & Morty — Lore",
+    "difficulty": 3,
+    "question": "Which universe is Rick originally from (main dimension)?",
+    "answer": "Dimension C-137",
+    "choices": [
+      "Dimension Prime",
+      "Dimension C-59",
+      "Dimension C-137",
+      "Parmesan Dimension"
+    ]
+  },
+  {
+    "theme": "mystery",
+    "subject": "Rick & Morty — Lore",
+    "difficulty": 3,
+    "question": "How old is Morty at the beginning of the series?",
+    "answer": "14 years old",
+    "choices": ["12 years old", "14 years old", "16 years old", "21 years old"]
+  },
+  {
+    "theme": "mystery",
+    "subject": "Rick & Morty — Lore",
+    "difficulty": 3,
+    "question": "What color are Evil Morty's portals?",
+    "answer": "Yellow",
+    "choices": ["Red", "mystery", "informatics", "Yellow"]
+  },
+  {
+    "theme": "mystery",
+    "subject": "Rick & Morty — Experts",
+    "difficulty": 4,
+    "question": "Why does Rick turn himself into a pickle (Pickle Rick)?",
+    "answer": "To avoid family therapy",
+    "choices": [
+      "To avoid family therapy",
+      "To prove to Morty he can do it",
+      "To hide from the Galactic Federation",
+      "It was a lab accident"
+    ]
+  },
+  {
+    "theme": "mystery",
+    "subject": "Rick & Morty — Experts",
+    "difficulty": 4,
+    "question": "Which member of Morty's family has their own recurring clone?",
+    "answer": "Beth",
+    "choices": ["Jerry", "Beth", "Summer", "Rick"]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "TV Shows — Level 1",
+    "difficulty": 1,
+    "question": "In Breaking Bad, what is Walter White's alter ego?",
+    "answer": "Heisenberg",
+    "choices": ["The Cook", "Heisenberg", "Mr. White", "Danger"]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "TV Shows — Level 1",
+    "difficulty": 1,
+    "question": "What color is the TARDIS in Doctor Who?",
+    "answer": "mystery",
+    "choices": ["Red", "informatics", "Yellow", "mystery"]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "TV Shows — Level 1",
+    "difficulty": 1,
+    "question": "What is the first name of Homer Simpson's boss?",
+    "answer": "Charles (Mr. Burns)",
+    "choices": ["Ned", "Charles (Mr. Burns)", "Moe", "Kent"]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "TV Shows — Level 2",
+    "difficulty": 2,
+    "question": "In Game of Thrones, what is the motto of House Stark?",
+    "answer": "Winter is Coming",
+    "choices": [
+      "Fire and Blood",
+      "Hear Me Roar",
+      "Winter is Coming",
+      "We Do Not Sow"
+    ]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "TV Shows — Level 2",
+    "difficulty": 2,
+    "question": "In Stranger Things, what is the parallel dimension called?",
+    "answer": "The Upside Down",
+    "choices": [
+      "The Shadow Realm",
+      "The Upside Down",
+      "The Dark Zone",
+      "The Void"
+    ]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "TV Shows — Level 2",
+    "difficulty": 2,
+    "question": "Who voices BoJack Horseman?",
+    "answer": "Will Arnett",
+    "choices": [
+      "Will Arnett",
+      "Seth MacFarlane",
+      "H. Jon Benjamin",
+      "John DiMaggio"
+    ]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "TV Shows — Level 3",
+    "difficulty": 3,
+    "question": "In The Wire, which Baltimore organization is at the heart of season 1?",
+    "answer": "The Barksdale Organization",
+    "choices": [
+      "The Greeks",
+      "The Stanfield Organization",
+      "The Barksdale Organization",
+      "The New Day Co-Op"
+    ]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "TV Shows — Level 3",
+    "difficulty": 3,
+    "question": "In the Black Mirror episode 'San Junipero', which decade is the simulation set in?",
+    "answer": "The 80s",
+    "choices": ["The 70s", "The 90s", "The 80s", "The 2000s"]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "TV Shows — Level 4",
+    "difficulty": 4,
+    "question": "In which episode does 'Interdimensional Cable' first appear?",
+    "answer": "S1E7",
+    "choices": ["S1E2", "S1E7", "S2E3", "S1E4"]
+  },
+  {
+    "theme": "entertainment",
+    "subject": "TV Shows — Level 4",
+    "difficulty": 4,
+    "question": "In Arrested Development, what is the name of the family's failed real estate project?",
+    "answer": "Sudden Valley",
+    "choices": [
+      "Newport Shores",
+      "Sudden Valley",
+      "Bluth's Banana Stand",
+      "Richter Scale"
+    ]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Computer Science — Basics",
+    "difficulty": 1,
+    "question": "What does the acronym OOP stand for?",
+    "answer": "Object-Oriented Programming",
+    "choices": [
+      "Object Operation Process",
+      "Object-Oriented Programming",
+      "Optimized Object Protocol",
+      "Open Operating Procedure"
+    ]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Computer Science — Basics",
+    "difficulty": 1,
+    "question": "Which of the following is a fundamental concept of OOP?",
+    "answer": "Encapsulation",
+    "choices": ["Compilation", "Networking", "Encapsulation", "Encryption"]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Computer Science — Intermediate",
+    "difficulty": 2,
+    "question": "What is a class in object-oriented programming?",
+    "answer": "A mysteryprint/model used to create objects",
+    "choices": [
+      "An instance of a program",
+      "A type of database table",
+      "A function",
+      "A mysteryprint/model used to create objects"
+    ]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Computer Science — Intermediate",
+    "difficulty": 2,
+    "question": "What is an object?",
+    "answer": "An instance of a class",
+    "choices": [
+      "A programming language",
+      "A number variable",
+      "An instance of a class",
+      "A compiler instruction"
+    ]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Computer Science — Advanced",
+    "difficulty": 3,
+    "question": "What is the main purpose of encapsulation?",
+    "answer": "To hide internal data and control access",
+    "choices": [
+      "To speed up the program",
+      "To allow multiple inheritance",
+      "To convert objects into files",
+      "To hide internal data and control access"
+    ]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Computer Science — Advanced",
+    "difficulty": 3,
+    "question": "What problem does a design pattern solve?",
+    "answer": "Recurring software design problems",
+    "choices": [
+      "Hardware failures",
+      "Syntax errors",
+      "Network configuration",
+      "Recurring software design problems"
+    ]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Computer Science — Expert",
+    "difficulty": 4,
+    "question": "What is the main purpose of the Singleton pattern?",
+    "answer": "To ensure a class has only one instance",
+    "choices": [
+      "To allow multiple instances",
+      "To simplify SQL queries",
+      "To ensure a class has only one instance",
+      "To improve graphical performance"
+    ]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Computer Science — Expert",
+    "difficulty": 4,
+    "question": "What does polymorphism allow?",
+    "answer": "Using one interface for different implementations",
+    "choices": [
+      "Storing objects in a single type",
+      "Creating objects without constructors",
+      "Preventing overriding",
+      "Using one interface for different implementations"
+    ]
+  },
+  {
+    "theme": "tourism",
+    "subject": "Geography & Travel — Basics",
+    "difficulty": 1,
+    "question": "Which country is mochi a culinary specialty of?",
+    "answer": "Japan",
+    "choices": ["China", "South Korea", "Japan", "Thailand"]
+  },
+  {
+    "theme": "tourism",
+    "subject": "Geography & Travel — Basics",
+    "difficulty": 1,
+    "question": "Where are the Great Pyramids of Giza located?",
+    "answer": "Egypt",
+    "choices": ["Mexico", "Egypt", "India", "Peru"]
+  },
+  {
+    "theme": "tourism",
+    "subject": "Geography & Travel — Intermediate",
+    "difficulty": 2,
+    "question": "Where is the city of Las Vegas located?",
+    "answer": "Nevada",
+    "choices": ["California", "Nevada", "Arizona", "Texas"]
+  },
+  {
+    "theme": "tourism",
+    "subject": "Geography & Travel — Intermediate",
+    "difficulty": 2,
+    "question": "What is the most visited monument in the world?",
+    "answer": "Forbidden City",
+    "choices": [
+      "Eiffel Tower",
+      "Forbidden City",
+      "Taj Mahal",
+      "Statue of Liberty"
+    ]
+  },
+  {
+    "theme": "tourism",
+    "subject": "Geography & Travel — Advanced",
+    "difficulty": 3,
+    "question": "What is the capital of Australia?",
+    "answer": "Canberra",
+    "choices": ["Sydney", "Melbourne", "Canberra", "Brisbane"]
+  },
+  {
+    "theme": "tourism",
+    "subject": "Geography & Travel — Advanced",
+    "difficulty": 3,
+    "question": "What is the IATA code for Brussels Airlines?",
+    "answer": "SN",
+    "choices": ["BA", "WL", "SN", "AR"]
+  },
+  {
+    "theme": "tourism",
+    "subject": "Geography & Travel — Expert",
+    "difficulty": 4,
+    "question": "How many time zones does China officially use?",
+    "answer": "1",
+    "choices": ["4", "7", "2", "1"]
+  },
+  {
+    "theme": "tourism",
+    "subject": "Geography & Travel — Expert",
+    "difficulty": 4,
+    "question": "What is the longest country in the world (from north to south)?",
+    "answer": "Chile",
+    "choices": ["Russia", "Brazil", "Chile", "Canada"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Cars : Characters",
+    "difficulty": 1,
+    "question": "What is the name of Lightning McQueen's girlfriend in Cars?",
+    "answer": "Sally",
+    "choices": ["Flo", "Holley Shiftwell", "Sally", "Cruz Ramirez"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Cars : Characters",
+    "difficulty": 2,
+    "question": "What is the name of the retired race car who trains Lightning McQueen in the first movie?",
+    "answer": "Doc Hudson",
+    "choices": ["Strip Weathers", "Jackson Storm", "Doc Hudson", "Smokey"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Cars : Characters",
+    "difficulty": 3,
+    "question": "What is the name of the British spy car who works with Mater in Cars 2?",
+    "answer": "Finn McMissile",
+    "choices": ["Jackson Storm", "Chick Hicks", "Finn McMissile", "Sterling"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Cars : Characters",
+    "difficulty": 4,
+    "question": "In Mater's Tall Tales, what kind of job does Mater say he had in \"Rescue Squad Mater\"?",
+    "answer": "Firefighter",
+    "choices": ["Firefighter", "Judge", "Doctor", "Teacher"]
+  },
+
+  {
+    "theme": "Mystery",
+    "subject": "Cars : Places, Races and Facts",
+    "difficulty": 1,
+    "question": "What number does Lightning McQueen race with?",
+    "answer": "95",
+    "choices": ["86", "51", "43", "95"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Cars : Places, Races and Facts",
+    "difficulty": 2,
+    "question": "What is the name of the town where Lightning McQueen gets stuck in the first Cars movie?",
+    "answer": "Radiator Springs",
+    "choices": [
+      "Ornament Valley",
+      "Radiator Springs",
+      "Thomasville",
+      "Motor City"
+    ]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Cars : Places, Races and Facts",
+    "difficulty": 3,
+    "question": "Who is Lightning McQueen's main rival in the first Cars movie?",
+    "answer": "Chick Hicks",
+    "choices": [
+      "Jackson Storm",
+      "Chick Hicks",
+      "The King",
+      "Francesco Bernoulli"
+    ]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Cars : Places, Races and Facts",
+    "difficulty": 4,
+    "question": "In \"Tokyo Mater\", what type of competition does Mater take part in?",
+    "answer": "A drifting race",
+    "choices": [
+      "A demolition derby",
+      "A drifting race",
+      "A boat race",
+      "A rally race"
+    ]
+  },
+
+  {
+    "theme": "Informatics",
+    "subject": "VBA",
+    "difficulty": 1,
+    "question": "What does the following VBA instruction do? Cells(1,1).Value = 10",
+    "answer": "Writes the value 10 into cell A1",
+    "choices": [
+      "Deletes cell A1",
+      "Writes the value 10 into cell A1",
+      "Copies cell A1",
+      "Selects cell A10"
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "VBA",
+    "difficulty": 2,
+    "question": "Which keyword is used to declare a variable in VBA?",
+    "answer": "Dim",
+    "choices": ["Dim", "Var", "Declare", "Let"]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "VBA",
+    "difficulty": 3,
+    "question": "Which event is triggered when a user changes a cell value on a worksheet?",
+    "answer": "Worksheet_Change",
+    "choices": [
+      "Workbook_Open",
+      "Worksheet_Change",
+      "Worksheet_Activate",
+      "Workbook_SheetEdit"
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "VBA",
+    "difficulty": 4,
+    "question": "Which VBA object allows you to store dynamic key-value pairs?",
+    "answer": "Dictionary",
+    "choices": ["Collection", "Dictionary", "ArrayList", "Ranges"]
+  },
+
+  {
+    "theme": "Entertainment",
+    "subject": "John Deere",
+    "difficulty": 1,
+    "question": "What color combination is most commonly associated with John Deere machinery?",
+    "answer": "Green and yellow",
+    "choices": [
+      "Red and black",
+      "Blue and white",
+      "Green and yellow",
+      "Orange and silver"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "John Deere",
+    "difficulty": 2,
+    "question": "Which of the following is a well-known John Deere slogan?",
+    "answer": "Nothing Runs like a Deere",
+    "choices": [
+      "Built for the future",
+      "Nothing Runs like a Deere",
+      "Power for every field",
+      "Stronger every season"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "John Deere",
+    "difficulty": 3,
+    "question": "John Deere's AutoTrac system is primarily used for which purpose?",
+    "answer": "Automatic steering and precision guidance",
+    "choices": [
+      "Increasing fuel tank capacity",
+      "Automatic steering and precision guidance",
+      "Monitoring livestock health",
+      "Enhancing tire traction on wet soil"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "John Deere",
+    "difficulty": 4,
+    "question": "On the John Deere 6155R, what is the primary function of the AutoQuad Plus transmission's differential lock system?",
+    "answer": "Improve traction by locking both rear wheels to rotate at the same speed",
+    "choices": [
+      "Reduce engine RPM during transport to save fuel",
+      "Automatically synchronize PTO speed with ground speed",
+      "Improve traction by locking both rear wheels to rotate at the same speed",
+      "Increase hydraulic flow to the front axle during heavy lifting"
+    ]
+  },
+
+  {
+    "theme": "Tourism",
+    "subject": "Ancient and New Wonders",
+    "difficulty": 1,
+    "question": "Which wonder is part of the New Seven Wonders of the World?",
+    "answer": "The Colosseum",
+    "choices": [
+      "The Hanging Gardens of Babylon",
+      "The Colosseum",
+      "The Temple of Artemis",
+      "The Lighthouse of Alexandria"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Ancient and New Wonders",
+    "difficulty": 2,
+    "question": "Which of the original Ancient Seven Wonders is the only one still standing today?",
+    "answer": "The Great Pyramid of Giza",
+    "choices": [
+      "The Mausoleum at Halicarnassus",
+      "The Statue of Zeus",
+      "The Great Pyramid of Giza",
+      "The Temple of Artemis"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Ancient and New Wonders",
+    "difficulty": 3,
+    "question": "In which country can you visit Petra, one of the New Seven Wonders of the World?",
+    "answer": "Jordan",
+    "choices": ["Egypt", "Jordan", "Turkey", "Saudi Arabia"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Ancient and New Wonders",
+    "difficulty": 4,
+    "question": "What distinctive feature is associated with the construction of Chichén Itza?",
+    "answer": "Its extremely precise astronomical alignment",
+    "choices": [
+      "Its extremely precise astronomical alignment",
+      "Its temple covered in gold",
+      "Its use of Roman concrete",
+      "Its complete reconstruction in the 20th century"
+    ]
+  },
+
+  {
+    "theme": "Tourism",
+    "subject": "World Capitals",
+    "difficulty": 1,
+    "question": "What is the capital of Madagascar?",
+    "answer": "Antananarivo",
+    "choices": ["Yaoundé", "Moroni", "Antananarivo", "Bamako"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "World Capitals",
+    "difficulty": 2,
+    "question": "What is the capital of the Mongolian Republic?",
+    "answer": "Ulaanbaatar",
+    "choices": ["Ulaanbaatar", "Kathmandu", "Sana'a", "Naypyidaw"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "World Capitals",
+    "difficulty": 3,
+    "question": "What is the capital of Moldova?",
+    "answer": "Chisinau",
+    "choices": ["Bratislava", "Vaduz", "Chisinau", "Nuuk"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "World Capitals",
+    "difficulty": 4,
+    "question": "What is the constitutional capital of Bolivia?",
+    "answer": "Sucre",
+    "choices": ["Asuncion", "Sucre", "Montevideo", "La Paz"]
+  },
+
+  {
+    "theme": "Entertainment",
+    "subject": "Songs and Artists",
+    "difficulty": 1,
+    "question": "Who sang the song \"Voulez-vous\" in 1979?",
+    "answer": "ABBA",
+    "choices": ["Mylène Farmer", "Claudio Capeo", "ABBA", "France Gall"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Songs and Artists",
+    "difficulty": 2,
+    "question": "Where does the name AC/DC come from?",
+    "answer": "Alternating Current / Direct Current",
+    "choices": [
+      "Alternating Current / Direct Current",
+      "Anti-Christ/Devil's Child",
+      "Abaddon Conceptus/ Dominion Chaos",
+      "Angry Cook, Dirty Culinary"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Songs and Artists",
+    "difficulty": 3,
+    "question": "Who sang the song \"Wish You Were Here\" in 1975?",
+    "answer": "Pink Floyd",
+    "choices": ["Jimi Hendrix", "Deep Purple", "Led Zeppelin", "Pink Floyd"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Songs and Artists",
+    "difficulty": 4,
+    "question": "Who sang the song \"Tous les mêmes\" in 2009?",
+    "answer": "La fouine",
+    "choices": ["Stromae", "La fouine", "Bramsito", "Kendji Girac"]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Oriented Object Programming",
+    "difficulty": 1,
+    "question": "Which concept allows a class to acquire the properties and behaviors of another class?",
+    "answer": "Inheritance",
+    "choices": ["Encapsulation", "Polymorphism", "Inheritance", "Abstraction"]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Oriented Object Programming",
+    "difficulty": 2,
+    "question": "What is the main difference between an Abstract Class and an Interface?",
+    "answer": "Abstract classes can contain constructors, while interfaces cannot",
+    "choices": [
+      "Abstract classes can contain constructors, while interfaces cannot",
+      "Interfaces can have fields, while abstract classes cannot",
+      "Abstract classes support multiple inheritance, while interfaces do not",
+      "There is no functional difference"
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Oriented Object Programming",
+    "difficulty": 3,
+    "question": "In the context of the Liskov Substitution Principle (LSP), what is the core requirement?",
+    "answer": "Subtypes must be usable as replacements for their base types without altering program correctness",
+    "choices": [
+      "Subtypes must be usable as replacements for their base types without altering program correctness",
+      "Objects should only depend on concrete classes, never on abstractions",
+      "A class should be open for extension but closed for modification",
+      "All classes must implement the same interface"
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Oriented Object Programming",
+    "difficulty": 4,
+    "question": "What is \"Multiple Inheritance\" in OOP and why is it often avoided in languages like Java or C#?",
+    "answer": "It allows a class to inherit from multiple parent classes, which can lead to the \"Diamond Problem\"",
+    "choices": [
+      "It refers to having too many methods in one class",
+      "It allows a class to inherit from multiple parent classes, which can lead to the \"Diamond Problem\"",
+      "It is the process of creating many instances of one object",
+      "It prevents the use of polymorphism"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Inception",
+    "difficulty": 1,
+    "question": "In Christopher Nolan's film Inception, what personal object does Cobb (Leonardo DiCaprio) use to verify if he is still in a dream?",
+    "answer": "A spinning top",
+    "choices": [
+      "A pocket watch",
+      "A spinning top",
+      "A playing die",
+      "A wedding ring"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Emmy Awards",
+    "difficulty": 2,
+    "question": "Which TV series holds the record for the most Emmy Awards won by a drama series (38 awards in total)?",
+    "answer": "Game of Thrones",
+    "choices": ["Breaking Bad", "Game of Thrones", "Succession", "The Crown"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Oscars Best Director",
+    "difficulty": 3,
+    "question": "Which of these directors is the only one to have won the Oscar for Best Director two years in a row (in 2015 and 2016)?",
+    "answer": "Alejandro González Iñárritu",
+    "choices": [
+      "Steven Spielberg",
+      "Alejandro González Iñárritu",
+      "Quentin Tarantino",
+      "Martin Scorsese"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Star Wars",
+    "difficulty": 4,
+    "question": "In the Star Wars saga, who is the actor inside the original Chewbacca suit in the original trilogy?",
+    "answer": "Peter Mayhew",
+    "choices": [
+      "Peter Mayhew",
+      "Warwick Davis",
+      "Anthony Daniels",
+      "Kenny Baker"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Classic Rock Albums",
+    "difficulty": 1,
+    "question": "Which British rock band released the iconic album The Dark Side of the Moon in 1973?",
+    "answer": "Pink Floyd",
+    "choices": ["Led Zeppelin", "Pink Floyd", "The Who", "The Rolling Stones"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Grammy Awards",
+    "difficulty": 2,
+    "question": "Which artist holds the absolute record for the most Grammy Awards won in music history?",
+    "answer": "Beyoncé",
+    "choices": ["Madonna", "Beyoncé", "Taylor Swift", "Adele"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Pop Artists",
+    "difficulty": 3,
+    "question": "Before becoming a global star, in which 'Boy Band' did Harry Styles begin his career?",
+    "answer": "One Direction",
+    "choices": ["Backstreet Boys", "One Direction", "NSYNC", "Take That"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Billboard Hot 100",
+    "difficulty": 4,
+    "question": "What is the title of the longest song to ever reach number one on the Billboard Hot 100 (lasting over 10 minutes)?",
+    "answer": "All Too Well (10 Minute Version) (Taylor Swift)",
+    "choices": [
+      "Bohemian Rhapsody (Queen)",
+      "All Too Well (10 Minute Version) (Taylor Swift)",
+      "Stairway to Heaven (Led Zeppelin)",
+      "American Pie (Don McLean)"
+    ]
+  },
+  {
+    "theme": "informatics",
+    "subject": "OOP Basics",
+    "difficulty": 1,
+    "question": "In Object-Oriented Programming (OOP), what do we call the 'mould' or blueprint used to create objects?",
+    "answer": "A class",
+    "choices": ["A function", "A class", "A variable", "A constant"]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Inheritance",
+    "difficulty": 2,
+    "question": "Which OOP principle allows a child class to acquire the properties and methods of a parent class?",
+    "answer": "Inheritance",
+    "choices": ["Inheritance", "Encapsulation", "Polymorphism", "Abstraction"]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Systems Analysis",
+    "difficulty": 3,
+    "question": "In systems analysis, what does the acronym UML stand for?",
+    "answer": "Unified Modelling Language",
+    "choices": [
+      "Unified Modelling Language",
+      "Unit Main Logic",
+      "User Management List",
+      "Universal Machine Logic"
+    ]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Encapsulation",
+    "difficulty": 4,
+    "question": "Which concept involves hiding the internal details of a component and only exposing the necessary interface (often via private or public modifiers)?",
+    "answer": "Encapsulation",
+    "choices": ["Instantiation", "Encapsulation", "Abstraction", "Overloading"]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Peripherals",
+    "difficulty": 1,
+    "question": "What is the name of the peripheral used to move the cursor on a desktop computer screen?",
+    "answer": "Mouse",
+    "choices": ["Keyboard", "Mouse", "Printer", "Scanner"]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Networking",
+    "difficulty": 2,
+    "question": "What does the acronym Wi-Fi stand for, the technology that allows for wireless internet connection?",
+    "answer": "Wireless Fidelity",
+    "choices": [
+      "Wireless Fidelity",
+      "Web Internal Fiber",
+      "Wide Fast Internet",
+      "Wave Frequency Index"
+    ]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Web Browsers",
+    "difficulty": 3,
+    "question": "Which of these web browsers is developed by Google?",
+    "answer": "Chrome",
+    "choices": ["Safari", "Firefox", "Chrome", "Opera"]
+  },
+  {
+    "theme": "informatics",
+    "subject": "Computer Memory",
+    "difficulty": 4,
+    "question": "What is the name of a computer's volatile memory, which is cleared when turned off but allows software to run smoothly?",
+    "answer": "RAM",
+    "choices": ["Hard Drive (SSD)", "RAM", "Processor (CPU)", "BIOS"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Travel Packages",
+    "difficulty": 1,
+    "question": "What do you call a trip where everything (transport, accommodation, meals) is included by the travel agency?",
+    "answer": "All-inclusive package",
+    "choices": [
+      "A-la-carte trip",
+      "All-inclusive package",
+      "Backpacking trip",
+      "Business trip"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Popular Destinations",
+    "difficulty": 2,
+    "question": "Which city is the most visited tourist destination in the world, famous for landmarks like the Eiffel Tower?",
+    "answer": "Paris",
+    "choices": ["London", "Paris", "New York", "Tokyo"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Hotel Industry",
+    "difficulty": 3,
+    "question": "In the hotel industry, what does the acronym OTA stand for (e.g., Booking.com or Expedia)?",
+    "answer": "Online Travel Agency",
+    "choices": [
+      "Online Travel Agency",
+      "Over Time Arrival",
+      "Official Tourism Association",
+      "Open Travel Access"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Sustainable Tourism",
+    "difficulty": 4,
+    "question": "What is the term for tourism that aims to minimise environmental impact and preserve local culture?",
+    "answer": "Ecotourism (or sustainable tourism)",
+    "choices": [
+      "Mass tourism",
+      "Ecotourism (or sustainable tourism)",
+      "Business tourism",
+      "Luxury tourism"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Monuments",
+    "difficulty": 1,
+    "question": "In which city can you admire the Alhambra, a masterpiece of Moorish architecture located in Andalusia?",
+    "answer": "Granada",
+    "choices": ["Seville", "Granada", "Córdoba", "Madrid"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Currencies",
+    "difficulty": 2,
+    "question": "What is the official currency used in Japan?",
+    "answer": "Yen",
+    "choices": ["Yuan", "Won", "Yen", "Baht"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Geography",
+    "difficulty": 3,
+    "question": "Machu Picchu is one of the New Seven Wonders of the World. In which mountain range is it located?",
+    "answer": "The Andes",
+    "choices": ["The Himalayas", "The Andes", "The Rockies", "The Alps"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "History",
+    "difficulty": 4,
+    "question": "Which South East Asian country is the only one to have never been colonised by a European power?",
+    "answer": "Thailand",
+    "choices": ["Vietnam", "Thailand", "Cambodia", "Malaysia"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "F1 Teams",
+    "difficulty": 1,
+    "question": "What is the primary colour of the Mercedes team's cars on the current grid?",
+    "answer": "Silver (or Black)",
+    "choices": ["Pink", "Silver (or Black)", "Yellow", "Blue"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "F1 Logos",
+    "difficulty": 2,
+    "question": "Which team uses a logo featuring a 'Prancing Horse'?",
+    "answer": "Ferrari",
+    "choices": ["Ferrari", "Lamborghini", "Red Bull", "McLaren"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Classic F1 Teams",
+    "difficulty": 3,
+    "question": "Which British team, once dominant with Nigel Mansell, was recognisable by its blue and white logo with a 'W'?",
+    "answer": "Williams",
+    "choices": ["WRT Racing", "Williams", "Willem Lotus", "Aston Martin"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Modern F1 Teams",
+    "difficulty": 4,
+    "question": "Under what name does the Renault team compete in Formula 1 today?",
+    "answer": "Alpine",
+    "choices": ["Alpine", "Aston Martin", "Stake", "Williams"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "F1 Circuits",
+    "difficulty": 1,
+    "question": "In which country is the Spa-Francorchamps Grand Prix held, known for its unpredictable weather?",
+    "answer": "Belgium",
+    "choices": ["France", "Belgium", "Germany", "Netherlands"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "F1 Circuits",
+    "difficulty": 2,
+    "question": "What is the name of the circuit that hosts the Italian Grand Prix, nicknamed 'The Temple of Speed'?",
+    "answer": "Monza",
+    "choices": ["Imola", "Monza", "Mugello", "Misano"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "F1 Drivers",
+    "difficulty": 3,
+    "question": "Which of these drivers was the youngest World Champion in F1 history (at 23 years and 134 days)?",
+    "answer": "Sebastian Vettel",
+    "choices": [
+      "Max Verstappen",
+      "Lewis Hamilton",
+      "Sebastian Vettel",
+      "Fernando Alonso"
+    ]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "F1 Circuits",
+    "difficulty": 4,
+    "question": "How many corners are there at the Monaco street circuit, known for being the slowest on the calendar?",
+    "answer": "19",
+    "choices": ["1", "15", "19", "21"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Cinema",
+    "difficulty": 1,
+    "question": "Who are the two main characters in the movie « Titanic » ?",
+    "answer": "Jack and Rose",
+    "choices": [
+      "Jack and Rose",
+      "Jean-Jacques and Jacqueline",
+      "Timmy and Josephine",
+      "Justin and Justine"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Cinema",
+    "difficulty": 2,
+    "question": "Which streaming service produced the series « Stranger Things » ?",
+    "answer": "Netflix",
+    "choices": ["Amazon Prime", "Netflix", "Disney+", "HBO"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Cinema",
+    "difficulty": 3,
+    "question": "Who is « Gossip Girl » in the TV series Gossip Girl ?",
+    "answer": "Dan Humphrey",
+    "choices": [
+      "Chuck Bass",
+      "Serena Van Der Woodsen",
+      "Dan Humphrey",
+      "Blair Waldorf"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Cinema",
+    "difficulty": 4,
+    "question": "Who is Elina's pet in Barbie Mariposa ?",
+    "answer": "Bibble",
+    "choices": ["Prince Carlos", "Rayla", "Zinzie", "Bibble"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Music",
+    "difficulty": 1,
+    "question": "Which singer is nicknamed the « King of Pop » ?",
+    "answer": "Michael Jackson",
+    "choices": ["Elvis Presley", "Freddie Mercury", "Michael Jackson", "Prince"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Music",
+    "difficulty": 2,
+    "question": "Who performed « Gangnam Style » ?",
+    "answer": "PSY",
+    "choices": ["Suga", "PSY", "Justin Bieber", "Selena Gomez"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Music",
+    "difficulty": 3,
+    "question": "Who performs the song Somebody that I used to know ?",
+    "answer": "Gotye",
+    "choices": ["James Blunt", "Gotye", "Ed Sheeran", "Sam smith"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Music",
+    "difficulty": 4,
+    "question": "Which famous artist sang the chorus on the Black Eyed Peas' hit 'Where Is The Love?' but was not officially credited?",
+    "answer": "Justin Timberlake",
+    "choices": [
+      "Pharrell Williams",
+      "Justin Timberlake",
+      "Adam Levine",
+      "Bruno Mars"
+    ]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Object-Oriented Programming",
+    "difficulty": 1,
+    "question": "Which language is used in « Object-Oriented Programming » ?",
+    "answer": "Java",
+    "choices": ["Javascript", "Python", "C++", "Java"]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Object-Oriented Programming",
+    "difficulty": 2,
+    "question": "What is the key concept that allows a method or an object to have multiple forms ?",
+    "answer": "Polymorphism",
+    "choices": [
+      "Inheritance",
+      "Extraction",
+      "Method overriding",
+      "Polymorphism"
+    ]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Object-Oriented Programming",
+    "difficulty": 3,
+    "question": "What is the purpose of the transient keyword when applied to a class attribute ?",
+    "answer": "To ignore this attribute when serializing the object",
+    "choices": [
+      "To make the variable accessible only within the same package",
+      "To indicate that the variable's value will never change",
+      "To ignore this attribute when serializing the object",
+      "To indicate that it is a password"
+    ]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Object-Oriented Programming",
+    "difficulty": 4,
+    "question": "Which company created « Java » ?",
+    "answer": "Sun Microsystems",
+    "choices": ["Moon System", "Google", "Sun Microsystems", "Apple"]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Design Pattern",
+    "difficulty": 1,
+    "question": "Which design pattern ensures a class has only one instance ?",
+    "answer": "Singleton",
+    "choices": ["Factory", "Strategy", "Adapter", "Singleton"]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Design Pattern",
+    "difficulty": 2,
+    "question": "What are the main types of design patterns ?",
+    "answer": "Creational, Structural, Behavioral",
+    "choices": [
+      "Singleton, Adapter, Observer",
+      "Creational, Structural, Behavioral",
+      "Model, View, Controller",
+      "Interface, Class, Object"
+    ]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Design Pattern",
+    "difficulty": 3,
+    "question": "Which design pattern allows you to define a family of algorithms and make them interchangeable ?",
+    "answer": "Strategy",
+    "choices": ["Singleton", "Strategy", "Builder", "Decorator"]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Design Pattern",
+    "difficulty": 4,
+    "question": "Which design pattern creates objects without exposing creation logic and adheres to dependency on abstractions ?",
+    "answer": "Factory Method",
+    "choices": ["Abstract Factory", "Builder", "Prototype", "Factory Method"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Food",
+    "difficulty": 1,
+    "question": "If you order an authentic « Neapolitan pizza, » which Italian city are you in ?",
+    "answer": "Naples",
+    "choices": ["Rome", "Florence", "Venice", "Naples"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Food",
+    "difficulty": 2,
+    "question": "Which spice is the most expensive in the world ?",
+    "answer": "Saffron",
+    "choices": ["Saffron", "Tahitian Vanilla", "Black Cardamom", "Turmeric"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Food",
+    "difficulty": 3,
+    "question": "What does the Italian name for 'Penne' pasta literally mean?",
+    "answer": "Feather",
+    "choices": ["Small tubes", "Feather", "Ropes", "Ears"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Food",
+    "difficulty": 4,
+    "question": "Which of the following statements about black truffles is true?",
+    "answer": "They are underground fungi",
+    "choices": [
+      "They are tree roots",
+      "They grow only on rocks",
+      "They are underground fungi",
+      "They lose all their flavor when heated"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Famous places",
+    "difficulty": 1,
+    "question": "What is the most iconic tourist attraction in New York ?",
+    "answer": "Statue of Liberty",
+    "choices": [
+      "Leaning Tower of Pisa",
+      "Eiffel Tower",
+      "Statue of Liberty",
+      "White House"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Famous places",
+    "difficulty": 2,
+    "question": "In which country is the ancient Inca city of « Machu Picchu » located ?",
+    "answer": "Peru",
+    "choices": ["Bolivia", "Peru", "Chile", "Ecuador"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Famous places",
+    "difficulty": 3,
+    "question": "Which European archipelago is home to Portugal’s highest point (Ponta do Pico) ?",
+    "answer": "The Azores",
+    "choices": [
+      "The Canary Islands",
+      "Madeira",
+      "The Azores",
+      "The Balearic Islands"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Famous places",
+    "difficulty": 4,
+    "question": "Which Korean tourist site is known for volcanic formations and « harubang » statues ?",
+    "answer": "Jeju Island",
+    "choices": [
+      "Gyeongbokgung Palace",
+      "Jeju Island",
+      "Mount Seoraksan",
+      "Bulguksa Temple"
+    ]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Pirate treasure",
+    "difficulty": 1,
+    "question": "What object is often associated with pirates searching for treasure ?",
+    "answer": "A treasure map",
+    "choices": ["A magic compass", "A sword", "A treasure map", "A spyglass"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Pirate treasure",
+    "difficulty": 2,
+    "question": "Besides gold and silver, what precious material from the ocean was found in chests ?",
+    "answer": "Pearls",
+    "choices": ["Crude oil", "Pearls", "Red coral", "Ambergris"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Pirate treasure",
+    "difficulty": 3,
+    "question": "Which famous pirate is known for hiding a treasure that has never been found ?",
+    "answer": "William Kidd",
+    "choices": ["William Kidd", "Edward Teach", "Mary Read", "Charles Vane"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Pirate treasure",
+    "difficulty": 4,
+    "question": "Which pirate is considered the richest pirate in history ($100 million haul) ?",
+    "answer": "Bartholomew Roberts",
+    "choices": [
+      "BlackBeard",
+      "Bartholomew Roberts",
+      "Anne Bonny",
+      "Henry Morgan"
+    ]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Pirate history",
+    "difficulty": 1,
+    "question": "What did pirates follow as rules ?",
+    "answer": "Pirate Code",
+    "choices": ["Pirate Code", "Sea Map", "Navy Law", "King’s Rule"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Pirate history",
+    "difficulty": 2,
+    "question": "Where did many famous pirates sail ?",
+    "answer": "Carribean Sea",
+    "choices": ["Pacific Ocean", "Carribean Sea", "Arctic Ocean", "Lake"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Pirate history",
+    "difficulty": 3,
+    "question": "Which famous pirate is known for hiding a treasure that has never been found ?",
+    "answer": "William Kidd",
+    "choices": ["William Kidd", "Edward Teach", "Mary Read", "Charles Vane"]
+  },
+  {
+    "theme": "Mystery",
+    "subject": "Pirate history",
+    "difficulty": 4,
+    "question": "Which female pirate fought alongside « Calico Jack » ?",
+    "answer": "Anne Bonny",
+    "choices": [
+      "Mary Stuart",
+      "Elizabeth Swann",
+      "Anne Bonny",
+      "Grace O’Malley"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "World Geography",
+    "difficulty": 1,
+    "question": "In which country is Machu Picchu located?",
+    "answer": "Peru",
+    "choices": ["Peru", "Japan", "Brazil", "France"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "World Geography",
+    "difficulty": 1,
+    "question": "What is the capital of Australia?",
+    "answer": "Canberra",
+    "choices": ["Canberra", "Sydney", "Melbourne", "Perth"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "History",
+    "difficulty": 2,
+    "question": "When was the Kingdom of Belgium created?",
+    "answer": "1830",
+    "choices": ["1830", "1815", "1839", "1848"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "History",
+    "difficulty": 2,
+    "question": "What was Thailand called before 1939?",
+    "answer": "Siam",
+    "choices": ["Siam", "Ayuthaya", "Khmer", "Myanmar"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "History",
+    "difficulty": 3,
+    "question": "What was the first capital of France?",
+    "answer": "Tournai",
+    "choices": ["Tournai", "Paris", "Lyon", "Versailles"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "World Geography",
+    "difficulty": 3,
+    "question": "Which country is home to Timbuktu?",
+    "answer": "Mali",
+    "choices": ["Mali", "Malaysia", "Kenya", "Angola"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Neo Tourism",
+    "difficulty": 4,
+    "question": "What is neo-tourism?",
+    "answer": "Sustainable tourism",
+    "choices": [
+      "Sustainable tourism",
+      "Ecological tourism",
+      "New tourism",
+      "Mass tourism"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "History",
+    "difficulty": 4,
+    "question": "What was the former name of Istanbul?",
+    "answer": "Constantinople",
+    "choices": ["Constantinople", "Alexandria", "Sparta", "Rome"]
+  },
+
+  {
+    "theme": "Entertainment",
+    "subject": "Video Games",
+    "difficulty": 1,
+    "question": "Which company created the Mario franchise?",
+    "answer": "Nintendo",
+    "choices": ["Nintendo", "Sega", "Sony", "Microsoft"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Video Games",
+    "difficulty": 1,
+    "question": "What is the name of Mario's dinosaur companion?",
+    "answer": "Yoshi",
+    "choices": ["Yoshi", "Toad", "Bowser", "Koopa"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Video Games",
+    "difficulty": 2,
+    "question": "Which video game has sold the most copies?",
+    "answer": "Minecraft",
+    "choices": ["Minecraft", "Grand Theft Auto V", "Fortnite", "Wii Sports"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Sitcoms",
+    "difficulty": 2,
+    "question": "Who's the main actor in 'The Fresh Prince of Bel-Air'?",
+    "answer": "Will Smith",
+    "choices": ["Will Smith", "Eddy Murphy", "Chris Tucker", "Kevin Hart"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Sitcoms",
+    "difficulty": 3,
+    "question": "What is Joey Tribbiani's famous catchphrase?",
+    "answer": "How you doin'?",
+    "choices": ["How you doin'?", "Oh my God", "We were on a break", "Pivot!"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Sitcoms",
+    "difficulty": 3,
+    "question": "What is the name of Ross's second wife?",
+    "answer": "Emily",
+    "choices": ["Emily", "Rachel", "Susan", "Carol"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Video Games",
+    "difficulty": 4,
+    "question": "What year was the original Super Mario Bros. released?",
+    "answer": "1985",
+    "choices": ["1985", "1983", "1987", "1990"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Video Games",
+    "difficulty": 4,
+    "question": "Who won the 2025 League of Legends World Championship?",
+    "answer": "T1",
+    "choices": ["T1", "Karmine Corp", "G2 Esports", "Gen.G"]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Hardware",
+    "difficulty": 1,
+    "question": "Which component is considered the brain of the computer?",
+    "answer": "CPU",
+    "choices": ["CPU", "RAM", "GPU", "Motherboard"]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "History",
+    "difficulty": 1,
+    "question": "Who is the creator of the famous iPhone from Apple?",
+    "answer": "Steve Jobs",
+    "choices": ["Tim Cook", "Steve Jobs", "Phil Schiller", "Jeff Williams"]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Hardware",
+    "difficulty": 2,
+    "question": "What does RAM stand for?",
+    "answer": "Random Access Memory",
+    "choices": [
+      "Random Access Memory",
+      "Read Access Memory",
+      "Run Access Memory",
+      "Rapid Access Memory"
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Language",
+    "difficulty": 2,
+    "question": "From which language were C++, Java and Python inspired?",
+    "answer": "Language C",
+    "choices": ["Language C", "Pascal", "Fortran", "COBOL"]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Hardware",
+    "difficulty": 3,
+    "question": "What is the most common form factor for a standard desktop motherboard?",
+    "answer": "ATX",
+    "choices": ["ATX", "ITX", "RTX", "GTX"]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Hardware",
+    "difficulty": 3,
+    "question": "What does SSD stand for?",
+    "answer": "Solid State Drive",
+    "choices": [
+      "Solid State Drive",
+      "Super Speed Disk",
+      "Silicon Standard Drive",
+      "System Storage Device"
+    ]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Hardware",
+    "difficulty": 4,
+    "question": "Which interface preceded SATA for connecting hard drives?",
+    "answer": "IDE",
+    "choices": ["IDE", "NVMe", "PCIe", "USB"]
+  },
+  {
+    "theme": "Informatics",
+    "subject": "Platform",
+    "difficulty": 4,
+    "question": "When was the Twitch streaming platform created?",
+    "answer": "2011",
+    "choices": ["2012", "2011", "2014", "2010"]
+  },
+
+  {
+    "theme": "Saint Seiya",
+    "subject": "Manga",
+    "difficulty": 1,
+    "question": "What is the name of the main character?",
+    "answer": "Seiya",
+    "choices": ["Seiya", "Yuji", "Ichigo", "Shiryu"]
+  },
+  {
+    "theme": "Saint Seiya",
+    "subject": "Manga",
+    "difficulty": 1,
+    "question": "Which goddess do the Saints protect?",
+    "answer": "Athena",
+    "choices": ["Athena", "Hera", "Son Goku", "Goldorak"]
+  },
+  {
+    "theme": "Saint Seiya",
+    "subject": "Manga",
+    "difficulty": 2,
+    "question": "What is the name of the energy used by the Saints?",
+    "answer": "Cosmos",
+    "choices": ["Cosmos", "Ki", "Chakra", "Haki"]
+  },
+  {
+    "theme": "Saint Seiya",
+    "subject": "Manga",
+    "difficulty": 2,
+    "question": "How many Gold Saints are there originally?",
+    "answer": "12",
+    "choices": ["12", "10", "5", "88"]
+  },
+  {
+    "theme": "Saint Seiya",
+    "subject": "Manga",
+    "difficulty": 3,
+    "question": "What is Seiya's Bronze Cloth constellation?",
+    "answer": "Pegasus",
+    "choices": ["Pegasus", "Dragon", "Phoenix", "Andromeda"]
+  },
+  {
+    "theme": "Saint Seiya",
+    "subject": "History",
+    "difficulty": 3,
+    "question": "What is the first broadcast year of the Saint Seiya anime?",
+    "answer": "1986",
+    "choices": ["1986", "1984", "1985", "1991"]
+  },
+  {
+    "theme": "Saint Seiya",
+    "subject": "Manga",
+    "difficulty": 4,
+    "question": "What is the name of the sanctuary where Athena resides?",
+    "answer": "Sanctuary",
+    "choices": ["Sanctuary", "Olympus", "Valhalla", "Asgard"]
+  },
+  {
+    "theme": "Saint Seiya",
+    "subject": "Statistics",
+    "difficulty": 4,
+    "question": "Across how many countries has Saint Seiya been broadcast?",
+    "answer": "80",
+    "choices": ["80", "10", "15", "65"]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Computer architecture",
+    "difficulty": 1,
+    "question": "Which architecture is commonly associated with 32-bit systems?",
+    "answer": "x86",
+    "choices": ["x64", "ARM64", "AMD64", "x86"]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Operating systems",
+    "difficulty": 1,
+    "question": "Who is primarily credited with initiating the development of the Linux kernel?",
+    "answer": "Linus Torvalds",
+    "choices": ["Linus Torvalds", "Richard Stallman", "Ken Thompson", "Notch"]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Data structures",
+    "difficulty": 1,
+    "question": "Which data structure consists of elements where each node points only to the next one?",
+    "answer": "Singly Linked List",
+    "choices": ["Doubly Linked List", "Singly Linked List", "HashMap", "Set"]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Game engines",
+    "difficulty": 2,
+    "question": "Which technique was used by the original Doom engine to create a pseudo-3D environment from a 2D map?",
+    "answer": "Ray tracing",
+    "choices": [
+      "Ray casting",
+      "Binary Space Partitioning (BSP)",
+      "Ray tracing",
+      "Scanline rendering"
+    ]
+  },
+  {
+    "theme": "Greek Mythology",
+    "subject": "Underworld",
+    "difficulty": 1,
+    "question": "In Greek mythology, what is the name of the river that souls must cross to enter the Underworld?",
+    "answer": "Styx",
+    "choices": ["Styx", "Lethe", "Acheron", "Phlegethon"]
+  },
+  {
+    "theme": "Greek Mythology",
+    "subject": "Mythological creatures",
+    "difficulty": 1,
+    "question": "Which creature is described as having the body of a lion, the head of a human, and posing riddles to travelers?",
+    "answer": "Sphinx",
+    "choices": ["Chimera", "Sphinx", "Minotaur", "Hydra"]
+  },
+  {
+    "theme": "Greek Mythology",
+    "subject": "Ancient Greece in pop culture",
+    "difficulty": 1,
+    "question": "The famous Spartan kick depicted in both Assassin’s Creed Odyssey and the movie *300* is often associated with which historical Greek figure, rooted in the militaristic culture inspired by Greek mythology?",
+    "answer": "Leonidas",
+    "choices": ["Achilles", "Theseus", "Ares", "Leonidas"]
+  },
+  {
+    "theme": "Greek Mythology",
+    "subject": "Assassin’s Creed Odyssey",
+    "difficulty": 2,
+    "question": "In Assassin’s Creed Odyssey, who are Kassandra’s biological parents, both tied to legendary Greek lineage?",
+    "answer": "Pythagoras and Myrrine",
+    "choices": [
+      "Nikolaos and Myrrine",
+      "Leonidas and Myrrine",
+      "Pythagoras and Myrrine",
+      "Pythagoras and Nikolaos"
+    ]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Object-oriented programming",
+    "difficulty": 1,
+    "question": "In object‑oriented programming, what is the purpose of encapsulation?",
+    "answer": "To hide internal data and control access",
+    "choices": [
+      "To allow multiple inheritance",
+      "To hide internal data and control access",
+      "To convert code into machine language",
+      "To increase CPU performance"
+    ]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Object-oriented programming",
+    "difficulty": 1,
+    "question": "Which OOP concept allows different objects to respond differently to the same method call?",
+    "answer": "Polymorphism",
+    "choices": ["Abstraction", "Polymorphism", "Serialization", "Overloading"]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "UML analysis",
+    "difficulty": 1,
+    "question": "In UML analysis, what does a use case primarily describe?",
+    "answer": "The interactions between an actor and the system",
+    "choices": [
+      "The internal attributes of a class",
+      "The memory footprint of an algorithm",
+      "The interactions between an actor and the system",
+      "The sequence of machine instructions"
+    ]
+  },
+  {
+    "theme": "Computer Science",
+    "subject": "Object-oriented programming",
+    "difficulty": 1,
+    "question": "Which OOP principle is most directly related to reducing code duplication through shared structure?",
+    "answer": "Inheritance",
+    "choices": ["Encapsulation", "Inheritance", "Compilation", "Overloading"]
+  },
+  {
+    "theme": "Greek Mythology",
+    "subject": "Greek gods",
+    "difficulty": 1,
+    "question": "Who was the god of war?",
+    "answer": "Ares",
+    "choices": ["Hades", "Zeus", "Kratos", "Ares"]
+  },
+  {
+    "theme": "Greek Culture",
+    "subject": "Ancient monuments",
+    "difficulty": 1,
+    "question": "Where is the Parthenon located?",
+    "answer": "Acropolis of Athens",
+    "choices": ["Acropolis of Athens", "Delphi", "Meteora", "Santorini"]
+  },
+  {
+    "theme": "Greek Mythology",
+    "subject": "Hercules",
+    "difficulty": 2,
+    "question": "What was Hercules' seventh labor?",
+    "answer": "The Capture of the Cretan Bull",
+    "choices": [
+      "Capture the Ceryneian Hind",
+      "Steal the Belt of Hippolyta",
+      "The Capture of the Cretan Bull",
+      "Bring Cerberus Back from the Underworld"
+    ]
+  },
+  {
+    "theme": "Greek Mythology",
+    "subject": "Greek gods",
+    "difficulty": 1,
+    "question": "Who was Hephaistos?",
+    "answer": "Blacksmith god",
+    "choices": [
+      "The king of the gods",
+      "God of the seas",
+      "Blacksmith god",
+      "God of the sun"
+    ]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Tourist destinations",
+    "difficulty": 1,
+    "question": "Which of these destinations is not known for tourism?",
+    "answer": "Springfield",
+    "choices": ["Tokyo", "Springfield", "Bangkok", "London"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "World monuments",
+    "difficulty": 1,
+    "question": "Which of these monuments is NOT one of the New Seven Wonders of the World?",
+    "answer": "Eiffel Tower",
+    "choices": ["Great Wall of China", "Petra", "Taj Mahal", "Eiffel Tower"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "European monuments",
+    "difficulty": 2,
+    "question": "Which is the most visited paid monument in Europe?",
+    "answer": "Tour Eiffel",
+    "choices": ["Tour Eiffel", "Colisée", "Sagrada Família", "Atomium"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Asian destinations",
+    "difficulty": 2,
+    "question": "Which country is generally considered the most visited destination in Asia by international tourists in recent years?",
+    "answer": "Japan",
+    "choices": ["Thailand", "China", "Japan", "Indonesia"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "United States destinations",
+    "difficulty": 2,
+    "question": "Which city in the United States attracts the highest number of international visitors each year?",
+    "answer": "New York",
+    "choices": ["Los Angeles", "Las Vegas", "New York", "Orlando"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "UNESCO World Heritage",
+    "difficulty": 2,
+    "question": "Which country has the highest number of UNESCO World Heritage sites in Europe?",
+    "answer": "Italy",
+    "choices": ["Italy", "France", "Spain", "Germany"]
+  },
+  {
+    "theme": "Geography",
+    "subject": "Volcanoes",
+    "difficulty": 2,
+    "question": "Which country has the highest number of active volcanoes in the world?",
+    "answer": "Indonesia",
+    "choices": ["Indonesia", "Japan", "United States", "Italy"]
+  },
+  {
+    "theme": "Tourism",
+    "subject": "Least visited countries",
+    "difficulty": 3,
+    "question": "Which country is the least visited in the world by international tourists?",
+    "answer": "Nauru",
+    "choices": ["Tuvalu", "Nauru", "Kiribati", "Micronesia"]
+  },
+  {
+    "theme": "Astronomy",
+    "subject": "Planetary gravity",
+    "difficulty": 1,
+    "question": "On which planet would you weigh the least?",
+    "answer": "Mars",
+    "choices": ["Earth", "Jupiter", "Mars", "Saturn"]
+  },
+  {
+    "theme": "Astronomy",
+    "subject": "Moonlight",
+    "difficulty": 1,
+    "question": "When we see the moon shining, it means...",
+    "answer": "It reflects sunlight",
+    "choices": [
+      "It produces its own light",
+      "It reflects sunlight",
+      "The aliens have conquered the moon, and built a city on it",
+      "Earth is lighting"
+    ]
+  },
+  {
+    "theme": "Astronomy",
+    "subject": "Light travel time",
+    "difficulty": 2,
+    "question": "If the Sun suddenly disappeared, how long would it take Earth to notice?",
+    "answer": "About 8 minutes",
+    "choices": ["Instantly", "About 8 minutes", "1 hour", "1 day"]
+  },
+  {
+    "theme": "Astronomy",
+    "subject": "Light-years",
+    "difficulty": 2,
+    "question": "If you travel at the speed of light toward a star 4 light-years away, how long would the trip take?",
+    "answer": "4 years",
+    "choices": ["4 days", "4 months", "4 years", "Instantly"]
+  },
+  {
+    "theme": "Astronomy",
+    "subject": "Atmosphere and sky color",
+    "difficulty": 3,
+    "question": "If Earth had no atmosphere, what color would the sky appear during the day?",
+    "answer": "No color, just transparent",
+    "choices": ["Grey", "Dark blue", "Black", "No color, just transparent"]
+  },
+  {
+    "theme": "Astronomy",
+    "subject": "Earth rotation",
+    "difficulty": 3,
+    "question": "If Earth suddenly stopped rotating, what would happen to objects on its surface?",
+    "answer": "They would keep moving east at high speed",
+    "choices": [
+      "Nothing",
+      "They would fall toward Earth’s center",
+      "They would keep moving east at high speed",
+      "They would float upward"
+    ]
+  },
+  {
+    "theme": "Astronomy",
+    "subject": "Atmospheric distortion",
+    "difficulty": 4,
+    "question": "Why do stars appear to twinkle, but planets usually don’t?",
+    "answer": "Stars are distant points distorted by the atmosphere, while planets appear as small disks",
+    "choices": [
+      "Stars move",
+      "Planets don’t emit light",
+      "Stars are distant points distorted by the atmosphere, while planets appear as small disks",
+      "Planets are colder"
+    ]
+  },
+  {
+    "theme": "Astronomy",
+    "subject": "Light travel time",
+    "difficulty": 4,
+    "question": "If a star 100 light-years away exploded today, when would we see it?",
+    "answer": "In 100 years",
+    "choices": ["Today", "In 8 minutes", "In 100 years", "Never"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Movies",
+    "difficulty": 1,
+    "question": "Which movie features the character Jack Sparrow?",
+    "answer": "Pirates of the Caribbean",
+    "choices": [
+      "Harry Potter",
+      "Pirates of the Caribbean",
+      "Titanic",
+      "The Matrix"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Music",
+    "difficulty": 1,
+    "question": "Which singer is known as the 'King of Pop'?",
+    "answer": "Michael Jackson",
+    "choices": ["Elvis Presley", "Justin Bieber", "Michael Jackson", "Drake"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Music",
+    "difficulty": 2,
+    "question": "Which artist sang 'Shape of You'?",
+    "answer": "Ed Sheeran",
+    "choices": ["Shawn Mendes", "Ed Sheeran", "Bruno Mars", "Harry Styles"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Superheroes",
+    "difficulty": 2,
+    "question": "Which superhero is also known as Bruce Wayne?",
+    "answer": "Batman",
+    "choices": ["Superman", "Iron Man", "Batman", "Flash"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Movies",
+    "difficulty": 3,
+    "question": "Which movie takes place on the fictional island of Isla Nublar?",
+    "answer": "Jurassic Park",
+    "choices": [
+      "King Kong",
+      "Jurassic Park",
+      "Lost",
+      "Pirates of the Caribbean"
+    ]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "TV Series",
+    "difficulty": 3,
+    "question": "Which TV series is set in the fictional town of Hawkins?",
+    "answer": "Stranger Things",
+    "choices": ["Riverdale", "Stranger Things", "The Walking Dead", "Dark"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Movies",
+    "difficulty": 4,
+    "question": "Which movie was the first animated feature-length film ever nominated for the Oscar for Best Picture?",
+    "answer": "Beauty and the Beast",
+    "choices": ["Toy Story", "Beauty and the Beast", "Shrek", "The Lion King"]
+  },
+  {
+    "theme": "Entertainment",
+    "subject": "Actors",
+    "difficulty": 4,
+    "question": "Which actor won an Oscar for playing a villain in 'No Country for Old Men'?",
+    "answer": "Javier Bardem",
+    "choices": [
+      "Javier Bardem",
+      "Josh Brolin",
+      "Tommy Lee Jones",
+      "Daniel Day-Lewis"
+    ]
+  },
+  {
+    "theme": "IT & Programming",
+    "subject": "Web",
+    "difficulty": 1,
+    "question": "What does 'HTML' stand for?",
+    "answer": "Hyper Text Markup Language",
+    "choices": [
+      "Hyper Trainer Marking Language",
+      "Hyper Text Markup Language",
+      "High Tech Modern Language",
+      "Home Tool Markup Language"
+    ]
+  },
+  {
+    "theme": "IT & Programming",
+    "subject": "Web",
+    "difficulty": 1,
+    "question": "Which language is mainly used for web page styling?",
+    "answer": "CSS",
+    "choices": ["Python", "C++", "CSS", "Java"]
+  },
+  {
+    "theme": "IT & Programming",
+    "subject": "Python",
+    "difficulty": 2,
+    "question": "What symbol is used to comment a single line in Python?",
+    "answer": "#",
+    "choices": ["//", "#", "/*", "-"]
+  },
+  {
+    "theme": "IT & Programming",
+    "subject": "Java",
+    "difficulty": 2,
+    "question": "Which company created Java?",
+    "answer": "Sun Microsystems",
+    "choices": ["Microsoft", "Apple", "Sun Microsystems", "Google"]
+  },
+  {
+    "theme": "IT & Programming",
+    "subject": "Database",
+    "difficulty": 3,
+    "question": "What does SQL stand for?",
+    "answer": "Structured Query Language",
+    "choices": [
+      "Structured Query Language",
+      "Simple Question Language",
+      "System Quick Logic",
+      "Software Query Link"
+    ]
+  },
+  {
+    "theme": "IT & Programming",
+    "subject": "Algorithms",
+    "difficulty": 3,
+    "question": "What is the time complexity of binary search?",
+    "answer": "O(log n)",
+    "choices": ["O(n)", "O(n²)", "O(log n)", "O(1)"]
+  },
+  {
+    "theme": "IT & Programming",
+    "subject": "Web",
+    "difficulty": 4,
+    "question": "What does REST stand for in web development?",
+    "answer": "Representational State Transfer",
+    "choices": [
+      "Remote Execution Standard Tool",
+      "Representational State Transfer",
+      "Rapid External System Tech",
+      "Reliable Endpoint Service Type"
+    ]
+  },
+  {
+    "theme": "IT & Programming",
+    "subject": "Algorithms",
+    "difficulty": 4,
+    "question": "Which sorting algorithm has an average time complexity of O(n log n)?",
+    "answer": "Quick sort",
+    "choices": ["Bubble sort", "Quick sort", "Insertion sort", "Selection sort"]
+  },
+  {
+    "theme": "Tourism & Travel",
+    "subject": "Geography",
+    "difficulty": 1,
+    "question": "What is the capital of France?",
+    "answer": "Paris",
+    "choices": ["Madrid", "Berlin", "Paris", "Rome"]
+  },
+  {
+    "theme": "Tourism & Travel",
+    "subject": "Geography",
+    "difficulty": 1,
+    "question": "Which continent is Brazil located in?",
+    "answer": "South America",
+    "choices": ["Europe", "Africa", "South America", "Asia"]
+  },
+  {
+    "theme": "Tourism & Travel",
+    "subject": "Geography",
+    "difficulty": 2,
+    "question": "Which country is home to the Great Barrier Reef?",
+    "answer": "Australia",
+    "choices": ["USA", "Australia", "Mexico", "Thailand"]
+  },
+  {
+    "theme": "Tourism & Travel",
+    "subject": "Currency",
+    "difficulty": 2,
+    "question": "What currency is used in Japan?",
+    "answer": "Yen",
+    "choices": ["Yuan", "Won", "Yen", "Dollar"]
+  },
+  {
+    "theme": "Tourism & Travel",
+    "subject": "Cities",
+    "difficulty": 3,
+    "question": "Which city is known as 'The Big Apple'?",
+    "answer": "New York",
+    "choices": ["Los Angeles", "Chicago", "New York", "Boston"]
+  },
+  {
+    "theme": "Tourism & Travel",
+    "subject": "Geography",
+    "difficulty": 3,
+    "question": "Machu Picchu is located in which country?",
+    "answer": "Peru",
+    "choices": ["Chile", "Peru", "Argentina", "Colombia"]
+  },
+  {
+    "theme": "Tourism & Travel",
+    "subject": "Geography",
+    "difficulty": 4,
+    "question": "Which desert is the largest hot desert in the world?",
+    "answer": "Sahara",
+    "choices": ["Gobi", "Sahara", "Arabian", "Kalahari"]
+  },
+  {
+    "theme": "Tourism & Travel",
+    "subject": "Geography",
+    "difficulty": 4,
+    "question": "What is the longest river in the world (traditionally recognized)?",
+    "answer": "Nile",
+    "choices": ["Amazon", "Nile", "Yangtze", "Mississippi"]
+  },
+  {
+    "theme": "Star Wars",
+    "subject": "Characters",
+    "difficulty": 1,
+    "question": "Who is Luke Skywalker's father?",
+    "answer": "Anakin Skywalker (Darth Vader)",
+    "choices": [
+      "Obi-Wan Kenobi",
+      "Anakin Skywalker (Darth Vader)",
+      "Yoda",
+      "Han Solo"
+    ]
+  },
+  {
+    "theme": "Star Wars",
+    "subject": "Droids",
+    "difficulty": 1,
+    "question": "Which small blue and white cylindrical robot often accompanies Luke Skywalker?",
+    "answer": "R2-D2",
+    "choices": ["C-3PO", "BB-8", "R2-D2", "K-2SO"]
+  },
+  {
+    "theme": "Star Wars",
+    "subject": "Planets",
+    "difficulty": 2,
+    "question": "On which planet was Padmé Amidala born and where did she serve as Queen?",
+    "answer": "Naboo",
+    "choices": ["Tatooine", "Alderaan", "Naboo", "Coruscant"]
+  },
+  {
+    "theme": "Star Wars",
+    "subject": "Ships",
+    "difficulty": 2,
+    "question": "What is the name of Boba Fett’s personal starship?",
+    "answer": "Slave I",
+    "choices": [
+      "The Ghost",
+      "Slave I",
+      "The Razor Crest",
+      "The Millennium Falcon"
+    ]
+  },
+  {
+    "theme": "Star Wars",
+    "subject": "Jedi",
+    "difficulty": 3,
+    "question": "Which Jedi Master discovered Anakin Skywalker on Tatooine in 'The Phantom Menace'?",
+    "answer": "Qui-Gon Jinn",
+    "choices": ["Obi-Wan Kenobi", "Mace Windu", "Qui-Gon Jinn", "Ki-Adi-Mundi"]
+  },
+  {
+    "theme": "Star Wars",
+    "subject": "Orders",
+    "difficulty": 3,
+    "question": "What is the name of the order executed by the clones to eliminate all Jedi?",
+    "answer": "Order 66",
+    "choices": ["Order 42", "Order 99", "Order 66", "Order 501"]
+  },
+  {
+    "theme": "Star Wars",
+    "subject": "Legends",
+    "difficulty": 4,
+    "question": "In the 'Legends' universe, what is Grand Admiral Thrawn’s full birth name?",
+    "answer": "Mitth'raw'nuruodo",
+    "choices": [
+      "Mitth'raw'nuruodo",
+      "Sheev Palpatine",
+      "Gilad Pellaeon",
+      "Talon Karrde"
+    ]
+  },
+  {
+    "theme": "Star Wars",
+    "subject": "Species",
+    "difficulty": 4,
+    "question": "Which species designed and built the primary structure of the original Death Star?",
+    "answer": "The Geonosians",
+    "choices": [
+      "The Kaminoans",
+      "The Geonosians",
+      "The Jawas",
+      "The Mon Calamari"
+    ]
+  }
+]

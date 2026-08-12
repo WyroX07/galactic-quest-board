@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="root"
+           xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.controller.GameController">
+
+    <children>
+
+        <!-- Background map -->
+        <ImageView fx:id="backgroundImage" preserveRatio="false">
+            <image><Image url="@../img/map.jpg" /></image>
+        </ImageView>
+
+        <!-- Game board pane (tokens, question cards) -->
+        <Pane fx:id="gamePane" prefWidth="1920.0" prefHeight="1080.0" />
+
+        <!-- HUD : Help + Settings only (top right) -->
+        <HBox spacing="10.0" StackPane.alignment="TOP_RIGHT">
+            <StackPane.margin><Insets top="15.0" right="15.0" /></StackPane.margin>
+
+            <Button fx:id="helpButton" onAction="#onHelp"
+                    contentDisplay="GRAPHIC_ONLY" pickOnBounds="true"
+                    style="-fx-background-color: transparent; -fx-padding: 0;
+                           -fx-border-color: transparent; -fx-cursor: hand;">
+                <graphic>
+                    <ImageView fitHeight="60.0" preserveRatio="true" smooth="true">
+                        <image><Image url="@../img/Assets/HelpBtn.png" /></image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button fx:id="settingsIGButton" onAction="#onSettingsIG"
+                    contentDisplay="GRAPHIC_ONLY" pickOnBounds="true"
+                    style="-fx-background-color: transparent; -fx-padding: 0;
+                           -fx-border-color: transparent; -fx-cursor: hand;">
+                <graphic>
+                    <ImageView fitHeight="60.0" preserveRatio="true" smooth="true">
+                        <image><Image url="@../img/Assets/SettingsIGBtn.png" /></image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+
+        <!--
+            HelpModal overlay — hidden by default.
+
+            HelpModal.png already contains all static rule text (Deployment Protocol,
+            Sector Legend, etc.). We only overlay the two dynamic values:
+              • helpPlayerLabel : current player's name    → after "CURRENT OPERATIVE :"
+              • helpQuestLabel  : active quest description → after "PRIMARY OBJECTIVE:"
+
+            ── Fine-tuning ──────────────────────────────────────────────────────
+            If the labels don't land exactly in the right spot, adjust:
+              helpPlayerLabel  → topAnchor / leftAnchor  (line ~74-75)
+              helpQuestLabel   → topAnchor / leftAnchor  (line ~82-83)
+            Coordinates are in the 920 × 524 px container space.
+        -->
+        <StackPane fx:id="helpModalOverlay"
+                   visible="false"
+                   style="-fx-background-color: rgba(0,0,0,0.65);">
+
+            <StackPane maxWidth="920.0" maxHeight="524.0">
+
+                <!-- Modal background image (contains all static rule text) -->
+                <ImageView fitWidth="920.0" fitHeight="524.0"
+                           preserveRatio="true" smooth="true">
+                    <image><Image url="@../img/Assets/HelpModal.png" /></image>
+                </ImageView>
+
+                <!-- Absolute overlay for dynamic content only -->
+                <AnchorPane pickOnBounds="false"
+                            style="-fx-background-color: transparent;">
+
+                    <!-- Exit button — top-right corner of the modal frame -->
+                    <Button onAction="#onCloseHelp"
+                            contentDisplay="GRAPHIC_ONLY" pickOnBounds="true"
+                            AnchorPane.topAnchor="60.0" AnchorPane.rightAnchor="130.0"
+                            style="-fx-background-color: transparent; -fx-padding: 0;
+                                   -fx-border-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitWidth="44.0" fitHeight="44.0"
+                                       preserveRatio="true" smooth="true">
+                                <image><Image url="@../img/Assets/ExitBtnModal.png" /></image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+
+                    <!-- Current player name (value after "CURRENT OPERATIVE :" in image) -->
+                    <Label fx:id="helpPlayerLabel" text=""
+                           AnchorPane.topAnchor="372.0" AnchorPane.leftAnchor="580.0"
+                           style="-fx-text-fill: white;
+                                  -fx-font-family: 'Consolas';
+                                  -fx-font-size: 15;
+                                  -fx-font-weight: bold;" />
+
+                    <!-- Active quest description (value after "PRIMARY OBJECTIVE:" in image) -->
+                    <Label fx:id="helpQuestLabel" text=""
+                           wrapText="true" maxWidth="400.0"
+                           AnchorPane.topAnchor="420.0" AnchorPane.leftAnchor="430.0"
+                           style="-fx-text-fill: #cccccc;
+                                  -fx-font-family: 'Consolas';
+                                  -fx-font-size: 12;" />
+
+                </AnchorPane>
+            </StackPane>
+        </StackPane>
+
+    </children>
+</StackPane>

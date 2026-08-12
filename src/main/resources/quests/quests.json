@@ -1,0 +1,62 @@
+{
+  "quests": {
+
+    "easy": [
+      {
+        "id": 1,
+        "description": "Answer 1 correct question per theme (Tech, Star Wars, Tourism, Entertainment)",
+        "requirements": [
+          { "theme": "IT & Programming", "count": 1 },
+          { "theme": "Star Wars",        "count": 1 },
+          { "theme": "Tourism & Travel", "count": 1 },
+          { "theme": "Entertainment",    "count": 1 }
+        ]
+      }
+    ],
+
+    "medium": [
+      {
+        "id": 2,
+        "description": "Answer 2 Tech, 2 Star Wars and 1 Entertainment questions correctly",
+        "requirements": [
+          { "theme": "IT & Programming", "count": 2 },
+          { "theme": "Star Wars",        "count": 2 },
+          { "theme": "Entertainment",    "count": 1 }
+        ]
+      },
+      {
+        "id": 3,
+        "description": "Answer 2 Tourism, 2 Entertainment and 1 Tech questions correctly",
+        "requirements": [
+          { "theme": "Tourism & Travel", "count": 2 },
+          { "theme": "Entertainment",    "count": 2 },
+          { "theme": "IT & Programming", "count": 1 }
+        ]
+      }
+    ],
+
+    "hard": [
+      {
+        "id": 4,
+        "description": "Answer 3 Tech, 3 Star Wars, 2 Tourism and 2 Entertainment questions correctly",
+        "requirements": [
+          { "theme": "IT & Programming", "count": 3 },
+          { "theme": "Star Wars",        "count": 3 },
+          { "theme": "Tourism & Travel", "count": 2 },
+          { "theme": "Entertainment",    "count": 2 }
+        ]
+      },
+      {
+        "id": 5,
+        "description": "Answer 3 Tourism, 3 Entertainment, 2 Tech and 2 Star Wars questions correctly",
+        "requirements": [
+          { "theme": "Tourism & Travel", "count": 3 },
+          { "theme": "Entertainment",    "count": 3 },
+          { "theme": "IT & Programming", "count": 2 },
+          { "theme": "Star Wars",        "count": 2 }
+        ]
+      }
+    ]
+
+  }
+}

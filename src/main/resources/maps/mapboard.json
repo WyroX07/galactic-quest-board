@@ -1,0 +1,143 @@
+{
+  "name": "MapBoard",
+  "tileSize": 60,
+  "planet": {
+    "image": "/img/map.jpg",
+    "scale": 1.0
+  },
+  "tiles": [
+    {
+      "id": 0,
+      "rx": 0.2307,
+      "ry": 0.279,
+      "type": "START",
+      "label": "START"
+    },
+    {
+      "id": 1,
+      "rx": 0.3479,
+      "ry": 0.2968,
+      "type": "THEME",
+      "theme": "GREEN"
+    },
+    {
+      "id": 2,
+      "rx": 0.4927,
+      "ry": 0.3992,
+      "type": "THEME",
+      "theme": "BLUE"
+    },
+    {
+      "id": 3,
+      "rx": 0.6641,
+      "ry": 0.3156,
+      "type": "THEME",
+      "theme": "GREEN"
+    },
+    {
+      "id": 4,
+      "rx": 0.8453,
+      "ry": 0.279,
+      "type": "THEME",
+      "theme": "ORANGE"
+    },
+    {
+      "id": 5,
+      "rx": 0.8995,
+      "ry": 0.3877,
+      "type": "ALL_IN",
+      "label": "ALL_IN"
+    },
+    {
+      "id": 6,
+      "rx": 0.7453,
+      "ry": 0.5078,
+      "type": "THEME",
+      "theme": "YELLOW"
+    },
+    {
+      "id": 7,
+      "rx": 0.9057,
+      "ry": 0.6761,
+      "type": "THEME",
+      "theme": "BLUE"
+    },
+    {
+      "id": 8,
+      "rx": 0.8859,
+      "ry": 0.8443,
+      "type": "THEME",
+      "theme": "GREEN"
+    },
+    {
+      "id": 9,
+      "rx": 0.7422,
+      "ry": 0.8715,
+      "type": "THEME",
+      "theme": "ORANGE"
+    },
+    {
+      "id": 10,
+      "rx": 0.5917,
+      "ry": 0.744,
+      "type": "THEME",
+      "theme": "YELLOW"
+    },
+    {
+      "id": 11,
+      "rx": 0.4385,
+      "ry": 0.6865,
+      "type": "THEME",
+      "theme": "BLUE"
+    },
+    {
+      "id": 12,
+      "rx": 0.301,
+      "ry": 0.838,
+      "type": "THEME",
+      "theme": "ORANGE"
+    },
+    {
+      "id": 13,
+      "rx": 0.1276,
+      "ry": 0.8495,
+      "type": "THEME",
+      "theme": "GREEN"
+    },
+    {
+      "id": 14,
+      "rx": 0.0786,
+      "ry": 0.6917,
+      "type": "THEME",
+      "theme": "YELLOW"
+    },
+    {
+      "id": 15,
+      "rx": 0.1484,
+      "ry": 0.6134,
+      "type": "DARK_VADOR",
+      "label": "VADOR"
+    },
+    {
+      "id": 16,
+      "rx": 0.2557,
+      "ry": 0.5298,
+      "type": "THEME",
+      "theme": "ORANGE"
+    },
+    {
+      "id": 17,
+      "rx": 0.1568,
+      "ry": 0.4451,
+      "type": "THEME",
+      "theme": "BLUE"
+    },
+    {
+      "id": 18,
+      "rx": 0.1109,
+      "ry": 0.3365,
+      "type": "THEME",
+      "theme": "YELLOW"
+    }
+  ]
+}

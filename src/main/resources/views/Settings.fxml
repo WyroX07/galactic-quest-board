@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="root"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.controller.SettingsController"
+            prefWidth="700.0"
+            prefHeight="480.0"
+            minWidth="700.0"
+            minHeight="480.0"
+            maxWidth="700.0"
+            maxHeight="480.0"
+            style="-fx-background-color: transparent;">
+
+    <children>
+
+        <!-- Fond pixel art -->
+        <ImageView fx:id="backgroundImage"
+                   fitWidth="700.0"
+                   fitHeight="480.0"
+                   preserveRatio="false"
+                   AnchorPane.topAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0">
+            <image>
+                <Image url="@../img/Assets/SettingsBackground.png" />
+            </image>
+        </ImageView>
+
+        <!-- Contenu -->
+        <StackPane AnchorPane.topAnchor="0.0"
+                   AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0">
+            <children>
+                <VBox alignment="TOP_CENTER"
+                      spacing="14.0"
+                      prefWidth="420.0"
+                      maxWidth="420.0"
+                      style="-fx-background-color: transparent;">
+                    <padding>
+                        <Insets top="52.0" right="40.0" bottom="20.0" left="40.0"/>
+                    </padding>
+                    <children>
+
+                        <!-- Titre image -->
+                        <ImageView fitWidth="280.0"
+                                   fitHeight="60.0"
+                                   preserveRatio="true"
+                                   smooth="true">
+                            <image>
+                                <Image url="@../img/Assets/LabelTitleSettingsModal.png" />
+                            </image>
+                        </ImageView>
+
+                        <VBox spacing="13.0" alignment="CENTER_LEFT"
+                              style="-fx-background-color: transparent;">
+                            <children>
+
+                                <!-- PLAYERS -->
+                                <HBox spacing="12.0" alignment="CENTER_LEFT">
+                                    <Label text="PLAYERS"
+                                           prefWidth="130.0"
+                                           style="-fx-text-fill: white;
+                                                  -fx-font-family: 'Consolas';
+                                                  -fx-font-size: 14;
+                                                  -fx-font-weight: bold;" />
+                                    <Button text="◀" onAction="#onMinusPlayer"
+                                            style="-fx-background-color: rgba(78,205,196,0.15);
+                                                   -fx-text-fill: #4ECDC4; -fx-font-size: 16;
+                                                   -fx-font-weight: bold; -fx-padding: 4 10;
+                                                   -fx-cursor: hand; -fx-border-color: rgba(78,205,196,0.3);
+                                                   -fx-border-radius: 3; -fx-background-radius: 3;" />
+                                    <Label fx:id="playerCountLabel" text="4"
+                                           style="-fx-text-fill: white;
+                                                  -fx-font-family: 'Consolas';
+                                                  -fx-font-size: 18;
+                                                  -fx-font-weight: bold;
+                                                  -fx-min-width: 24;
+                                                  -fx-alignment: center;" />
+                                    <Button text="▶" onAction="#onPlusPlayer"
+                                            style="-fx-background-color: rgba(78,205,196,0.15);
+                                                   -fx-text-fill: #4ECDC4; -fx-font-size: 16;
+                                                   -fx-font-weight: bold; -fx-padding: 4 10;
+                                                   -fx-cursor: hand; -fx-border-color: rgba(78,205,196,0.3);
+                                                   -fx-border-radius: 3; -fx-background-radius: 3;" />
+                                </HBox>
+
+                                <!-- TIMER -->
+                                <HBox spacing="12.0" alignment="CENTER_LEFT">
+                                    <Label text="TIMER"
+                                           prefWidth="130.0"
+                                           style="-fx-text-fill: white;
+                                                  -fx-font-family: 'Consolas';
+                                                  -fx-font-size: 14;
+                                                  -fx-font-weight: bold;" />
+                                    <Button text="◀" onAction="#onMinusTimer"
+                                            style="-fx-background-color: rgba(78,205,196,0.15);
+                                                   -fx-text-fill: #4ECDC4; -fx-font-size: 16;
+                                                   -fx-font-weight: bold; -fx-padding: 4 10;
+                                                   -fx-cursor: hand; -fx-border-color: rgba(78,205,196,0.3);
+                                                   -fx-border-radius: 3; -fx-background-radius: 3;" />
+                                    <Label fx:id="timerLabel" text="30s"
+                                           style="-fx-text-fill: white;
+                                                  -fx-font-family: 'Consolas';
+                                                  -fx-font-size: 18;
+                                                  -fx-font-weight: bold;
+                                                  -fx-min-width: 48;
+                                                  -fx-alignment: center;" />
+                                    <Button text="▶" onAction="#onPlusTimer"
+                                            style="-fx-background-color: rgba(78,205,196,0.15);
+                                                   -fx-text-fill: #4ECDC4; -fx-font-size: 16;
+                                                   -fx-font-weight: bold; -fx-padding: 4 10;
+                                                   -fx-cursor: hand; -fx-border-color: rgba(78,205,196,0.3);
+                                                   -fx-border-radius: 3; -fx-background-radius: 3;" />
+                                </HBox>
+
+                                <!-- DIFFICULTY -->
+                                <HBox spacing="12.0" alignment="CENTER_LEFT">
+                                    <Label text="DIFFICULTY"
+                                           prefWidth="130.0"
+                                           style="-fx-text-fill: white;
+                  -fx-font-family: 'Consolas';
+                  -fx-font-size: 14;
+                  -fx-font-weight: bold;" />
+
+                                    <Button text="◀" onAction="#onMinusDifficulty"
+                                            style="-fx-background-color: rgba(78,205,196,0.15);
+                   -fx-text-fill: #4ECDC4; -fx-font-size: 16;
+                   -fx-font-weight: bold; -fx-padding: 4 10;
+                   -fx-cursor: hand; -fx-border-color: rgba(78,205,196,0.3);
+                   -fx-border-radius: 3; -fx-background-radius: 3;" />
+
+                                    <Label fx:id="difficultyLabel" text="MEDIUM"
+                                           style="-fx-text-fill: white;
+                  -fx-font-family: 'Consolas';
+                  -fx-font-size: 18;
+                  -fx-font-weight: bold;
+                  -fx-min-width: 80;
+                  -fx-alignment: center;" />
+
+                                    <Button text="▶" onAction="#onPlusDifficulty"
+                                            style="-fx-background-color: rgba(78,205,196,0.15);
+                   -fx-text-fill: #4ECDC4; -fx-font-size: 16;
+                   -fx-font-weight: bold; -fx-padding: 4 10;
+                   -fx-cursor: hand; -fx-border-color: rgba(78,205,196,0.3);
+                   -fx-border-radius: 3; -fx-background-radius: 3;" />
+                                </HBox>
+
+                                <!-- MUSIC -->
+                                <HBox spacing="12.0" alignment="CENTER_LEFT">
+                                    <Label text="MUSIC"
+                                           prefWidth="130.0"
+                                           style="-fx-text-fill: white;
+                                                  -fx-font-family: 'Consolas';
+                                                  -fx-font-size: 14;
+                                                  -fx-font-weight: bold;" />
+                                    <Slider fx:id="musicSlider" prefWidth="200.0" value="50" min="0" max="100"/>
+                                </HBox>
+
+                            </children>
+                        </VBox>
+
+                        <!-- Bouton Back to Menu (caché en mode pré-jeu) -->
+                        <Button fx:id="backToMenuButton"
+                                onAction="#onBackToMenu"
+                                contentDisplay="GRAPHIC_ONLY"
+                                pickOnBounds="true"
+                                style="-fx-background-color: transparent;
+                                       -fx-padding: 0;
+                                       -fx-border-color: transparent;
+                                       -fx-cursor: hand;">
+                            <graphic>
+                                <ImageView fitWidth="260.0"
+                                           fitHeight="50.0"
+                                           preserveRatio="false"
+                                           smooth="true">
+                                    <image>
+                                        <Image url="@../img/BackToMenuSettings.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+
+        <!-- Bouton fermer (X) -->
+        <Button fx:id="closeButton"
+                onAction="#onClose"
+                contentDisplay="GRAPHIC_ONLY"
+                pickOnBounds="true"
+                AnchorPane.topAnchor="70.0"
+                AnchorPane.rightAnchor="50.0"
+                style="-fx-background-color: transparent;
+                       -fx-padding: 0;
+                       -fx-border-color: transparent;
+                       -fx-cursor: hand;">
+            <graphic>
+                <ImageView fitWidth="44.0"
+                           fitHeight="44.0"
+                           preserveRatio="true"
+                           smooth="true">
+                    <image>
+                        <Image url="@../img/Assets/ExitBtnModal.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+{
+  "name": "MapBoard_Admin",
+  "tileSize": 60,
+  "planet": {
+    "image": "/img/map.jpg",
+    "scale": 1.0
+  },
+  "tiles": [
+    {
+      "id": 0,
+      "rx": 0.2307,
+      "ry": 0.279,
+      "type": "START",
+      "label": "START"
+    },
+    {
+      "id": 1,
+      "rx": 0.3479,
+      "ry": 0.2968,
+      "type": "THEME",
+      "theme": "GREEN"
+    },
+    {
+      "id": 2,
+      "rx": 0.4927,
+      "ry": 0.3992,
+      "type": "THEME",
+      "theme": "BLUE"
+    },
+    {
+      "id": 3,
+      "rx": 0.6641,
+      "ry": 0.3156,
+      "type": "ALL_IN",
+      "label": "ALL_IN"
+    },
+    {
+      "id": 4,
+      "rx": 0.8453,
+      "ry": 0.279,
+      "type": "DARK_VADOR",
+      "label": "VADOR"
+    },
+    {
+      "id": 5,
+      "rx": 0.5917,
+      "ry": 0.744,
+      "type": "THEME",
+      "theme": "YELLOW"
+    }
+  ]
+}
