@@ -95,6 +95,28 @@ public class GameController {
         root.getChildren().add(selection);
 
         setupDemoShortcut();
+        preloadHyperspaceVideo();
+    }
+
+    private javafx.scene.media.MediaPlayer hyperspacePlayer;
+
+    /**
+     * Prepares the hyperspace video player as soon as the game screen loads,
+     * while the player is still busy picking ships — by the time it's
+     * actually needed, the underlying media engine has had time to warm up
+     * instead of racing to get ready right when we call play().
+     */
+    private void preloadHyperspaceVideo() {
+        java.net.URL videoUrl = getClass().getResource("/audio/hyperspace.mp4");
+        if (videoUrl == null) return;
+        try {
+            hyperspacePlayer = new javafx.scene.media.MediaPlayer(
+                    new javafx.scene.media.Media(videoUrl.toExternalForm()));
+            hyperspacePlayer.setMute(true);
+        } catch (Exception e) {
+            System.err.println("[Hyperspace] Could not preload video: " + e.getMessage());
+            hyperspacePlayer = null;
+        }
     }
 
     /** F9 toggles a hidden demo panel to jump the active player to any tile type — for presentations only. */
@@ -136,30 +158,33 @@ public class GameController {
     }
 
     private Node buildDemoPanel() {
-        VBox panel = new VBox(8);
-        panel.setPadding(new Insets(12));
-        panel.setStyle("-fx-background-color: rgba(0,0,0,0.85); -fx-background-radius: 8;");
+        VBox panel = new VBox(10);
+        panel.setPadding(new Insets(16));
+        panel.setMaxWidth(220);
+        panel.setStyle("-fx-background-color: rgba(10,10,15,0.92); "
+                + "-fx-background-radius: 10; -fx-border-radius: 10; "
+                + "-fx-border-color: #4ECDC4; -fx-border-width: 1.5; "
+                + "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 16, 0, 0, 4);");
         StackPane.setAlignment(panel, Pos.BOTTOM_LEFT);
-        StackPane.setMargin(panel, new Insets(0, 0, 20, 20));
+        StackPane.setMargin(panel, new Insets(0, 0, 24, 24));
 
-        Label title = new Label("DEMO PANEL");
+        Label title = new Label("⚙ DEMO PANEL");
         title.setTextFill(Color.web("#4ECDC4"));
-        title.setFont(Font.font("Consolas", FontWeight.BOLD, 12));
+        title.setFont(Font.font("Consolas", FontWeight.BOLD, 13));
         panel.getChildren().add(title);
 
         // Who's about to be teleported — explicit and switchable.
-        Label playerHint = new Label("Jump this player:");
-        playerHint.setTextFill(Color.web("#aaaaaa"));
-        playerHint.setFont(Font.font("Consolas", 10));
+        Label playerHint = new Label("JUMP THIS PLAYER");
+        playerHint.setTextFill(Color.web("#888888"));
+        playerHint.setFont(Font.font("Consolas", FontWeight.BOLD, 9));
         panel.getChildren().add(playerHint);
 
-        HBox playerRow = new HBox(4);
+        HBox playerRow = new HBox(6);
         for (PlayerToken p : playerTokens) {
             boolean selected = p == demoSelectedPlayer;
             Button pBtn = new Button(p.getPlayerName());
-            pBtn.setStyle("-fx-font-size: 11px; -fx-cursor: hand;"
-                    + (selected ? "-fx-background-color: #4ECDC4; -fx-text-fill: #0a0a0a; -fx-font-weight: bold;"
-                                : ""));
+            pBtn.setFont(Font.font("Consolas", FontWeight.BOLD, 11));
+            pBtn.setStyle(demoBtnStyle(selected ? "#4ECDC4" : "#333333", selected ? "#0a0a0a" : "#cccccc"));
             pBtn.setOnAction(e -> {
                 demoSelectedPlayer = p;
                 refreshDemoPanel();
@@ -168,30 +193,42 @@ public class GameController {
         }
         panel.getChildren().add(playerRow);
 
-        Label tileHint = new Label("Jump to tile:");
-        tileHint.setTextFill(Color.web("#aaaaaa"));
-        tileHint.setFont(Font.font("Consolas", 10));
+        Label tileHint = new Label("JUMP TO TILE");
+        tileHint.setTextFill(Color.web("#888888"));
+        tileHint.setFont(Font.font("Consolas", FontWeight.BOLD, 9));
         panel.getChildren().add(tileHint);
 
-        panel.getChildren().add(demoJumpButton("Blue", "THEME", "BLUE"));
-        panel.getChildren().add(demoJumpButton("Green", "THEME", "GREEN"));
-        panel.getChildren().add(demoJumpButton("Orange", "THEME", "ORANGE"));
-        panel.getChildren().add(demoJumpButton("Yellow", "THEME", "YELLOW"));
-        panel.getChildren().add(demoJumpButton("ALL-IN", "ALL_IN", null));
-        panel.getChildren().add(demoJumpButton("VADER", "DARK_VADOR", null));
-        panel.getChildren().add(demoJumpButton("START (final assault once quest done)", "START", null));
+        VBox tileButtons = new VBox(5);
+        tileButtons.getChildren().addAll(
+                demoJumpButton("Blue", "THEME", "BLUE", "#4CC9F0"),
+                demoJumpButton("Green", "THEME", "GREEN", "#80ED99"),
+                demoJumpButton("Orange", "THEME", "ORANGE", "#F4A261"),
+                demoJumpButton("Yellow", "THEME", "YELLOW", "#FFD60A"),
+                demoJumpButton("ALL-IN", "ALL_IN", null, "#C77DFF"),
+                demoJumpButton("VADER", "DARK_VADOR", null, "#9B2226"),
+                demoJumpButton("START — Final Assault", "START", null, "#D6D6D6")
+        );
+        panel.getChildren().add(tileButtons);
 
-        Label afterHint = new Label("After answering: normal turn flow\nresumes for the NEXT player.");
-        afterHint.setTextFill(Color.web("#888888"));
+        Label afterHint = new Label("After answering, the normal turn\nflow resumes for the next player.");
+        afterHint.setTextFill(Color.web("#666666"));
         afterHint.setFont(Font.font("Consolas", 9));
         panel.getChildren().add(afterHint);
 
         return panel;
     }
 
-    private Button demoJumpButton(String label, String type, String theme) {
+    private String demoBtnStyle(String bgColor, String textColor) {
+        return "-fx-background-color: " + bgColor + "; -fx-text-fill: " + textColor + "; "
+                + "-fx-background-radius: 5; -fx-padding: 5 12; -fx-cursor: hand;";
+    }
+
+    private Button demoJumpButton(String label, String type, String theme, String bgColor) {
         Button btn = new Button(label);
-        btn.setStyle("-fx-font-size: 11px; -fx-cursor: hand;");
+        btn.setFont(Font.font("Consolas", FontWeight.BOLD, 11));
+        btn.setMaxWidth(Double.MAX_VALUE);
+        btn.setAlignment(Pos.CENTER_LEFT);
+        btn.setStyle(demoBtnStyle(bgColor, "#0a0a0a"));
         btn.setOnAction(e -> demoJumpTo(type, theme));
         return btn;
     }
@@ -223,47 +260,42 @@ public class GameController {
         // Stop menu music
         MusicPlayer.stop();
 
-        // Play hyperspace video if the file exists
-        java.net.URL videoUrl = getClass().getResource("/audio/hyperspace.mp4");
-        if (videoUrl != null) {
-            javafx.scene.media.Media video = new javafx.scene.media.Media(videoUrl.toExternalForm());
-            javafx.scene.media.MediaPlayer vp = new javafx.scene.media.MediaPlayer(video);
-            javafx.scene.media.MediaView mv = new javafx.scene.media.MediaView(vp);
-
-            mv.fitWidthProperty().bind(root.widthProperty());
-            mv.fitHeightProperty().bind(root.heightProperty());
-            mv.setPreserveRatio(false);
-
-            root.getChildren().add(mv);
-
-            vp.setOnEndOfMedia(() -> {
-                root.getChildren().remove(mv);
-                mv.fitWidthProperty().unbind();
-                mv.fitHeightProperty().unbind();
-                vp.dispose();
-                MusicPlayer.playGame();
-                proceedWithGameSetup(players);
-            });
-
-            vp.setOnError(() -> {
-                // Fallback if video fails to play
-                root.getChildren().remove(mv);
-                vp.dispose();
-                MusicPlayer.playGame();
-                proceedWithGameSetup(players);
-            });
-
-            // Wait for the player to be fully ready before playing — calling
-            // play() right after creation is a race: the video track isn't
-            // always prepared yet, so only the audio would start and the
-            // image would stay frozen on the first frame.
-            vp.setOnReady(vp::play);
+        if (hyperspacePlayer == null) {
+            // No video available (missing file or failed to preload) — skip straight to the game.
+            MusicPlayer.playGame();
+            proceedWithGameSetup(players);
             return;
         }
 
-        // No video file found, start directly
-        MusicPlayer.playGame();
-        proceedWithGameSetup(players);
+        javafx.scene.media.MediaView mv = new javafx.scene.media.MediaView(hyperspacePlayer);
+        mv.fitWidthProperty().bind(root.widthProperty());
+        mv.fitHeightProperty().bind(root.heightProperty());
+        mv.setPreserveRatio(false);
+        root.getChildren().add(mv);
+
+        final boolean[] proceeded = {false};
+        Runnable finishVideo = () -> {
+            if (proceeded[0]) return;
+            proceeded[0] = true;
+            root.getChildren().remove(mv);
+            mv.fitWidthProperty().unbind();
+            mv.fitHeightProperty().unbind();
+            hyperspacePlayer.setMute(true);
+            MusicPlayer.playGame();
+            proceedWithGameSetup(players);
+        };
+
+        hyperspacePlayer.setOnEndOfMedia(finishVideo);
+        hyperspacePlayer.setOnError(finishVideo);
+        hyperspacePlayer.setMute(false);
+        hyperspacePlayer.seek(javafx.util.Duration.ZERO);
+        hyperspacePlayer.play();
+
+        // Safety net: never let a stuck video block the game from starting.
+        javafx.animation.PauseTransition timeout = new javafx.animation.PauseTransition(
+                javafx.util.Duration.seconds(6));
+        timeout.setOnFinished(e -> finishVideo.run());
+        timeout.play();
     }
 
     private void proceedWithGameSetup(List<ShipSelectionView.PlayerSelection> players) {
