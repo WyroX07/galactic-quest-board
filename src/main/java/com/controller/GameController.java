@@ -119,7 +119,11 @@ public class GameController {
                 proceedWithGameSetup(players);
             });
 
-            vp.play();
+            // Wait for the player to be fully ready before playing — calling
+            // play() right after creation is a race: the video track isn't
+            // always prepared yet, so only the audio would start and the
+            // image would stay frozen on the first frame.
+            vp.setOnReady(vp::play);
             return;
         }
 
@@ -235,7 +239,6 @@ public class GameController {
     private void continueAfterResolvedTurn() {
         if (gameOver || continuePromptShown) return;
         continuePromptShown = true;
-        unlockHud();
         if (showingInitialStartQuestions) {
             showContinueButton("Next player ▶", this::showNextInitialStartQuestion);
         } else {
@@ -247,7 +250,6 @@ public class GameController {
         if (gameOver) return;
         PlayerToken current = playerTokens.get(currentPlayerIndex);
         pendingQuestionPlayer = current;
-        lockHud();
         boardView.mooveToken(current);
     }
 
@@ -261,7 +263,6 @@ public class GameController {
             return;
         }
         pendingQuestionPlayer = nextPlayer;
-        lockHud();
         boardView.askQuestionForCurrentTile(nextPlayer);
     }
 
@@ -287,18 +288,6 @@ public class GameController {
         });
 
         root.getChildren().add(continueBtn);
-    }
-
-    /** Disables Help/Settings while a question is pending — nothing to check mid-question. */
-    private void lockHud() {
-        helpButton.setDisable(true);
-        settingsIGButton.setDisable(true);
-    }
-
-    /** Re-enables Help/Settings between turns, once no question is on screen. */
-    private void unlockHud() {
-        helpButton.setDisable(false);
-        settingsIGButton.setDisable(false);
     }
 
     /**
