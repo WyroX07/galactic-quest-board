@@ -194,6 +194,11 @@ public class QuestionCardView {
 
         final boolean[] answerConfirmed = {false};
 
+        // Tracks the "back to card" button created when the player hides the
+        // card with the X button, so it can be removed no matter how the
+        // overlay ends up closing (validate, X, or timeout).
+        final Button[] hiddenBackButton = {null};
+
         validateBtn.setOnAction(e -> {
             if (answerConfirmed[0]) return;
             countdown.stop();
@@ -220,10 +225,7 @@ public class QuestionCardView {
 
             PauseTransition closeDelay = new PauseTransition(Duration.seconds(1.5));
             closeDelay.setOnFinished(event -> {
-                System.out.println("=== FERMETURE CARTE ===");
-                System.out.println("gameRoot children avant: " + gameRoot.getChildren().size());
-                closeOverlay(gameRoot, dimOverlay, cardContainer);
-                System.out.println("gameRoot children après: " + gameRoot.getChildren().size());
+                closeOverlay(gameRoot, dimOverlay, cardContainer, hiddenBackButton[0]);
                 onAnswer.accept(isCorrect);
             });
             closeDelay.play();
@@ -269,9 +271,11 @@ public class QuestionCardView {
             StackPane.setAlignment(backBtn, Pos.BOTTOM_CENTER);
             StackPane.setMargin(backBtn, new Insets(0, 0, 5, 0));
             gameRoot.getChildren().add(backBtn);
+            hiddenBackButton[0] = backBtn;
 
             backBtn.setOnAction(ev -> {
                 gameRoot.getChildren().remove(backBtn);
+                hiddenBackButton[0] = null;
                 cardContainer.setVisible(true);
                 dimOverlay.setVisible(true);
                 for (var child : gameRoot.getChildren()) {
@@ -318,7 +322,7 @@ public class QuestionCardView {
 
                         PauseTransition closeDelay2 = new PauseTransition(Duration.seconds(1.5));
                         closeDelay2.setOnFinished(ev -> {
-                            closeOverlay(gameRoot, dimOverlay, cardContainer);
+                            closeOverlay(gameRoot, dimOverlay, cardContainer, hiddenBackButton[0]);
                             onAnswer.accept(false);
                         });
                         closeDelay2.play();
@@ -373,9 +377,19 @@ public class QuestionCardView {
 
 
 
-    private static void closeOverlay(StackPane gameRoot, Rectangle dimOverlay, Node cardContainer) {
+    /**
+     * Closes the question overlay. strayBackButton is the "back to card"
+     * button created when the player hid the card with X — it must be
+     * removed here too, otherwise it stays stranded on screen and the next
+     * question card ends up visually stacked on top of it.
+     */
+    private static void closeOverlay(StackPane gameRoot, Rectangle dimOverlay, Node cardContainer,
+                                     Button strayBackButton) {
         gameRoot.getChildren().remove(cardContainer);
         gameRoot.getChildren().remove(dimOverlay);
+        if (strayBackButton != null) {
+            gameRoot.getChildren().remove(strayBackButton);
+        }
         for (var child : gameRoot.getChildren()) {
             child.setEffect(null);
         }
