@@ -71,6 +71,17 @@
                             </ImageView>
                         </graphic>
                     </Button>
+
+                    <Button fx:id="exitButton" onAction="#onExitGame"
+                            contentDisplay="GRAPHIC_ONLY" pickOnBounds="true"
+                            style="-fx-background-color: transparent; -fx-padding: 0;
+                                   -fx-border-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="60.0" preserveRatio="true" smooth="true">
+                                <image><Image url="@../img/Assets/ExitBtnModal.png" /></image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
                 </HBox>
 
             </children>

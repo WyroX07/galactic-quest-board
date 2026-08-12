@@ -10,6 +10,8 @@ import com.service.QuestionService;
 import com.ui.PlanetBoardView;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -47,6 +49,7 @@ public class GameController {
     // HUD buttons
     @FXML private Button helpButton;
     @FXML private Button settingsIGButton;
+    @FXML private Button exitButton;
 
     // HelpModal overlay — only dynamic labels (static rule text is baked into HelpModal.png)
     @FXML private StackPane helpModalOverlay;
@@ -354,10 +357,32 @@ public class GameController {
         helpModalOverlay.setVisible(false);
     }
 
-    /** Opens the in-game Settings modal (music slider + back to menu). */
+    /** Opens the in-game Settings modal (music volume only). */
     @FXML
     private void onSettingsIG() throws Exception {
         mainController.showSettingsGame(root);
+    }
+
+    /** Asks for confirmation, then quits the current game and returns to the main menu. */
+    @FXML
+    private void onExitGame() {
+        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION,
+                "Quit the current game? All progress will be lost.",
+                ButtonType.YES, ButtonType.NO);
+        confirm.setTitle("Quit game");
+        confirm.setHeaderText(null);
+
+        confirm.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.YES) {
+                gameOver = true;
+                MusicPlayer.stop();
+                try {
+                    mainController.showMenu();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
     }
 
     /** Displays a victory overlay when a player completes their quest and reaches START. */

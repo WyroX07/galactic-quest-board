@@ -95,15 +95,12 @@ public class MainController {
         showGame();
     }
 
-    /** Opens the in-game settings modal (music slider + back to menu). */
+    /** Opens the in-game settings modal (music volume only). */
     public void showSettingsGame(Parent root) throws Exception {
         root.setEffect(new GaussianBlur(10));
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/SettingsGame.fxml"));
         Parent settingsRoot = loader.load();
-
-        SettingsGameController controller = loader.getController();
-        controller.setMainController(this);
 
         Scene scene = new Scene(settingsRoot);
         scene.setFill(Color.TRANSPARENT);
