@@ -68,6 +68,13 @@ public class GameController {
     private int currentPlayerIndex = 0;
     private QuestionService questionService;
     private PlayerToken pendingQuestionPlayer;
+
+    // Type of the tile the pending question was asked on, captured BEFORE
+    // the answer is processed. Correct Vader answers move the player to a
+    // freshly-chosen tile before this listener runs, so re-reading the
+    // player's current tile at that point would see the new tile instead
+    // of the one the question was actually about.
+    private String pendingTileType;
     private final Queue<PlayerToken> initialStartQuestionQueue = new ArrayDeque<>();
     private boolean showingInitialStartQuestions = false;
     private boolean continuePromptShown = false;
@@ -247,6 +254,7 @@ public class GameController {
         currentPlayerIndex = playerTokens.indexOf(demoSelectedPlayer);
         pendingQuestionPlayer = demoSelectedPlayer;
         activePlayer = demoSelectedPlayer;
+        pendingTileType = type;
         updateMiniHud();
 
         root.getChildren().remove(demoPanel);
@@ -312,14 +320,9 @@ public class GameController {
             pendingQuestionPlayer = null;
             QuestService qs = questServices.get(current);
 
-            TileDefinition currentTile = boardView.getCurrentTile(current);
-            boolean isAllIn = currentTile != null
-                    && currentTile.getType() != null
-                    && "ALL_IN".equalsIgnoreCase(currentTile.getType());
-            boolean isVader = currentTile != null
-                    && currentTile.getType() != null
-                    && ("DARK_VADOR".equalsIgnoreCase(currentTile.getType())
-                    || "VADER".equalsIgnoreCase(currentTile.getType()));
+            boolean isAllIn = "ALL_IN".equalsIgnoreCase(pendingTileType);
+            boolean isVader = "DARK_VADOR".equalsIgnoreCase(pendingTileType)
+                    || "VADER".equalsIgnoreCase(pendingTileType);
             boolean specialTileAlreadyMoved = isAllIn || isVader;
 
             currentPlayerIndex = (currentPlayerIndex + 1) % playerTokens.size();
@@ -422,6 +425,7 @@ public class GameController {
         PlayerToken current = playerTokens.get(currentPlayerIndex);
         pendingQuestionPlayer = current;
         activePlayer = current;
+        pendingTileType = tileTypeOf(current);
         updateMiniHud();
         boardView.mooveToken(current);
     }
@@ -437,8 +441,15 @@ public class GameController {
         }
         pendingQuestionPlayer = nextPlayer;
         activePlayer = nextPlayer;
+        pendingTileType = tileTypeOf(nextPlayer);
         updateMiniHud();
         boardView.askQuestionForCurrentTile(nextPlayer);
+    }
+
+    /** The type of tile a player is currently standing on (before any movement). */
+    private String tileTypeOf(PlayerToken token) {
+        TileDefinition tile = boardView.getCurrentTile(token);
+        return tile != null ? tile.getType() : null;
     }
 
     /** Updates the always-visible mini-HUD with the active player's name and quest progress. */
