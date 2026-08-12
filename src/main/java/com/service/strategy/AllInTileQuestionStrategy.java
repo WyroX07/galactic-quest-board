@@ -186,7 +186,7 @@ public class AllInTileQuestionStrategy implements TileQuestionStrategy {
             }
 
             javafx.scene.control.Button backBtn =
-                    new javafx.scene.control.Button("Retour à la question");
+                    new javafx.scene.control.Button("Back to choice");
             backBtn.setStyle(
                     "-fx-background-color: #4ECDC4;" +
                     "-fx-text-fill: white;" +

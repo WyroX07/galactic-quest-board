@@ -150,7 +150,7 @@ public class VaderTileQuestionStrategy implements TileQuestionStrategy {
         content.setPadding(new Insets(70, 55, 50, 55));
         content.setMaxWidth(cardWidth);
 
-        // Close (X) button with "Retour à la question" back button
+        // Close (X) button with "Back to choice" back button
         Button closeBtn = new Button("X");
         closeBtn.setStyle(
                 "-fx-background-color: rgba(0,0,0,0.6);" +
@@ -164,7 +164,7 @@ public class VaderTileQuestionStrategy implements TileQuestionStrategy {
                 if (child != cardContainer && child != dimOverlay) child.setEffect(null);
             }
 
-            Button backBtn = new Button("Retour à la question");
+            Button backBtn = new Button("Back to choice");
             backBtn.setStyle(
                     "-fx-background-color: #4ECDC4; -fx-text-fill: white; -fx-font-size: 16px;" +
                     "-fx-font-weight: bold; -fx-padding: 12 30; -fx-background-radius: 8;" +

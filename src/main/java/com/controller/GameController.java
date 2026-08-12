@@ -237,9 +237,9 @@ public class GameController {
         continuePromptShown = true;
         unlockHud();
         if (showingInitialStartQuestions) {
-            showContinueButton("Joueur suivant ▶", this::showNextInitialStartQuestion);
+            showContinueButton("Next player ▶", this::showNextInitialStartQuestion);
         } else {
-            showContinueButton("Tour suivant ▶", this::startNextTurn);
+            showContinueButton("Next player ▶", this::startNextTurn);
         }
     }
 
