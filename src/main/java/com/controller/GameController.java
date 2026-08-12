@@ -119,7 +119,11 @@ public class GameController {
                 proceedWithGameSetup(players);
             });
 
-            vp.play();
+            // Wait for the player to be fully ready before playing — calling
+            // play() right after creation is a race: the video track isn't
+            // always prepared yet, so only the audio would start and the
+            // image would stay frozen on the first frame.
+            vp.setOnReady(vp::play);
             return;
         }
 
