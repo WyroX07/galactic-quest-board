@@ -8,6 +8,7 @@ import com.service.MusicPlayer;
 import com.service.QuestService;
 import com.service.QuestionService;
 import com.ui.PlanetBoardView;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.paint.Color;
@@ -61,7 +62,7 @@ public class GameController {
     private PlayerToken pendingQuestionPlayer;
     private final Queue<PlayerToken> initialStartQuestionQueue = new ArrayDeque<>();
     private boolean showingInitialStartQuestions = false;
-    private boolean turnTransitionScheduled = false;
+    private boolean continuePromptShown = false;
 
     @FXML
     public void initialize() {
@@ -232,34 +233,26 @@ public class GameController {
     }
 
     private void continueAfterResolvedTurn() {
-        if (gameOver) return;
+        if (gameOver || continuePromptShown) return;
+        continuePromptShown = true;
+        unlockHud();
         if (showingInitialStartQuestions) {
-            javafx.animation.PauseTransition nextDelay = new javafx.animation.PauseTransition(
-                    javafx.util.Duration.millis(2000));
-            nextDelay.setOnFinished(evt -> showNextInitialStartQuestion());
-            nextDelay.play();
+            showContinueButton("Joueur suivant ▶", this::showNextInitialStartQuestion);
         } else {
-            startNextTurn();
+            showContinueButton("Tour suivant ▶", this::startNextTurn);
         }
     }
 
     private void startNextTurn() {
-        if (gameOver || turnTransitionScheduled) return;
-        turnTransitionScheduled = true;
-        javafx.animation.PauseTransition delay = new javafx.animation.PauseTransition(
-                javafx.util.Duration.millis(2000));
-        delay.setOnFinished(evt -> {
-            turnTransitionScheduled = false;
-            if (gameOver || showingInitialStartQuestions) return;
-            PlayerToken current = playerTokens.get(currentPlayerIndex);
-            pendingQuestionPlayer = current;
-            boardView.mooveToken(current);
-        });
-        delay.play();
+        if (gameOver) return;
+        PlayerToken current = playerTokens.get(currentPlayerIndex);
+        pendingQuestionPlayer = current;
+        lockHud();
+        boardView.mooveToken(current);
     }
 
     private void showNextInitialStartQuestion() {
-        if (gameOver || !showingInitialStartQuestions) return;
+        if (gameOver) return;
         PlayerToken nextPlayer = initialStartQuestionQueue.poll();
         if (nextPlayer == null) {
             showingInitialStartQuestions = false;
@@ -268,7 +261,44 @@ public class GameController {
             return;
         }
         pendingQuestionPlayer = nextPlayer;
+        lockHud();
         boardView.askQuestionForCurrentTile(nextPlayer);
+    }
+
+    /**
+     * Shows a "continue" button and waits for the player to click it before
+     * running the next step, instead of an automatic delay — turn pacing is
+     * up to the players, not a timer.
+     */
+    private void showContinueButton(String label, Runnable onContinue) {
+        Button continueBtn = new Button(label);
+        continueBtn.setFont(Font.font("Consolas", FontWeight.BOLD, 18));
+        continueBtn.setStyle(
+                "-fx-background-color: #4ECDC4; -fx-text-fill: #0a0a0a; "
+                        + "-fx-padding: 14 40; -fx-cursor: hand; -fx-background-radius: 6; "
+                        + "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 12, 0, 0, 4);");
+        StackPane.setAlignment(continueBtn, Pos.BOTTOM_CENTER);
+        StackPane.setMargin(continueBtn, new Insets(0, 0, 60, 0));
+
+        continueBtn.setOnAction(e -> {
+            root.getChildren().remove(continueBtn);
+            continuePromptShown = false;
+            onContinue.run();
+        });
+
+        root.getChildren().add(continueBtn);
+    }
+
+    /** Disables Help/Settings while a question is pending — nothing to check mid-question. */
+    private void lockHud() {
+        helpButton.setDisable(true);
+        settingsIGButton.setDisable(true);
+    }
+
+    /** Re-enables Help/Settings between turns, once no question is on screen. */
+    private void unlockHud() {
+        helpButton.setDisable(false);
+        settingsIGButton.setDisable(false);
     }
 
     /**
