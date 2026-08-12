@@ -420,7 +420,10 @@ public class GameController {
         root.getChildren().add(overlay);
     }
 
-    /** Displays a victory overlay when a player completes their quest and reaches START. */
+    /**
+     * Displays the end-of-game scoreboard: the winner, plus every player
+     * ranked by their total correct answers.
+     */
     private void showWinnerScreen(PlayerToken winner) {
         gamePane.setEffect(new GaussianBlur(10));
 
@@ -429,8 +432,26 @@ public class GameController {
         winnerTitle.setTextFill(Color.web("#4ECDC4"));
 
         Label winnerText = new Label(winner.getPlayerName().toUpperCase() + " HAS WON THE GAME!");
-        winnerText.setFont(Font.font("Consolas", FontWeight.BOLD, 28));
+        winnerText.setFont(Font.font("Consolas", FontWeight.BOLD, 22));
         winnerText.setTextFill(Color.WHITE);
+
+        List<PlayerToken> ranking = new ArrayList<>(playerTokens);
+        ranking.sort((a, b) -> questServices.get(b).getTotalCorrectAnswers()
+                - questServices.get(a).getTotalCorrectAnswers());
+
+        VBox rankingBox = new VBox(6);
+        rankingBox.setAlignment(Pos.CENTER_LEFT);
+        for (int i = 0; i < ranking.size(); i++) {
+            PlayerToken player = ranking.get(i);
+            int score = questServices.get(player).getTotalCorrectAnswers();
+            boolean isWinner = player == winner;
+
+            Label row = new Label((i + 1) + ". " + player.getPlayerName()
+                    + " — " + score + " correct answer" + (score == 1 ? "" : "s"));
+            row.setFont(Font.font("Consolas", isWinner ? FontWeight.BOLD : FontWeight.NORMAL, 16));
+            row.setTextFill(isWinner ? Color.web("#4ECDC4") : Color.web("#cccccc"));
+            rankingBox.getChildren().add(row);
+        }
 
         Button backButton = new Button("BACK TO MENU");
         backButton.setFont(Font.font("Consolas", FontWeight.BOLD, 16));
@@ -441,10 +462,10 @@ public class GameController {
             try { mainController.showMenu(); } catch (Exception ex) { throw new RuntimeException(ex); }
         });
 
-        VBox box = new VBox(25, winnerTitle, winnerText, backButton);
+        VBox box = new VBox(20, winnerTitle, winnerText, rankingBox, backButton);
         box.setAlignment(Pos.CENTER);
         box.setMaxWidth(650);
-        box.setMaxHeight(300);
+        box.setMaxHeight(420);
         box.setStyle("-fx-background-color: rgba(0,0,0,0.75); "
                 + "-fx-border-color: #4ECDC4; -fx-border-width: 2; "
                 + "-fx-background-radius: 12; -fx-border-radius: 12; -fx-padding: 40;");
