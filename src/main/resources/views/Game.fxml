@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
 <StackPane fx:id="root"
            xmlns="http://javafx.com/javafx/21"
@@ -24,6 +25,24 @@
 
         <!-- Game board pane (tokens, question cards) -->
         <Pane fx:id="gamePane" prefWidth="1920.0" prefHeight="1080.0" />
+
+        <!-- Mini-HUD : current player + quest progress, always visible (top left) -->
+        <VBox spacing="4.0" StackPane.alignment="TOP_LEFT" pickOnBounds="false">
+            <StackPane.margin><Insets top="15.0" left="15.0" /></StackPane.margin>
+
+            <Label fx:id="hudPlayerLabel" text=""
+                   style="-fx-text-fill: white;
+                          -fx-font-family: 'Consolas';
+                          -fx-font-size: 16;
+                          -fx-font-weight: bold;
+                          -fx-effect: dropshadow(gaussian, black, 4, 0.6, 0, 1);" />
+
+            <Label fx:id="hudQuestLabel" text="" wrapText="true" maxWidth="320.0"
+                   style="-fx-text-fill: #cccccc;
+                          -fx-font-family: 'Consolas';
+                          -fx-font-size: 12;
+                          -fx-effect: dropshadow(gaussian, black, 3, 0.5, 0, 1);" />
+        </VBox>
 
         <!-- HUD : Help + Settings only (top right) -->
         <HBox spacing="10.0" StackPane.alignment="TOP_RIGHT">

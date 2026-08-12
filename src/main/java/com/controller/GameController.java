@@ -53,6 +53,10 @@ public class GameController {
     @FXML private Label helpPlayerLabel;
     @FXML private Label helpQuestLabel;
 
+    // Mini-HUD — current player + quest progress, always visible (no need to open Help)
+    @FXML private Label hudPlayerLabel;
+    @FXML private Label hudQuestLabel;
+
     // Game state
     private BoardDefinition board;
     private PlanetBoardView boardView;
@@ -250,6 +254,7 @@ public class GameController {
         if (gameOver) return;
         PlayerToken current = playerTokens.get(currentPlayerIndex);
         pendingQuestionPlayer = current;
+        updateMiniHud(current);
         boardView.mooveToken(current);
     }
 
@@ -263,7 +268,27 @@ public class GameController {
             return;
         }
         pendingQuestionPlayer = nextPlayer;
+        updateMiniHud(nextPlayer);
         boardView.askQuestionForCurrentTile(nextPlayer);
+    }
+
+    /** Updates the always-visible mini-HUD with the given player's name and quest progress. */
+    private void updateMiniHud(PlayerToken token) {
+        if (token == null) {
+            hudPlayerLabel.setText("");
+            hudQuestLabel.setText("");
+            return;
+        }
+        hudPlayerLabel.setText(token.getPlayerName().toUpperCase());
+
+        QuestService qs = questServices.get(token);
+        if (qs == null || qs.getActiveQuest() == null) {
+            hudQuestLabel.setText("");
+        } else if (qs.isActiveQuestCompleted()) {
+            hudQuestLabel.setText("Quest complete! Return to START");
+        } else {
+            hudQuestLabel.setText(qs.getProgressText());
+        }
     }
 
     /**
@@ -305,9 +330,9 @@ public class GameController {
             if (qs != null && qs.getActiveQuest() != null) {
                 if (qs.isActiveQuestCompleted()) {
                     helpQuestLabel.setText(
-                            "✅ QUÊTE ACCOMPLIE !\n" +
-                                    "Retournez à la case DÉPART\n" +
-                                    "pour l'Assaut Final (difficulté 4) !");
+                            "✅ QUEST COMPLETE!\n" +
+                                    "Return to the START tile\n" +
+                                    "for the Final Assault (difficulty 4)!");
                 } else {
                     helpQuestLabel.setText(
                             qs.getActiveQuest().getDescription()
