@@ -14,6 +14,7 @@ import javafx.scene.effect.GaussianBlur;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -47,6 +48,7 @@ public class GameController {
     // HUD buttons
     @FXML private Button helpButton;
     @FXML private Button settingsIGButton;
+    @FXML private Button exitButton;
 
     // HelpModal overlay — only dynamic labels (static rule text is baked into HelpModal.png)
     @FXML private StackPane helpModalOverlay;
@@ -354,10 +356,68 @@ public class GameController {
         helpModalOverlay.setVisible(false);
     }
 
-    /** Opens the in-game Settings modal (music slider + back to menu). */
+    /** Opens the in-game Settings modal (music volume only). */
     @FXML
     private void onSettingsIG() throws Exception {
         mainController.showSettingsGame(root);
+    }
+
+    /** Shows an in-game confirmation overlay (no separate window, stays in fullscreen) before quitting. */
+    @FXML
+    private void onExitGame() {
+        gamePane.setEffect(new GaussianBlur(10));
+
+        Label title = new Label("QUIT GAME?");
+        title.setFont(Font.font("Consolas", FontWeight.BOLD, 32));
+        title.setTextFill(Color.web("#ff6b6b"));
+
+        Label message = new Label("All progress will be lost.");
+        message.setFont(Font.font("Consolas", FontWeight.BOLD, 16));
+        message.setTextFill(Color.WHITE);
+
+        Button cancelBtn = new Button("CANCEL");
+        cancelBtn.setFont(Font.font("Consolas", FontWeight.BOLD, 16));
+        cancelBtn.setStyle("-fx-background-color: #444; -fx-text-fill: white; "
+                + "-fx-padding: 12 30; -fx-cursor: hand; -fx-background-radius: 4;");
+
+        Button quitBtn = new Button("QUIT");
+        quitBtn.setFont(Font.font("Consolas", FontWeight.BOLD, 16));
+        quitBtn.setStyle("-fx-background-color: #ff6b6b; -fx-text-fill: #0a0a0a; "
+                + "-fx-padding: 12 30; -fx-cursor: hand; -fx-background-radius: 4;");
+
+        HBox buttonsRow = new HBox(20, cancelBtn, quitBtn);
+        buttonsRow.setAlignment(Pos.CENTER);
+
+        VBox box = new VBox(20, title, message, buttonsRow);
+        box.setAlignment(Pos.CENTER);
+        box.setMaxWidth(500);
+        box.setMaxHeight(220);
+        box.setStyle("-fx-background-color: rgba(0,0,0,0.75); "
+                + "-fx-border-color: #ff6b6b; -fx-border-width: 2; "
+                + "-fx-background-radius: 12; -fx-border-radius: 12; -fx-padding: 30;");
+
+        StackPane overlay = new StackPane(box);
+        overlay.setStyle("-fx-background-color: rgba(0,0,0,0.35);");
+        overlay.setAlignment(Pos.CENTER);
+
+        cancelBtn.setOnAction(e -> {
+            root.getChildren().remove(overlay);
+            gamePane.setEffect(null);
+        });
+
+        quitBtn.setOnAction(e -> {
+            root.getChildren().remove(overlay);
+            gamePane.setEffect(null);
+            gameOver = true;
+            MusicPlayer.stop();
+            try {
+                mainController.showMenu();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        root.getChildren().add(overlay);
     }
 
     /** Displays a victory overlay when a player completes their quest and reaches START. */

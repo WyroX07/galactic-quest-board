@@ -2,33 +2,18 @@ package com.controller;
 
 import com.service.MusicPlayer;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-/** In-game settings controller. Handles the music slider and back-to-menu button. */
+/** In-game settings controller. Music volume only — quitting the game has its own dedicated button. */
 public class SettingsGameController {
 
     @FXML
     private AnchorPane root;
 
     @FXML
-    public Button backToMenuButton;
-
-    @FXML
     public Slider musicSlider;
-
-    private MainController mainController;
-
-    @FXML
-    private void onBackToMenu() throws Exception {
-        Stage stage = (Stage) root.getScene().getWindow();
-        stage.close();
-        if (mainController != null) {
-            mainController.showMenu();
-        }
-    }
 
     @FXML
     public void onClose() {
@@ -43,9 +28,5 @@ public class SettingsGameController {
             musicSlider.valueProperty().addListener(
                     (obs, o, n) -> MusicPlayer.setVolume(n.doubleValue() / 100.0));
         }
-    }
-
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
     }
 }

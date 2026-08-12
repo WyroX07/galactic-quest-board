@@ -81,27 +81,6 @@
                             </children>
                         </VBox>
 
-                        <!-- Bouton Back to Menu -->
-                        <Button fx:id="backToMenuButton"
-                                onAction="#onBackToMenu"
-                                contentDisplay="GRAPHIC_ONLY"
-                                pickOnBounds="true"
-                                style="-fx-background-color: transparent;
-                                       -fx-padding: 0;
-                                       -fx-border-color: transparent;
-                                       -fx-cursor: hand;">
-                            <graphic>
-                                <ImageView fitWidth="260.0"
-                                           fitHeight="50.0"
-                                           preserveRatio="false"
-                                           smooth="true">
-                                    <image>
-                                        <Image url="@../img/BackToMenuSettings.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </Button>
-
                     </children>
                 </VBox>
             </children>
