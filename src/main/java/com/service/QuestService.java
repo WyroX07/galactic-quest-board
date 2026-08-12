@@ -44,6 +44,11 @@ public class QuestService {
                 correctAnswersByTheme.getOrDefault(canonical, 0) + 1);
     }
 
+    /** Total correct answers across every theme, used to rank players on the scoreboard. */
+    public int getTotalCorrectAnswers() {
+        return correctAnswersByTheme.values().stream().mapToInt(Integer::intValue).sum();
+    }
+
     /** Returns true when every quest requirement is satisfied. */
     public boolean isActiveQuestCompleted() {
         return activeQuest.isCompleted(correctAnswersByTheme);
