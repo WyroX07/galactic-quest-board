@@ -20,6 +20,7 @@ import javafx.scene.layout.VBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -353,10 +354,10 @@ public class GameController {
             } else {
                 System.out.println(current.getPlayerName() + " wrong answer, stays in place.");
 
-                // ALL_IN faux recule avec une animation : on attend le callback
-                // d'animation. VADER faux retourne au départ instantanément, donc
-                // on peut passer au tour suivant après le délai normal.
-                if (!isAllIn) {
+                // ALL_IN and VADER both retreat with an animation on a wrong
+                // answer, so we wait for the animation-finished callback
+                // instead of moving on right away.
+                if (!specialTileAlreadyMoved) {
                     continueAfterResolvedTurn();
                 }
             }
@@ -608,10 +609,21 @@ public class GameController {
             rankingBox.getChildren().add(row);
         }
 
-        Button backButton = new Button("BACK TO MENU");
-        backButton.setFont(Font.font("Consolas", FontWeight.BOLD, 16));
-        backButton.setStyle("-fx-background-color: #4ECDC4; -fx-text-fill: #0a0a0a; "
-                + "-fx-padding: 12 40; -fx-cursor: hand; -fx-background-radius: 4;");
+        Button backButton = new Button();
+        try {
+            ImageView backImg = new ImageView(new Image(
+                    getClass().getResourceAsStream("/img/BackToMenuSettings.png")));
+            backImg.setFitWidth(260);
+            backImg.setFitHeight(50);
+            backImg.setPreserveRatio(false);
+            backButton.setGraphic(backImg);
+            backButton.setStyle("-fx-background-color: transparent; -fx-padding: 0; -fx-cursor: hand;");
+        } catch (Exception e) {
+            backButton.setText("BACK TO MENU");
+            backButton.setFont(Font.font("Consolas", FontWeight.BOLD, 16));
+            backButton.setStyle("-fx-background-color: #4ECDC4; -fx-text-fill: #0a0a0a; "
+                    + "-fx-padding: 12 40; -fx-cursor: hand; -fx-background-radius: 4;");
+        }
         backButton.setOnAction(e -> {
             gamePane.setEffect(null);
             try { mainController.showMenu(); } catch (Exception ex) { throw new RuntimeException(ex); }
