@@ -218,10 +218,13 @@ public class QuestionCardView {
             if (isCorrect) {
                 resultLabel.setText("Correct answer!");
                 resultLabel.setStyle("-fx-text-fill: lightgreen; -fx-font-size: 13px; -fx-font-weight: bold;");
+                com.service.MusicPlayer.playCorrectSound();
             } else {
                 resultLabel.setText("Wrong answer. Correct answer: " + question.getAnswer());
                 resultLabel.setStyle("-fx-text-fill: #ff6b6b; -fx-font-size: 13px; -fx-font-weight: bold;");
+                com.service.MusicPlayer.playWrongSound();
             }
+            highlightChoices(choicesBox, question.getAnswer(), selected);
 
             PauseTransition closeDelay = new PauseTransition(Duration.seconds(1.5));
             closeDelay.setOnFinished(event -> {
@@ -260,10 +263,13 @@ public class QuestionCardView {
 
                     if (timeLeft[0] <= 0) {
                         countdown.stop();
-                        resultLabel.setText("Temps écoulé !");
+                        resultLabel.setText("Time's up!");
                         resultLabel.setStyle("-fx-text-fill: #ff6b6b; -fx-font-size: 13px; -fx-font-weight: bold;");
                         choicesBox.setDisable(true);
                         validateBtn.setDisable(true);
+                        com.service.MusicPlayer.playWrongSound();
+                        highlightChoices(choicesBox, question.getAnswer(),
+                                (RadioButton) group.getSelectedToggle());
 
                         PauseTransition closeDelay2 = new PauseTransition(Duration.seconds(1.5));
                         closeDelay2.setOnFinished(ev -> {
@@ -319,6 +325,22 @@ public class QuestionCardView {
     }
 
 
+
+    /** Highlights the correct choice in green, and the wrong one picked (if any) in red. */
+    private static void highlightChoices(VBox choicesBox, String correctAnswer, RadioButton selected) {
+        for (var node : choicesBox.getChildren()) {
+            if (!(node instanceof RadioButton rb)) continue;
+
+            boolean isTheCorrectOne = rb.getText().equalsIgnoreCase(correctAnswer);
+            boolean isTheWrongPick = rb == selected && !isTheCorrectOne;
+
+            if (isTheCorrectOne) {
+                rb.setStyle(rb.getStyle() + "-fx-text-fill: #6bff8a; -fx-font-weight: bold;");
+            } else if (isTheWrongPick) {
+                rb.setStyle(rb.getStyle() + "-fx-text-fill: #ff6b6b; -fx-font-weight: bold;");
+            }
+        }
+    }
 
     private static void closeOverlay(StackPane gameRoot, Rectangle dimOverlay, Node cardContainer) {
         gameRoot.getChildren().remove(cardContainer);
