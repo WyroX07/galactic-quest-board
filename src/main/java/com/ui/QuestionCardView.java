@@ -14,7 +14,6 @@ import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
-import javafx.scene.Cursor;
 
 /**
  * Question pop-up overlay.
@@ -26,6 +25,12 @@ import javafx.scene.Cursor;
  * The question text and choices are wrapped properly so no text is cut off
  * with ellipsis ("..."). The VBox grows with its content and a ScrollPane
  * is used as a safety net for extremely long questions.
+ *
+ * Once a question is shown, the player must answer it or let the timer run
+ * out — there is no way to hide the card and go back to the board. Unlike
+ * the difficulty/theme selection screens, nothing about the board can
+ * change the player's answer at this point, so a "hide" button here only
+ * added confusion (and used to cause a duplicated-card bug).
  */
 public class QuestionCardView {
 
@@ -220,66 +225,10 @@ public class QuestionCardView {
 
             PauseTransition closeDelay = new PauseTransition(Duration.seconds(1.5));
             closeDelay.setOnFinished(event -> {
-                System.out.println("=== FERMETURE CARTE ===");
-                System.out.println("gameRoot children avant: " + gameRoot.getChildren().size());
                 closeOverlay(gameRoot, dimOverlay, cardContainer);
-                System.out.println("gameRoot children après: " + gameRoot.getChildren().size());
                 onAnswer.accept(isCorrect);
             });
             closeDelay.play();
-        });
-
-        // --- Close (X) button ---
-        Button closeBtn = new Button("X");
-        closeBtn.setStyle(
-                "-fx-background-color: rgba(0,0,0,0.6);" +
-                        "-fx-text-fill: white;" +
-                        "-fx-font-size: 14px;" +
-                        "-fx-font-weight: bold;" +
-                        "-fx-background-radius: 20;" +
-                        "-fx-min-width: 28px;" +
-                        "-fx-min-height: 28px;" +
-                        "-fx-cursor: hand;"
-        );
-        closeBtn.setOnAction(e -> {
-            cardContainer.setVisible(false);
-            dimOverlay.setVisible(false);
-            countdown.stop();
-            for (var child : gameRoot.getChildren()) {
-                if (child != cardContainer && child != dimOverlay) {
-                    child.setEffect(null);
-                }
-            }
-
-            Image backBtnImage = new Image(QuestionCardView.class.getResourceAsStream("/img/QuestionButton.png"));
-            ImageView backBtnView = new ImageView(backBtnImage);
-            backBtnView.setFitWidth(270);
-            backBtnView.setPreserveRatio(true);
-            backBtnView.setCursor(Cursor.HAND);
-
-            // Hover effect
-            backBtnView.setOnMouseEntered(me -> backBtnView.setOpacity(0.8));
-            backBtnView.setOnMouseExited(me  -> backBtnView.setOpacity(1.0));
-            backBtnView.setOnMousePressed(me -> backBtnView.setScaleX(0.95));
-            backBtnView.setOnMouseReleased(me -> backBtnView.setScaleX(1.0));
-
-            Button backBtn = new Button();
-            backBtn.setGraphic(backBtnView);
-            backBtn.setStyle("-fx-background-color: transparent; -fx-padding: 0; -fx-cursor: hand;");
-            StackPane.setAlignment(backBtn, Pos.BOTTOM_CENTER);
-            StackPane.setMargin(backBtn, new Insets(0, 0, 5, 0));
-            gameRoot.getChildren().add(backBtn);
-
-            backBtn.setOnAction(ev -> {
-                gameRoot.getChildren().remove(backBtn);
-                cardContainer.setVisible(true);
-                dimOverlay.setVisible(true);
-                for (var child : gameRoot.getChildren()) {
-                    if (child != cardContainer && child != dimOverlay) {
-                        child.setEffect(new GaussianBlur(12));
-                    }
-                }
-            });
         });
 
         // --- Content VBox ---
@@ -361,9 +310,7 @@ public class QuestionCardView {
 
         StackPane.setAlignment(content, Pos.TOP_LEFT);
 
-        StackPane.setAlignment(closeBtn, Pos.TOP_RIGHT);
-        StackPane innerCard = new StackPane(cardBg, content, closeBtn);
-        StackPane.setMargin(closeBtn, new Insets(10, 10, 0, 0));
+        StackPane innerCard = new StackPane(cardBg, content);
 
         cardContainer.getChildren().add(innerCard);
 
