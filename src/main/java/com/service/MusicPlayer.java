@@ -33,6 +33,35 @@ public class MusicPlayer {
         }
     }
 
+    /** Plays a short "correct answer" sound effect, without touching the background music. */
+    public static void playCorrectSound() {
+        playSfx("/audio/correct.mp3");
+    }
+
+    /** Plays a short "wrong answer" sound effect, without touching the background music. */
+    public static void playWrongSound() {
+        playSfx("/audio/wrong.mp3");
+    }
+
+    /** Plays a short one-shot sound effect on its own player, disposed once finished. */
+    private static void playSfx(String resourcePath) {
+        URL url = MusicPlayer.class.getResource(resourcePath);
+        if (url == null) return;
+
+        try {
+            Media media = new Media(url.toExternalForm());
+            MediaPlayer sfx = new MediaPlayer(media);
+            sfx.setVolume(volume);
+            sfx.setOnEndOfMedia(sfx::dispose);
+            // Same reason as the hyperspace video: play() right after creation
+            // can race with the player's own setup, so the very first sound
+            // of the session could silently not play.
+            sfx.setOnReady(sfx::play);
+        } catch (Exception e) {
+            System.err.println("[MusicPlayer] Could not play sound effect: " + e.getMessage());
+        }
+    }
+
     /** Sets the volume. Value must be between 0.0 and 1.0. */
     public static void setVolume(double vol) {
         volume = Math.max(0.0, Math.min(1.0, vol));

@@ -53,6 +53,10 @@ public class GameController {
     @FXML private Label helpPlayerLabel;
     @FXML private Label helpQuestLabel;
 
+    // Mini-HUD — current player + quest progress, always visible (no need to open Help)
+    @FXML private Label hudPlayerLabel;
+    @FXML private Label hudQuestLabel;
+
     // Game state
     private BoardDefinition board;
     private PlanetBoardView boardView;
@@ -63,6 +67,11 @@ public class GameController {
     private final Queue<PlayerToken> initialStartQuestionQueue = new ArrayDeque<>();
     private boolean showingInitialStartQuestions = false;
     private boolean continuePromptShown = false;
+
+    // Player currently shown in the HUD/Help modal — only changes when a new
+    // turn actually starts, unlike currentPlayerIndex which advances right
+    // after an answer, before the "Next player" button is even clicked.
+    private PlayerToken activePlayer;
 
     @FXML
     public void initialize() {
@@ -169,6 +178,10 @@ public class GameController {
                     System.out.println(current.getPlayerName() + " completed their quest! Return to START.");
                 }
 
+                // Refresh the HUD right away — no need to wait for the next
+                // turn to see the objective progress update.
+                updateMiniHud();
+
                 // Les cases ALL_IN et VADER lancent déjà leur propre déplacement
                 // dans PlanetBoardView. On ne doit surtout pas relancer un
                 // déplacement ici, sinon le tour suivant peut démarrer pendant
@@ -250,6 +263,8 @@ public class GameController {
         if (gameOver) return;
         PlayerToken current = playerTokens.get(currentPlayerIndex);
         pendingQuestionPlayer = current;
+        activePlayer = current;
+        updateMiniHud();
         boardView.mooveToken(current);
     }
 
@@ -263,7 +278,32 @@ public class GameController {
             return;
         }
         pendingQuestionPlayer = nextPlayer;
+        activePlayer = nextPlayer;
+        updateMiniHud();
         boardView.askQuestionForCurrentTile(nextPlayer);
+    }
+
+    /** Updates the always-visible mini-HUD with the active player's name and quest progress. */
+    private void updateMiniHud() {
+        if (activePlayer == null) {
+            hudPlayerLabel.setText("");
+            hudQuestLabel.setText("");
+            return;
+        }
+        hudPlayerLabel.setText(activePlayer.getPlayerName().toUpperCase());
+        hudQuestLabel.setText(questStatusText(activePlayer, false));
+    }
+
+    /** Quest status text: description + progress, or a completed message. */
+    private String questStatusText(PlayerToken token, boolean detailed) {
+        QuestService qs = questServices.get(token);
+        if (qs == null || qs.getActiveQuest() == null) return "";
+        if (qs.isActiveQuestCompleted()) {
+            return detailed
+                    ? "✅ QUEST COMPLETE!\nReturn to the START tile\nfor the Final Assault (difficulty 4)!"
+                    : "Quest complete! Return to START";
+        }
+        return qs.getActiveQuest().getDescription() + "\n" + qs.getProgressText();
     }
 
     /**
@@ -297,25 +337,10 @@ public class GameController {
      */
     @FXML
     private void onHelp() {
-        if (!playerTokens.isEmpty()) {
-            PlayerToken current = playerTokens.get(currentPlayerIndex);
-            helpPlayerLabel.setText(current.getPlayerName().toUpperCase());
-
-            QuestService qs = questServices.get(current);
-            if (qs != null && qs.getActiveQuest() != null) {
-                if (qs.isActiveQuestCompleted()) {
-                    helpQuestLabel.setText(
-                            "✅ QUÊTE ACCOMPLIE !\n" +
-                                    "Retournez à la case DÉPART\n" +
-                                    "pour l'Assaut Final (difficulté 4) !");
-                } else {
-                    helpQuestLabel.setText(
-                            qs.getActiveQuest().getDescription()
-                                    + "\n[" + qs.getProgressText() + "]");
-                }
-            } else {
-                helpQuestLabel.setText("—");
-            }
+        if (activePlayer != null) {
+            helpPlayerLabel.setText(activePlayer.getPlayerName().toUpperCase());
+            String status = questStatusText(activePlayer, true);
+            helpQuestLabel.setText(status.isEmpty() ? "—" : status);
         } else {
             helpPlayerLabel.setText("—");
             helpQuestLabel.setText("—");
