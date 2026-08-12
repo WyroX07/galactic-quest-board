@@ -38,18 +38,6 @@ public class QuestionCardView {
     private static final double CARD_WIDTH  = 780;
     private static final double CARD_HEIGHT = 640;
 
-    // Notified exactly while THIS card (the actual question, not the
-    // difficulty/theme choice screens before it) is on screen, so the
-    // HUD (Help/Settings) can be locked only during that window.
-    private static Runnable onShown;
-    private static Runnable onClosed;
-
-    /** Wires the HUD lock/unlock callbacks. Called once from GameController. */
-    public static void setHudLockHooks(Runnable onShown, Runnable onClosed) {
-        QuestionCardView.onShown = onShown;
-        QuestionCardView.onClosed = onClosed;
-    }
-
     // Horizontal padding inside the card (left / right)
     private static final double PAD_LEFT  = 95;
     private static final double PAD_RIGHT = 40;
@@ -328,8 +316,6 @@ public class QuestionCardView {
 
         gameRoot.getChildren().add(dimOverlay);
         gameRoot.getChildren().add(cardContainer);
-
-        if (onShown != null) onShown.run();
     }
 
 
@@ -340,7 +326,6 @@ public class QuestionCardView {
         for (var child : gameRoot.getChildren()) {
             child.setEffect(null);
         }
-        if (onClosed != null) onClosed.run();
     }
 
     private static void showNoQuestion(StackPane gameRoot) {
@@ -377,13 +362,10 @@ public class QuestionCardView {
             for (var child : gameRoot.getChildren()) {
                 child.setEffect(null);
             }
-            if (onClosed != null) onClosed.run();
         });
 
         gameRoot.getChildren().add(dimOverlay);
         gameRoot.getChildren().add(box);
-
-        if (onShown != null) onShown.run();
     }
 
     private static String cardImageFor(QuestionDefinition question) {

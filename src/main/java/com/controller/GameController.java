@@ -8,7 +8,6 @@ import com.service.MusicPlayer;
 import com.service.QuestService;
 import com.service.QuestionService;
 import com.ui.PlanetBoardView;
-import com.ui.QuestionCardView;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.effect.GaussianBlur;
@@ -67,10 +66,6 @@ public class GameController {
 
     @FXML
     public void initialize() {
-        // Help/Settings are only locked while a question card is actually
-        // on screen — not during difficulty/theme selection beforehand.
-        QuestionCardView.setHudLockHooks(this::lockHud, this::unlockHud);
-
         backgroundImage.fitWidthProperty().bind(root.widthProperty());
         backgroundImage.fitHeightProperty().bind(root.heightProperty());
 
@@ -289,18 +284,6 @@ public class GameController {
         });
 
         root.getChildren().add(continueBtn);
-    }
-
-    /** Disables Help/Settings while a question is pending — nothing to check mid-question. */
-    private void lockHud() {
-        helpButton.setDisable(true);
-        settingsIGButton.setDisable(true);
-    }
-
-    /** Re-enables Help/Settings between turns, once no question is on screen. */
-    private void unlockHud() {
-        helpButton.setDisable(false);
-        settingsIGButton.setDisable(false);
     }
 
     /**
