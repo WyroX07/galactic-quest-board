@@ -53,7 +53,10 @@ public class MusicPlayer {
             MediaPlayer sfx = new MediaPlayer(media);
             sfx.setVolume(volume);
             sfx.setOnEndOfMedia(sfx::dispose);
-            sfx.play();
+            // Same reason as the hyperspace video: play() right after creation
+            // can race with the player's own setup, so the very first sound
+            // of the session could silently not play.
+            sfx.setOnReady(sfx::play);
         } catch (Exception e) {
             System.err.println("[MusicPlayer] Could not play sound effect: " + e.getMessage());
         }
