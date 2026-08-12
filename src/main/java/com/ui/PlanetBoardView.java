@@ -108,6 +108,26 @@ public class PlanetBoardView extends Pane {
         askQuestionForCurrentTile(token);
     }
 
+    /**
+     * Demo/rehearsal tool: instantly moves the token to the first tile
+     * matching the given type (and theme, for THEME tiles), then triggers
+     * that tile's question flow — lets a presenter show off any tile type
+     * on demand instead of walking the whole board. Not reachable from
+     * normal gameplay.
+     */
+    public void teleportToTileType(PlayerToken token, String type, String theme) {
+        TileDefinition target = getOrderedTiles().stream()
+                .filter(t -> type.equalsIgnoreCase(t.getType()))
+                .filter(t -> theme == null || theme.equalsIgnoreCase(t.getTheme()))
+                .findFirst()
+                .orElse(null);
+        if (target == null) return;
+
+        token.setCurrentPosition(target.getId());
+        requestLayout();
+        askQuestionForCurrentTile(token);
+    }
+
     public void askQuestionForCurrentTile(PlayerToken token) {
         TileDefinition currentTile = getCurrentTile(token);
 

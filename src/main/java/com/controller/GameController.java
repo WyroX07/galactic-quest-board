@@ -10,6 +10,7 @@ import com.service.QuestionService;
 import com.ui.PlanetBoardView;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -92,6 +93,71 @@ public class GameController {
 
         ShipSelectionView selection = new ShipSelectionView(GameSettings.getNumberOfPlayers(), this::startGame);
         root.getChildren().add(selection);
+
+        setupDemoShortcut();
+    }
+
+    /** F9 toggles a hidden demo panel to jump the active player to any tile type — for presentations only. */
+    private void setupDemoShortcut() {
+        root.sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+                newScene.getAccelerators().put(
+                        javafx.scene.input.KeyCombination.keyCombination("F9"),
+                        this::toggleDemoPanel);
+            }
+        });
+    }
+
+    private Node demoPanel;
+
+    private void toggleDemoPanel() {
+        if (demoPanel != null) {
+            root.getChildren().remove(demoPanel);
+            demoPanel = null;
+            return;
+        }
+        demoPanel = buildDemoPanel();
+        root.getChildren().add(demoPanel);
+    }
+
+    private Node buildDemoPanel() {
+        VBox panel = new VBox(6);
+        panel.setPadding(new Insets(12));
+        panel.setStyle("-fx-background-color: rgba(0,0,0,0.85); -fx-background-radius: 8;");
+        StackPane.setAlignment(panel, Pos.BOTTOM_LEFT);
+        StackPane.setMargin(panel, new Insets(0, 0, 20, 20));
+
+        Label title = new Label("DEMO — jump to tile");
+        title.setTextFill(Color.web("#4ECDC4"));
+        title.setFont(Font.font("Consolas", FontWeight.BOLD, 12));
+        panel.getChildren().add(title);
+
+        panel.getChildren().add(demoJumpButton("Blue", "THEME", "BLUE"));
+        panel.getChildren().add(demoJumpButton("Green", "THEME", "GREEN"));
+        panel.getChildren().add(demoJumpButton("Orange", "THEME", "ORANGE"));
+        panel.getChildren().add(demoJumpButton("Yellow", "THEME", "YELLOW"));
+        panel.getChildren().add(demoJumpButton("ALL-IN", "ALL_IN", null));
+        panel.getChildren().add(demoJumpButton("VADER", "DARK_VADOR", null));
+        panel.getChildren().add(demoJumpButton("START (final assault once quest done)", "START", null));
+
+        return panel;
+    }
+
+    private Button demoJumpButton(String label, String type, String theme) {
+        Button btn = new Button(label);
+        btn.setStyle("-fx-font-size: 11px; -fx-cursor: hand;");
+        btn.setOnAction(e -> demoJumpTo(type, theme));
+        return btn;
+    }
+
+    /** Jumps the currently active player straight to a tile type and asks its question — use only between turns. */
+    private void demoJumpTo(String type, String theme) {
+        if (playerTokens.isEmpty() || boardView == null) return;
+        PlayerToken target = activePlayer != null ? activePlayer : playerTokens.get(currentPlayerIndex);
+        pendingQuestionPlayer = target;
+        activePlayer = target;
+        updateMiniHud();
+        boardView.teleportToTileType(target, type, theme);
     }
 
     private void startGame(List<ShipSelectionView.PlayerSelection> players) {
