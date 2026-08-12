@@ -110,27 +110,68 @@ public class GameController {
 
     private Node demoPanel;
 
+    // Which player the demo panel will jump next — explicit, so the
+    // presenter always knows who's about to be teleported.
+    private PlayerToken demoSelectedPlayer;
+
     private void toggleDemoPanel() {
         if (demoPanel != null) {
             root.getChildren().remove(demoPanel);
             demoPanel = null;
             return;
         }
+        if (demoSelectedPlayer == null && !playerTokens.isEmpty()) {
+            demoSelectedPlayer = activePlayer != null ? activePlayer : playerTokens.get(currentPlayerIndex);
+        }
+        demoPanel = buildDemoPanel();
+        root.getChildren().add(demoPanel);
+    }
+
+    /** Rebuilds the demo panel in place — used after changing the selected player. */
+    private void refreshDemoPanel() {
+        if (demoPanel == null) return;
+        root.getChildren().remove(demoPanel);
         demoPanel = buildDemoPanel();
         root.getChildren().add(demoPanel);
     }
 
     private Node buildDemoPanel() {
-        VBox panel = new VBox(6);
+        VBox panel = new VBox(8);
         panel.setPadding(new Insets(12));
         panel.setStyle("-fx-background-color: rgba(0,0,0,0.85); -fx-background-radius: 8;");
         StackPane.setAlignment(panel, Pos.BOTTOM_LEFT);
         StackPane.setMargin(panel, new Insets(0, 0, 20, 20));
 
-        Label title = new Label("DEMO — jump to tile");
+        Label title = new Label("DEMO PANEL");
         title.setTextFill(Color.web("#4ECDC4"));
         title.setFont(Font.font("Consolas", FontWeight.BOLD, 12));
         panel.getChildren().add(title);
+
+        // Who's about to be teleported — explicit and switchable.
+        Label playerHint = new Label("Jump this player:");
+        playerHint.setTextFill(Color.web("#aaaaaa"));
+        playerHint.setFont(Font.font("Consolas", 10));
+        panel.getChildren().add(playerHint);
+
+        HBox playerRow = new HBox(4);
+        for (PlayerToken p : playerTokens) {
+            boolean selected = p == demoSelectedPlayer;
+            Button pBtn = new Button(p.getPlayerName());
+            pBtn.setStyle("-fx-font-size: 11px; -fx-cursor: hand;"
+                    + (selected ? "-fx-background-color: #4ECDC4; -fx-text-fill: #0a0a0a; -fx-font-weight: bold;"
+                                : ""));
+            pBtn.setOnAction(e -> {
+                demoSelectedPlayer = p;
+                refreshDemoPanel();
+            });
+            playerRow.getChildren().add(pBtn);
+        }
+        panel.getChildren().add(playerRow);
+
+        Label tileHint = new Label("Jump to tile:");
+        tileHint.setTextFill(Color.web("#aaaaaa"));
+        tileHint.setFont(Font.font("Consolas", 10));
+        panel.getChildren().add(tileHint);
 
         panel.getChildren().add(demoJumpButton("Blue", "THEME", "BLUE"));
         panel.getChildren().add(demoJumpButton("Green", "THEME", "GREEN"));
@@ -139,6 +180,11 @@ public class GameController {
         panel.getChildren().add(demoJumpButton("ALL-IN", "ALL_IN", null));
         panel.getChildren().add(demoJumpButton("VADER", "DARK_VADOR", null));
         panel.getChildren().add(demoJumpButton("START (final assault once quest done)", "START", null));
+
+        Label afterHint = new Label("After answering: normal turn flow\nresumes for the NEXT player.");
+        afterHint.setTextFill(Color.web("#888888"));
+        afterHint.setFont(Font.font("Consolas", 9));
+        panel.getChildren().add(afterHint);
 
         return panel;
     }
@@ -150,14 +196,25 @@ public class GameController {
         return btn;
     }
 
-    /** Jumps the currently active player straight to a tile type and asks its question — use only between turns. */
+    /**
+     * Jumps the selected player straight to a tile type and asks its
+     * question. Also syncs the normal turn order to that player first, so
+     * everything that happens afterward (the "Next player" button, whose
+     * turn comes next) behaves exactly like a regular turn — fully
+     * predictable, nothing demo-specific to remember.
+     */
     private void demoJumpTo(String type, String theme) {
-        if (playerTokens.isEmpty() || boardView == null) return;
-        PlayerToken target = activePlayer != null ? activePlayer : playerTokens.get(currentPlayerIndex);
-        pendingQuestionPlayer = target;
-        activePlayer = target;
+        if (playerTokens.isEmpty() || boardView == null || demoSelectedPlayer == null) return;
+
+        currentPlayerIndex = playerTokens.indexOf(demoSelectedPlayer);
+        pendingQuestionPlayer = demoSelectedPlayer;
+        activePlayer = demoSelectedPlayer;
         updateMiniHud();
-        boardView.teleportToTileType(target, type, theme);
+
+        root.getChildren().remove(demoPanel);
+        demoPanel = null;
+
+        boardView.teleportToTileType(demoSelectedPlayer, type, theme);
     }
 
     private void startGame(List<ShipSelectionView.PlayerSelection> players) {
