@@ -1,6 +1,16 @@
 {
   "quests": {
 
+    "demo": [
+      {
+        "id": 6,
+        "description": "Answer 1 correct question in any theme",
+        "requirements": [
+          { "theme": "Star Wars", "count": 1 }
+        ]
+      }
+    ],
+
     "easy": [
       {
         "id": 1,

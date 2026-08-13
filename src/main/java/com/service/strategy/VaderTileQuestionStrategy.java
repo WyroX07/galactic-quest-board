@@ -27,8 +27,8 @@ import java.util.Random;
  * Rules:
  *  - Player chooses a theme (Blue / Green / Orange / Yellow).
  *  - Question is always difficulty 4.
- *  - Correct answer  -> player advances 4 tiles.
- *  - Wrong answer    -> player moves back to START.
+ *  - Correct answer  -> player picks any tile on the board to land on.
+ *  - Wrong answer    -> player retreats 4 tiles.
  */
 public class VaderTileQuestionStrategy implements TileQuestionStrategy {
 
@@ -89,7 +89,7 @@ public class VaderTileQuestionStrategy implements TileQuestionStrategy {
         cardBg.setFitHeight(cardHeight);
         cardBg.setPreserveRatio(false);
 
-        Label titleLabel = new Label("⚡ DARK VADOR — " + playerName.toUpperCase());
+        Label titleLabel = new Label("⚡ DARK VADER — " + playerName.toUpperCase());
         titleLabel.setStyle(
                 "-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" +
                 "-fx-effect: dropshadow(gaussian, black, 6, 0.6, 0, 2);"
@@ -99,8 +99,8 @@ public class VaderTileQuestionStrategy implements TileQuestionStrategy {
         titleLabel.setAlignment(Pos.CENTER);
 
         Label subLabel = new Label(
-                "Choisissez votre thème  •  Difficulté 4  •  " +
-                "Correct : +4 cases  •  Faux : retour au DÉPART"
+                "Choose your theme  •  Difficulty 4  •  " +
+                "Correct: pick your landing tile  •  Wrong: -4 tiles"
         );
         subLabel.setStyle(
                 "-fx-font-size: 13px; -fx-text-fill: rgba(255,255,255,0.9);" +

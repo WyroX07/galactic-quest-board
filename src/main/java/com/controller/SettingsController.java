@@ -24,7 +24,7 @@ public class SettingsController {
     @FXML
     private Label difficultyLabel;
 
-    private final String[] difficulties = {"EASY", "MEDIUM", "HARD"};
+    private final String[] difficulties = {"EASY", "MEDIUM", "HARD", "DEMO"};
     private int difficultyIndex = 1;
 
 
@@ -36,6 +36,7 @@ public class SettingsController {
         difficultyIndex = switch (GameSettings.getDifficulty()) {
             case "easy" -> 0;
             case "hard" -> 2;
+            case "demo" -> 3;
             default -> 1;
         };
         difficultyLabel.setText(difficulties[difficultyIndex]);

@@ -87,6 +87,19 @@ public class DifficultyCardView {
         subLabel.setMaxWidth(CONTENT_WIDTH);
         subLabel.setAlignment(Pos.CENTER);
 
+        // Topic — so the player knows what the question will be about, not
+        // just the card colour.
+        Label topicLabel = new Label("Topic: " + themeDisplayName(tile));
+        topicLabel.setStyle(
+                "-fx-font-size: 15px;" +
+                        "-fx-font-weight: bold;" +
+                        "-fx-text-fill: #FFD60A;" +
+                        "-fx-effect: dropshadow(gaussian, black, 4, 0.5, 0, 1);"
+        );
+        topicLabel.setWrapText(true);
+        topicLabel.setMaxWidth(CONTENT_WIDTH);
+        topicLabel.setAlignment(Pos.CENTER);
+
         // Difficulty buttons
         HBox buttonsBox = new HBox(14);
         buttonsBox.setAlignment(Pos.CENTER);
@@ -116,7 +129,7 @@ public class DifficultyCardView {
             buttonsBox.getChildren().add(btn);
         }
 
-        VBox content = new VBox(24, titleLabel, subLabel, buttonsBox);
+        VBox content = new VBox(24, titleLabel, subLabel, topicLabel, buttonsBox);
         content.setAlignment(Pos.CENTER);
         content.setPadding(new Insets(70, 55, 50, 55));
         content.setMaxWidth(CARD_WIDTH);
@@ -236,6 +249,21 @@ public class DifficultyCardView {
         for (var child : gameRoot.getChildren()) {
             child.setEffect(null);
         }
+    }
+
+    /** Human-readable topic name shown on the difficulty screen. */
+    private static String themeDisplayName(TileDefinition tile) {
+        if (tile != null && "THEME".equals(tile.getType()) && tile.getTheme() != null) {
+            return switch (tile.getTheme().trim().toUpperCase()) {
+                case "BLUE", "TECH", "IT", "COMPUTING", "INFORMATICS", "COMPUTER SCIENCE", "IT & PROGRAMMING" -> "Tech & IT";
+                case "GREEN", "WORLD", "TOURISM", "TOURISM & TRAVEL" -> "Tourism & Travel";
+                case "ORANGE", "ENTERTAINMENT" -> "Entertainment";
+                case "YELLOW", "STAR WARS" -> "Star Wars";
+                default -> tile.getTheme();
+            };
+        }
+        // START and other non-THEME tiles ask Star Wars questions.
+        return "Star Wars";
     }
 
     private static String cardImageFor(TileDefinition tile) {

@@ -108,6 +108,26 @@ public class PlanetBoardView extends Pane {
         askQuestionForCurrentTile(token);
     }
 
+    /**
+     * Demo/rehearsal tool: instantly moves the token to the first tile
+     * matching the given type (and theme, for THEME tiles), then triggers
+     * that tile's question flow — lets a presenter show off any tile type
+     * on demand instead of walking the whole board. Not reachable from
+     * normal gameplay.
+     */
+    public void teleportToTileType(PlayerToken token, String type, String theme) {
+        TileDefinition target = getOrderedTiles().stream()
+                .filter(t -> type.equalsIgnoreCase(t.getType()))
+                .filter(t -> theme == null || theme.equalsIgnoreCase(t.getTheme()))
+                .findFirst()
+                .orElse(null);
+        if (target == null) return;
+
+        token.setCurrentPosition(target.getId());
+        requestLayout();
+        askQuestionForCurrentTile(token);
+    }
+
     public void askQuestionForCurrentTile(PlayerToken token) {
         TileDefinition currentTile = getCurrentTile(token);
 
@@ -139,11 +159,23 @@ public class PlanetBoardView extends Pane {
                         }
                     });
 
+        } else if (isVaderTile(currentTile)) {
+            strategy.askQuestion(currentTile, questionService, gameRoot, token.getPlayerName(), (question, isCorrect) -> {
+                if (isCorrect) {
+                    // Correct: player picks any tile on the board to land on.
+                    // answerListener fires only once that choice is made, so
+                    // the turn doesn't move on while the picker is still open.
+                    promptChooseLandingTile(token, () -> {
+                        if (answerListener != null) answerListener.onAnswer(question, true);
+                    });
+                } else {
+                    moveTokenBySteps(token, -4);
+                    if (answerListener != null) answerListener.onAnswer(question, false);
+                }
+            });
+
         } else {
             strategy.askQuestion(currentTile, questionService, gameRoot, token.getPlayerName(), (question, isCorrect) -> {
-                if (isVaderTile(currentTile)) {
-                    applyVaderRule(token, isCorrect);
-                }
                 if (answerListener != null) {
                     answerListener.onAnswer(question, isCorrect);
                 }
@@ -176,11 +208,48 @@ public class PlanetBoardView extends Pane {
                 && "ALL_IN".equalsIgnoreCase(tile.getType());
     }
 
-    private void applyVaderRule(PlayerToken token, boolean isCorrect) {
-        if (isCorrect) {
-            moveTokenBySteps(token, 4);
-        } else {
-            moveTokenToStart(token);
+    /**
+     * Lets the player click any tile on the board to land on — the Vader
+     * reward for a correct answer. Tiles are made clickable and highlighted
+     * until one is picked, then everything is restored and onDone runs.
+     */
+    private void promptChooseLandingTile(PlayerToken token, Runnable onDone) {
+        Label hint = new Label("⚡ Correct! Choose your landing tile...");
+        hint.setStyle("-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white; "
+                + "-fx-background-color: rgba(0,0,0,0.7); -fx-padding: 12 24; -fx-background-radius: 8; "
+                + "-fx-effect: dropshadow(gaussian, black, 6, 0.5, 0, 2);");
+        if (gameRoot != null) {
+            StackPane.setAlignment(hint, Pos.TOP_CENTER);
+            StackPane.setMargin(hint, new Insets(90, 0, 0, 0));
+            gameRoot.getChildren().add(hint);
+        }
+
+        List<StackPane> pickableTiles = new ArrayList<>();
+        for (TileDefinition tile : board.getTiles()) {
+            StackPane node = tileNodesById.get(tile.getId());
+            if (node == null) continue;
+
+            node.setOpacity(1);
+            node.setMouseTransparent(false);
+            node.setCursor(Cursor.HAND);
+            node.setEffect(new DropShadow(20, Color.web("#4ECDC4")));
+            pickableTiles.add(node);
+
+            node.setOnMouseClicked(e -> {
+                token.setCurrentPosition(tile.getId());
+                requestLayout();
+
+                for (StackPane n : pickableTiles) {
+                    n.setOpacity(0);
+                    n.setMouseTransparent(true);
+                    n.setCursor(Cursor.DEFAULT);
+                    n.setEffect(null);
+                    n.setOnMouseClicked(null);
+                }
+                if (gameRoot != null) gameRoot.getChildren().remove(hint);
+
+                onDone.run();
+            });
         }
     }
 
@@ -245,7 +314,7 @@ public class PlanetBoardView extends Pane {
         cardBg.setFitHeight(cardHeight);
         cardBg.setPreserveRatio(false);
 
-        Label titleLabel = new Label("⚡ ASSAUT FINAL — " + playerName.toUpperCase() + " !");
+        Label titleLabel = new Label("⚡ FINAL ASSAULT — " + playerName.toUpperCase() + "!");
         titleLabel.setStyle(
                 "-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" +
                         "-fx-effect: dropshadow(gaussian, black, 6, 0.6, 0, 2);"
@@ -255,7 +324,7 @@ public class PlanetBoardView extends Pane {
         titleLabel.setAlignment(Pos.CENTER);
 
         Label subLabel = new Label(
-                "Quête accomplie ! Choisissez votre thème  •  Difficulté 4  •  Correct = VICTOIRE !"
+                "Quest complete! Choose your theme  •  Difficulty 4  •  Correct = VICTORY!"
         );
         subLabel.setStyle(
                 "-fx-font-size: 13px; -fx-text-fill: rgba(255,255,255,0.9);" +
@@ -407,16 +476,6 @@ public class PlanetBoardView extends Pane {
             if (onAnimationFinished != null) onAnimationFinished.run();
         });
         timeline.play();
-    }
-
-    private void moveTokenToStart(PlayerToken token) {
-        TileDefinition startTile = getOrderedTiles().stream()
-                .filter(tile -> "START".equalsIgnoreCase(tile.getType()))
-                .findFirst()
-                .orElse(getOrderedTiles().get(0));
-
-        token.setCurrentPosition(startTile.getId());
-        requestLayout();
     }
 
     private void buildLinksFollowingIds() {
