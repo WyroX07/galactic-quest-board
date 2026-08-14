@@ -330,6 +330,9 @@ public class GameController {
                             javafx.util.Duration.millis(400));
                     delay.setOnFinished(evt -> boardView.moveTokenBySteps(current, level));
                     delay.play();
+                } else if (isVader) {
+                    // No animation for this teleport, so continue the turn manually.
+                    continueAfterResolvedTurn();
                 }
 
             } else {
