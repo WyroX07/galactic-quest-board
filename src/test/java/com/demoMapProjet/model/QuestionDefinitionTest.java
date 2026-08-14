@@ -11,7 +11,7 @@ import java.util.List;
  * These tests verify:
  * - Setters and getters correctly store and return values
  * - Default values are handled properly when fields are null
- * - Alternative fields (sujet, reponse, choix) are correctly used when needed
+ * - Alternative fields (subject, legacyAnswer, legacyChoices) are correctly used when needed
  * - The toString method contains important information about the object
  */
 
@@ -91,51 +91,51 @@ class QuestionDefinitionTest {
         assertTrue(result.contains("type='text'"));
         assertTrue(result.contains("theme='History'"));
         assertTrue(result.contains("title='World War II'"));
-        assertTrue(result.contains("difficulte=3"));
+        assertTrue(result.contains("difficulty=3"));
     }
 
     @Test
-    void testGetTitleUsesSujetWhenTitleIsNull() throws Exception {
+    void testGetTitleUsesSubjectWhenTitleIsNull() throws Exception {
         // Create a question without setting a title
         QuestionDefinition question = new QuestionDefinition();
 
-        // Use reflection to set the alternative field "sujet"
-        Field sujetField = QuestionDefinition.class.getDeclaredField("sujet");
-        sujetField.setAccessible(true);
-        sujetField.set(question, "Titre alternatif");
+        // Use reflection to set the alternative field "subject"
+        Field subjectField = QuestionDefinition.class.getDeclaredField("subject");
+        subjectField.setAccessible(true);
+        subjectField.set(question, "Alternative title");
 
-        // Verify that getTitle returns the value of "sujet" when "title" is null
-        assertEquals("Titre alternatif", question.getTitle());
+        // Verify that getTitle returns the value of "subject" when "title" is null
+        assertEquals("Alternative title", question.getTitle());
     }
 
     @Test
-    void testGetAnswerUsesReponseWhenAnswerIsNull() throws Exception {
+    void testGetAnswerUsesLegacyAnswerWhenAnswerIsNull() throws Exception {
         // Create a question without setting an answer
         QuestionDefinition question = new QuestionDefinition();
 
-        // Use reflection to set the alternative field "reponse"
-        Field reponseField = QuestionDefinition.class.getDeclaredField("reponse");
-        reponseField.setAccessible(true);
-        reponseField.set(question, "Réponse alternative");
+        // Use reflection to set the alternative field "legacyAnswer"
+        Field legacyAnswerField = QuestionDefinition.class.getDeclaredField("legacyAnswer");
+        legacyAnswerField.setAccessible(true);
+        legacyAnswerField.set(question, "Alternative answer");
 
-        // Verify that getAnswer returns the value of "reponse" when "answer" is null
-        assertEquals("Réponse alternative", question.getAnswer());
+        // Verify that getAnswer returns the value of "legacyAnswer" when "answer" is null
+        assertEquals("Alternative answer", question.getAnswer());
     }
 
     @Test
-    void testGetChoicesUsesChoixWhenChoicesIsNull() throws Exception {
+    void testGetChoicesUsesLegacyChoicesWhenChoicesIsNull() throws Exception {
         // Create a question without setting choices
         QuestionDefinition question = new QuestionDefinition();
 
         // Prepare alternative choices list
-        List<String> choix = Arrays.asList("Choix A", "Choix B");
+        List<String> legacyChoices = Arrays.asList("Choice A", "Choice B");
 
-        // Use reflection to set the alternative field "choix"
-        Field choixField = QuestionDefinition.class.getDeclaredField("choix");
-        choixField.setAccessible(true);
-        choixField.set(question, choix);
+        // Use reflection to set the alternative field "legacyChoices"
+        Field legacyChoicesField = QuestionDefinition.class.getDeclaredField("legacyChoices");
+        legacyChoicesField.setAccessible(true);
+        legacyChoicesField.set(question, legacyChoices);
 
-        // Verify that getChoices returns "choix" when "choices" is null
-        assertEquals(choix, question.getChoices());
+        // Verify that getChoices returns "legacyChoices" when "choices" is null
+        assertEquals(legacyChoices, question.getChoices());
     }
 }

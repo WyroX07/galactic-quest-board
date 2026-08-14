@@ -343,10 +343,9 @@ public class GameController {
                 // turn to see the objective progress update.
                 updateMiniHud();
 
-                // Les cases ALL_IN et VADER lancent déjà leur propre déplacement
-                // dans PlanetBoardView. On ne doit surtout pas relancer un
-                // déplacement ici, sinon le tour suivant peut démarrer pendant
-                // l'animation du joueur actuel.
+                // ALL_IN and VADER tiles already trigger their own movement in
+                // PlanetBoardView — moving again here would risk starting the
+                // next turn while the current player's animation is still playing.
                 if (!specialTileAlreadyMoved) {
                     javafx.animation.PauseTransition delay = new javafx.animation.PauseTransition(
                             javafx.util.Duration.millis(400));

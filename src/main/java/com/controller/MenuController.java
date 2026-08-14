@@ -3,8 +3,6 @@ package com.controller;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 
@@ -15,6 +13,9 @@ public class MenuController {
 
     @FXML
     private ImageView backgroundImage;
+
+    @FXML
+    private StackPane rulesModalOverlay;
 
     private MainController mainController;
 
@@ -39,13 +40,15 @@ public class MenuController {
         mainController.showSettings(root);
     }
 
+    /** Shows the rules overlay — reuses the same HelpModal.png image as the in-game Help button. */
     @FXML
     public void onRules() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION,
-                "Les règles du jeu seront disponibles ici.", ButtonType.OK);
-        alert.setTitle("Règles — Galactic Trials");
-        alert.setHeaderText("📖  Règles du jeu");
-        alert.showAndWait();
+        rulesModalOverlay.setVisible(true);
+    }
+
+    @FXML
+    public void onCloseRules() {
+        rulesModalOverlay.setVisible(false);
     }
 
     @FXML

@@ -628,15 +628,6 @@ public class PlanetBoardView extends Pane {
         return Color.WHITE;
     }
 
-    public void avancerToken(PlayerToken token) {
-        int currentPosition = token.getCurrentPosition();
-        List<TileDefinition> ordered = getOrderedTiles();
-
-        int nextPosition = (currentPosition + 1) % ordered.size();
-        token.setCurrentPosition(nextPosition);
-        requestLayout();
-    }
-
     public interface AnswerListener {
         void onAnswer(QuestionDefinition question, boolean isCorrect);
     }

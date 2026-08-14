@@ -26,7 +26,7 @@
 
     <children>
 
-        <!-- Fond pixel art -->
+        <!-- Pixel art background -->
         <ImageView fx:id="backgroundImage"
                    fitWidth="700.0"
                    fitHeight="480.0"
@@ -54,7 +54,7 @@
                     </padding>
                     <children>
 
-                        <!-- Titre image -->
+                        <!-- Title image -->
                         <ImageView fitWidth="280.0"
                                    fitHeight="60.0"
                                    preserveRatio="true"
@@ -172,7 +172,7 @@
                             </children>
                         </VBox>
 
-                        <!-- Bouton Back to Menu (caché en mode pré-jeu) -->
+                        <!-- Back to Menu button (hidden in pre-game mode) -->
                         <Button fx:id="backToMenuButton"
                                 onAction="#onBackToMenu"
                                 contentDisplay="GRAPHIC_ONLY"
@@ -198,7 +198,7 @@
             </children>
         </StackPane>
 
-        <!-- Bouton fermer (X) -->
+        <!-- Close button (X) -->
         <Button fx:id="closeButton"
                 onAction="#onClose"
                 contentDisplay="GRAPHIC_ONLY"

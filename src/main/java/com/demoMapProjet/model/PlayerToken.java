@@ -29,9 +29,4 @@ public class PlayerToken {
     public int getShipNumber() {
         return shipNumber;
     }
-
-    //Checks if the player is on the start tile
-    public boolean isOnStartTile() {
-        return currentPosition == 0;
-    }
 }
