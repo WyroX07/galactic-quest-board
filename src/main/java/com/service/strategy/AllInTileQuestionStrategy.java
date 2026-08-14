@@ -7,9 +7,6 @@ import com.ui.DifficultyCardView;
 import com.ui.QuestionCardView;
 import javafx.scene.layout.StackPane;
 
-import java.util.List;
-import java.util.Random;
-
 /**
  * Strategy for ALL_IN tiles.
  *
@@ -41,11 +38,6 @@ public class AllInTileQuestionStrategy implements TileQuestionStrategy {
         default void onAnswer(QuestionDefinition question, boolean isCorrect) {
             // Not used directly; the strategy calls onAllInAnswer instead.
         }
-    }
-
-    @Override
-    public QuestionDefinition selectQuestion(List<QuestionDefinition> allQuestions, int chosenLevel, Random random) {
-        return null;
     }
 
     @Override

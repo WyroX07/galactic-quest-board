@@ -10,7 +10,6 @@ public class TileDefinition {
 
     private String type;   // START, THEME, ALL_IN, DARK_VADOR
     private String theme;  // ORANGE, BLUE, GREEN, YELLOW when type is THEME
-    private String label;  // Optional START / ALL-IN / VADER label
 
     public int getId() {
         return id;
@@ -26,8 +25,5 @@ public class TileDefinition {
     }
     public String getTheme() {
         return theme;
-    }
-    public String getLabel() {
-        return label;
     }
 }

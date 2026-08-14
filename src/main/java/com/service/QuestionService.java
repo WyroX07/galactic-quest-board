@@ -61,10 +61,6 @@ public class QuestionService {
         return filteredQuestions.get(random.nextInt(filteredQuestions.size()));
     }
 
-    public QuestionDefinition getQuestionForTile(TileDefinition tile) {
-        return getQuestionForTile(tile, -1);
-    }
-
     /**
      * Returns a random question matching the given theme string and difficulty.
      * Used by special tile strategies that need to force a specific question theme

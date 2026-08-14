@@ -18,9 +18,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-import java.util.List;
-import java.util.Random;
-
 /**
  * Strategy for DARK_VADOR tiles.
  *
@@ -33,12 +30,6 @@ import java.util.Random;
 public class VaderTileQuestionStrategy implements TileQuestionStrategy {
 
     private static final int VADER_DIFFICULTY = 4;
-
-    @Override
-    public QuestionDefinition selectQuestion(List<QuestionDefinition> allQuestions,
-                                             int chosenLevel, Random random) {
-        return null;
-    }
 
     @Override
     public void askQuestion(TileDefinition tile,

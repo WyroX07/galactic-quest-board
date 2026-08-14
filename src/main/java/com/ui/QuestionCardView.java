@@ -60,12 +60,6 @@ public class QuestionCardView {
         showInternal(question, gameRoot, playerName, onAnswer);
     }
 
-    /** Kept for backward compatibility — delegates to the main path. */
-    public static void showLarge(QuestionDefinition question, StackPane gameRoot,
-                                 String playerName,java.util.function.Consumer<Boolean> onAnswer) {
-        showInternal(question, gameRoot,playerName,onAnswer);
-    }
-
 
     private static void showInternal(QuestionDefinition question, StackPane gameRoot,
                                      String playerName,java.util.function.Consumer<Boolean> onAnswer) {

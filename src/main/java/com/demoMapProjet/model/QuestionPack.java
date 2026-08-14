@@ -37,19 +37,11 @@ public class QuestionPack {
         this.questions = questions;
     }
 
-    public List<Card> getCards() { return cards; }
-    public void setCards(List<Card> cards) { this.cards = cards; }
-
     public static class Card {
-        @SerializedName("auteur")
-        private String author;
-        private String theme;
         @SerializedName("couleur")
         private String color;
         private List<QuestionDefinition> questions;
 
-        public String getAuthor() { return author; }
-        public String getTheme() { return theme; }
         public String getColor() { return color; }
         public List<QuestionDefinition> getQuestions() { return questions; }
     }
