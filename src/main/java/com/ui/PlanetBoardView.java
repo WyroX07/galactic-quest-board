@@ -108,13 +108,7 @@ public class PlanetBoardView extends Pane {
         askQuestionForCurrentTile(token);
     }
 
-    /**
-     * Demo/rehearsal tool: instantly moves the token to the first tile
-     * matching the given type (and theme, for THEME tiles), then triggers
-     * that tile's question flow — lets a presenter show off any tile type
-     * on demand instead of walking the whole board. Not reachable from
-     * normal gameplay.
-     */
+    /** Demo-only: instantly moves the token to the first tile of the given type/theme and asks its question. */
     public void teleportToTileType(PlayerToken token, String type, String theme) {
         TileDefinition target = getOrderedTiles().stream()
                 .filter(t -> type.equalsIgnoreCase(t.getType()))
@@ -131,7 +125,7 @@ public class PlanetBoardView extends Pane {
     public void askQuestionForCurrentTile(PlayerToken token) {
         TileDefinition currentTile = getCurrentTile(token);
 
-        // ── Final assault: player on START and quest already completed ──────
+        // Final assault: player on START and quest already completed
         if (isStartTile(currentTile)
                 && questCompletedChecker != null
                 && questCompletedChecker.test(token)) {
@@ -162,9 +156,7 @@ public class PlanetBoardView extends Pane {
         } else if (isVaderTile(currentTile)) {
             strategy.askQuestion(currentTile, questionService, gameRoot, token.getPlayerName(), (question, isCorrect) -> {
                 if (isCorrect) {
-                    // Correct: player picks any tile on the board to land on.
-                    // answerListener fires only once that choice is made, so
-                    // the turn doesn't move on while the picker is still open.
+                    // Correct: player picks any tile to land on; answerListener fires once that's done.
                     promptChooseLandingTile(token, () -> {
                         if (answerListener != null) answerListener.onAnswer(question, true);
                     });
@@ -208,11 +200,7 @@ public class PlanetBoardView extends Pane {
                 && "ALL_IN".equalsIgnoreCase(tile.getType());
     }
 
-    /**
-     * Lets the player click any tile on the board to land on — the Vader
-     * reward for a correct answer. Tiles are made clickable and highlighted
-     * until one is picked, then everything is restored and onDone runs.
-     */
+    /** Vader reward: highlights every tile as clickable until the player picks one to land on. */
     private void promptChooseLandingTile(PlayerToken token, Runnable onDone) {
         Label hint = new Label("⚡ Correct! Choose your landing tile...");
         hint.setStyle("-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white; "
@@ -253,16 +241,7 @@ public class PlanetBoardView extends Pane {
         }
     }
 
-    /**
-     * Applies ALL_IN move rules after the player has answered.
-     *
-     * Correct answer  -> advance by (chosenLevel + 1) tiles.
-     * Wrong answer    -> move back by chosenLevel tiles.
-     *
-     * @param token       the player token to move
-     * @param isCorrect   whether the answer was correct
-     * @param chosenLevel the difficulty level the player selected (1-4)
-     */
+    /** ALL_IN move rules: correct = advance (chosenLevel + 1) tiles, wrong = move back chosenLevel tiles. */
     private void applyAllInRule(PlayerToken token, boolean isCorrect, int chosenLevel) {
         if (isCorrect) {
             int advance = chosenLevel + 1;
@@ -275,13 +254,9 @@ public class PlanetBoardView extends Pane {
         }
     }
 
-    // ── Final Assault overlay ─────────────────────────────────────────────────
+    // Final Assault overlay
 
-    /**
-     * Shows a theme-selector card for the Final Assault.
-     * The player picks a theme; a difficulty-4 question is then asked.
-     * Correct → win. Wrong → turn ends normally.
-     */
+    /** Final Assault theme-selector card: player picks a theme, gets a difficulty-4 question, correct = win. */
     private void showFinalAssault(PlayerToken token) {
         if (gameRoot == null) return;
         String playerName = token.getPlayerName();

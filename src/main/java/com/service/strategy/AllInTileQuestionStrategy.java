@@ -7,28 +7,13 @@ import com.ui.DifficultyCardView;
 import com.ui.QuestionCardView;
 import javafx.scene.layout.StackPane;
 
-/**
- * Strategy for ALL_IN tiles.
- *
- * Rules:
- *  - The question is always from the "Star Wars" theme.
- *  - The player chooses a difficulty level (1-4) via DifficultyCardView.
- *  - Wrong answer  -> player moves BACK by <chosenLevel> tiles.
- *  - Correct answer -> player moves FORWARD by <chosenLevel + 1> tiles.
- *
- * To communicate the chosen level back to PlanetBoardView, the answer
- * listener receives a AllInAnswerListener (subtype of AnswerListener)
- * that also carries the chosen level.
- */
+/** Strategy for ALL_IN tiles: always Star Wars theme, player picks difficulty 1-4, correct = +(level+1) tiles, wrong = -level tiles. */
 public class AllInTileQuestionStrategy implements TileQuestionStrategy {
 
     /** Tile theme string used in questions.json for Star Wars questions */
     public static final String ALL_IN_QUESTION_THEME = "Star Wars";
 
-    /**
-     * Extended listener that also exposes the difficulty level the player chose,
-     * so PlanetBoardView can compute the correct number of steps.
-     */
+    /** Extended listener that also exposes the chosen difficulty level, so PlanetBoardView can compute steps. */
     public interface AllInAnswerListener extends DifficultyCardView.AnswerListener {
         /** Called once the player has answered; level is the chosen difficulty (1-4). */
         void onAllInAnswer(QuestionDefinition question, boolean isCorrect, int chosenLevel);
@@ -54,10 +39,7 @@ public class AllInTileQuestionStrategy implements TileQuestionStrategy {
 
 
 
-    /**
-     * Shows a difficulty card whose question is always fetched from Star Wars,
-     * and whose answer listener carries the chosen level.
-     */
+    /** Shows a difficulty card whose question is always fetched from Star Wars. */
     private static void showAllInDifficultyCard(TileDefinition yellowProxy,
                                                 QuestionService questionService,
                                                 StackPane gameRoot,
