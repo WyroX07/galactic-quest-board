@@ -25,7 +25,7 @@
 
     <children>
 
-        <!-- Fond pixel art (même que Settings principal) -->
+        <!-- Pixel art background (same as the main Settings screen) -->
         <ImageView fx:id="backgroundImage"
                    fitWidth="700.0"
                    fitHeight="350.0"
@@ -53,7 +53,7 @@
                     </padding>
                     <children>
 
-                        <!-- Titre image (même asset que Settings principal) -->
+                        <!-- Title image (same asset as the main Settings screen) -->
                         <ImageView fitWidth="280.0"
                                    fitHeight="50.0"
                                    preserveRatio="true"
@@ -86,7 +86,7 @@
             </children>
         </StackPane>
 
-        <!-- Bouton fermer (X) — même asset que Settings principal -->
+        <!-- Close button (X) — same asset as the main Settings screen -->
         <Button fx:id="closeButton"
                 onAction="#onClose"
                 contentDisplay="GRAPHIC_ONLY"
