@@ -15,23 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-/**
- * Question pop-up overlay.
- *
- * All four colour variants (BLUE, GREEN, ORANGE, YELLOW) and all tile types
- * (THEME, START, ALL_IN, DARK_VADOR) share the exact same fixed dimensions:
- * CARD_WIDTH x CARD_HEIGHT.
- *
- * The question text and choices are wrapped properly so no text is cut off
- * with ellipsis ("..."). The VBox grows with its content and a ScrollPane
- * is used as a safety net for extremely long questions.
- *
- * Once a question is shown, the player must answer it or let the timer run
- * out — there is no way to hide the card and go back to the board. Unlike
- * the difficulty/theme selection screens, nothing about the board can
- * change the player's answer at this point, so a "hide" button here only
- * added confusion (and used to cause a duplicated-card bug).
- */
+/** Question pop-up overlay, same fixed size for every colour variant. Answer or let the timer run out — no hide button, unlike the selection screens. */
 public class QuestionCardView {
 
     // Unique fixed size used by EVERY variant — no more per-tile branching
@@ -103,7 +87,7 @@ public class QuestionCardView {
         cardBg.setFitHeight(CARD_HEIGHT);
         cardBg.setPreserveRatio(false);
 
-        Label playerLabel = new Label("C'est au tour de : " + playerName);
+        Label playerLabel = new Label(playerName + "'s turn");
         playerLabel.setStyle(
                 "-fx-font-size: 16px;" +
                         "-fx-font-weight: bold;" +

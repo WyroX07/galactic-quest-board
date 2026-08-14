@@ -4,15 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Unit tests for the PlayerToken class.
- *
- * These tests verify:
- * - The constructor correctly initializes the player name and ship number
- * - The default position is set to 0
- * - The setter correctly updates the current position
- * - Multiple position updates behave correctly
- */
+/** Unit tests for the PlayerToken class: constructor, default position, and position updates. */
 
 class PlayerTokenTest {
 

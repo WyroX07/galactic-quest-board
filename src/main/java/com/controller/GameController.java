@@ -69,19 +69,13 @@ public class GameController {
     private QuestionService questionService;
     private PlayerToken pendingQuestionPlayer;
 
-    // Type of the tile the pending question was asked on, captured BEFORE
-    // the answer is processed. Correct Vader answers move the player to a
-    // freshly-chosen tile before this listener runs, so re-reading the
-    // player's current tile at that point would see the new tile instead
-    // of the one the question was actually about.
+    // Tile type captured before the answer is processed (Vader moves the player before the listener runs).
     private String pendingTileType;
     private final Queue<PlayerToken> initialStartQuestionQueue = new ArrayDeque<>();
     private boolean showingInitialStartQuestions = false;
     private boolean continuePromptShown = false;
 
-    // Player currently shown in the HUD/Help modal — only changes when a new
-    // turn actually starts, unlike currentPlayerIndex which advances right
-    // after an answer, before the "Next player" button is even clicked.
+    // Player shown in the HUD/Help modal — only updates when a new turn starts.
     private PlayerToken activePlayer;
 
     @FXML
@@ -108,12 +102,7 @@ public class GameController {
 
     private javafx.scene.media.MediaPlayer hyperspacePlayer;
 
-    /**
-     * Prepares the hyperspace video player as soon as the game screen loads,
-     * while the player is still busy picking ships — by the time it's
-     * actually needed, the underlying media engine has had time to warm up
-     * instead of racing to get ready right when we call play().
-     */
+    /** Preloads the hyperspace video while ships are being picked, so it's ready by the time it's needed. */
     private void preloadHyperspaceVideo() {
         java.net.URL videoUrl = getClass().getResource("/audio/hyperspace.mp4");
         if (videoUrl == null) return;
@@ -140,8 +129,7 @@ public class GameController {
 
     private Node demoPanel;
 
-    // Which player the demo panel will jump next — explicit, so the
-    // presenter always knows who's about to be teleported.
+    // Which player the demo panel will jump next.
     private PlayerToken demoSelectedPlayer;
 
     private void toggleDemoPanel() {
@@ -241,13 +229,7 @@ public class GameController {
         return btn;
     }
 
-    /**
-     * Jumps the selected player straight to a tile type and asks its
-     * question. Also syncs the normal turn order to that player first, so
-     * everything that happens afterward (the "Next player" button, whose
-     * turn comes next) behaves exactly like a regular turn — fully
-     * predictable, nothing demo-specific to remember.
-     */
+    /** Jumps the selected player straight to a tile type and asks its question, syncing the normal turn order. */
     private void demoJumpTo(String type, String theme) {
         if (playerTokens.isEmpty() || boardView == null || demoSelectedPlayer == null) return;
 
@@ -339,13 +321,10 @@ public class GameController {
                     System.out.println(current.getPlayerName() + " completed their quest! Return to START.");
                 }
 
-                // Refresh the HUD right away — no need to wait for the next
-                // turn to see the objective progress update.
+                // Refresh the HUD right away so the quest progress update is visible immediately.
                 updateMiniHud();
 
-                // ALL_IN and VADER tiles already trigger their own movement in
-                // PlanetBoardView — moving again here would risk starting the
-                // next turn while the current player's animation is still playing.
+                // ALL_IN and VADER already trigger their own movement in PlanetBoardView.
                 if (!specialTileAlreadyMoved) {
                     javafx.animation.PauseTransition delay = new javafx.animation.PauseTransition(
                             javafx.util.Duration.millis(400));
@@ -356,9 +335,7 @@ public class GameController {
             } else {
                 System.out.println(current.getPlayerName() + " wrong answer, stays in place.");
 
-                // ALL_IN and VADER both retreat with an animation on a wrong
-                // answer, so we wait for the animation-finished callback
-                // instead of moving on right away.
+                // ALL_IN and VADER retreat with an animation, so we wait for the animation-finished callback.
                 if (!specialTileAlreadyMoved) {
                     continueAfterResolvedTurn();
                 }
@@ -474,11 +451,7 @@ public class GameController {
         return qs.getActiveQuest().getDescription() + "\n" + qs.getProgressText();
     }
 
-    /**
-     * Shows a "continue" button and waits for the player to click it before
-     * running the next step, instead of an automatic delay — turn pacing is
-     * up to the players, not a timer.
-     */
+    /** Shows a "continue" button instead of an automatic delay, so turn pacing is up to the players. */
     private void showContinueButton(String label, Runnable onContinue) {
         Button continueBtn = new Button(label);
         continueBtn.setFont(Font.font("Consolas", FontWeight.BOLD, 18));
@@ -498,11 +471,7 @@ public class GameController {
         root.getChildren().add(continueBtn);
     }
 
-    /**
-     * Opens the HelpModal showing the current player's name and active quest.
-     * The HelpModal.png image already contains all static rule text —
-     * we only populate the two dynamic value fields.
-     */
+    /** Opens the HelpModal and fills in the current player's name and active quest (rules text is baked into the image). */
     @FXML
     private void onHelp() {
         if (activePlayer != null) {
@@ -586,10 +555,7 @@ public class GameController {
         root.getChildren().add(overlay);
     }
 
-    /**
-     * Displays the end-of-game scoreboard: the winner, plus every player
-     * ranked by their total correct answers.
-     */
+    /** Displays the end-of-game scoreboard: the winner, plus every player ranked by correct answers. */
     private void showWinnerScreen(PlayerToken winner) {
         gamePane.setEffect(new GaussianBlur(10));
 

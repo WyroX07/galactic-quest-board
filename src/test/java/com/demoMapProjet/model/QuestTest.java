@@ -7,14 +7,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Unit tests for the Quest class.
- *
- * These tests verify:
- * - Constructor and getters work correctly
- * - Quest completion logic based on requirements
- * - Behavior when a required theme is missing
- */
+/** Unit tests for the Quest class: constructor, getters, and isCompleted() logic. */
 
 class QuestTest {
 

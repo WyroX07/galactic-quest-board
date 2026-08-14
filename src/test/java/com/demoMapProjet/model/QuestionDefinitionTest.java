@@ -5,15 +5,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Unit tests for the QuestionDefinition class.
- *
- * These tests verify:
- * - Setters and getters correctly store and return values
- * - Default values are handled properly when fields are null
- * - Alternative fields (subject, legacyAnswer, legacyChoices) are correctly used when needed
- * - The toString method contains important information about the object
- */
+/** Unit tests for the QuestionDefinition class: getters/setters, default values, and legacy field fallbacks. */
 
 import static org.junit.jupiter.api.Assertions.*;
 

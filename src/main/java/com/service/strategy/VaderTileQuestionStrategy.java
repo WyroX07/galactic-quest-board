@@ -18,15 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-/**
- * Strategy for DARK_VADOR tiles.
- *
- * Rules:
- *  - Player chooses a theme (Blue / Green / Orange / Yellow).
- *  - Question is always difficulty 4.
- *  - Correct answer  -> player picks any tile on the board to land on.
- *  - Wrong answer    -> player retreats 4 tiles.
- */
+/** Strategy for DARK_VADOR tiles: player picks a theme, difficulty always 4, correct = pick landing tile, wrong = retreat 4 tiles. */
 public class VaderTileQuestionStrategy implements TileQuestionStrategy {
 
     private static final int VADER_DIFFICULTY = 4;
