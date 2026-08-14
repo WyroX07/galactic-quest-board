@@ -44,6 +44,17 @@
     <!-- Corner buttons -->
     <AnchorPane pickOnBounds="false">
 
+        <!-- Rules — top right, shows the same rules image used in-game -->
+        <Button fx:id="rulesButton" onAction="#onRules"
+                AnchorPane.topAnchor="18" AnchorPane.rightAnchor="18"
+                style="-fx-background-color: transparent; -fx-padding: 0; -fx-cursor: hand;">
+            <graphic>
+                <ImageView fitWidth="60" preserveRatio="true">
+                    <image><Image url="@../img/Assets/RulesBtn.png" /></image>
+                </ImageView>
+            </graphic>
+        </Button>
+
         <!-- Exit — bottom right, closes the application -->
         <Button fx:id="exitButton" onAction="#onExit"
                 AnchorPane.bottomAnchor="18" AnchorPane.rightAnchor="18"
@@ -56,5 +67,35 @@
         </Button>
 
     </AnchorPane>
+
+    <!--
+        Rules overlay — hidden by default. Reuses the exact same HelpModal.png
+        image shown in-game (it already contains the full rules text), just
+        without the two dynamic fields since there is no active game yet.
+    -->
+    <StackPane fx:id="rulesModalOverlay"
+               visible="false"
+               style="-fx-background-color: rgba(0,0,0,0.65);">
+
+        <StackPane maxWidth="920.0" maxHeight="524.0">
+            <ImageView fitWidth="920.0" fitHeight="524.0" preserveRatio="true" smooth="true">
+                <image><Image url="@../img/Assets/HelpModal.png" /></image>
+            </ImageView>
+
+            <AnchorPane pickOnBounds="false" style="-fx-background-color: transparent;">
+                <Button onAction="#onCloseRules"
+                        contentDisplay="GRAPHIC_ONLY" pickOnBounds="true"
+                        AnchorPane.topAnchor="60.0" AnchorPane.rightAnchor="130.0"
+                        style="-fx-background-color: transparent; -fx-padding: 0;
+                               -fx-border-color: transparent; -fx-cursor: hand;">
+                    <graphic>
+                        <ImageView fitWidth="44.0" fitHeight="44.0" preserveRatio="true" smooth="true">
+                            <image><Image url="@../img/Assets/ExitBtnModal.png" /></image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </AnchorPane>
+        </StackPane>
+    </StackPane>
 
 </StackPane>
