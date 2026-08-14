@@ -3,7 +3,6 @@ module com.example.demomapprojet {
     requires javafx.fxml;
     requires javafx.media;
     requires com.google.gson;
-    requires org.controlsfx.controls;
     requires javafx.graphics;
 
     // Needed for Gson to access private fields
